@@ -1,0 +1,156 @@
+# Gaza Memes
+
+This collection of memes, stored in the `memes` directory, addresses themes related to Gaza, often with a satirical or activist perspective.
+
+Files are listed alphabetically, so the order is essentially random.
+
+Context is provided for memes where the meaning or references might not be immediately clear.
+
+If you think we've misjudged what's "obvious," feel free to open an issue or share feedback!
+
+### anti anti zionists
+![anti anti zionists -w](memes/anti%20anti%20zionists%20-w.jpg)
+
+### assassination
+![assassination -t](memes/assassination%20-t.jpg)
+
+### axis of evil
+![axis of evil -t](memes/axis%20of%20evil%20-t.jpg)
+
+### blueprint for peace
+![blueprint for peace - built](memes/blueprint%20for%20peace%20-%20built.jpeg)
+
+### boycott complicity
+![boycott complicity - built](memes/boycott%20complicity%20-%20built.jpg)
+
+### bullets in the head
+![bullets in the head -w](memes/bullets%20in%20the%20head%20-w.jpg)
+
+### bunch of questions
+![bunch of questions -w](memes/bunch%20of%20questions%20-w.jpg)
+
+### cannot comment
+![cannot comment - built](memes/cannot%20comment%20-%20built.jpg)
+
+### enough is enough
+![enough is enough -w](memes/enough%20is%20enough%20-w.jpg)
+
+### filton24 another one
+![filton24 another one -w](memes/filton24%20another%20one%20-w.jpg)
+
+### filton24 hero
+![filton24 hero -w](memes/filton24%20hero%20-w.jpg)
+
+### filton24 hero 2
+![filton24 hero 2 -w](memes/filton24%20hero%202%20-w.jpg)
+
+### filton24 ultra legends
+![filton24 ultra legends -w](memes/filton24%20ultra%20legends%20-w.jpg)
+
+### francesca legend
+![francesca legend -w](memes/francesca%20legend%20-w.jpg)
+
+### glitch the matrix
+![glitch the matrix -w](memes/glitch%20the%20matrix%20-w.jpg)
+
+### global peace
+![global peace - built](memes/global%20peace%20-%20built.jpeg)
+
+### hummus not hamas 2
+![hummus not hamas 2 -w](memes/hummus%20not%20hamas%202%20-w.jpg)
+
+### hummus not hamas
+![hummus not hamas-w](memes/hummus%20not%20hamas-w.jpg)
+
+### ibm holocaust
+![ibm holocaust -w](memes/ibm%20holocaust%20-w.jpg)
+
+### idf peace loving army
+![idf peace loving army -w](memes/idf%20peace%20loving%20army%20-w.jpg)
+
+### it was coming
+![it was coming -w](memes/it%20was%20coming%20-w.jpg)
+
+### justice will come
+![justice will come -w](memes/justice%20will%20come%20-w.jpg)
+
+### medium is message - israel unifies
+![medium is message - israel unifies -w](memes/medium%20is%20message%20-%20israel%20unifies%20-w.jpg)
+
+### mental gymnastics
+![mental gymnastics -w](memes/mental%20gymnastics%20-w.jpg)
+
+### morale of the troops
+![morale of the troops -w](memes/morale%20of%20the%20troops%20-w.jpg)
+
+### netanyahu trump fox
+![netanyahu trump fox -w](memes/netanyahu%20trump%20fox%20-w.jpg)
+
+### netanyahu trump prize
+![netanyahu trump prize -t](memes/netanyahu%20trump%20prize%20-t.jpg)
+
+### organs harvesting
+![organs harvesting -w](memes/organs%20harvesting%20-w.jpg)
+
+### orwell 2025
+![orwell 2025 -t](memes/orwell%202025%20-t.jpg)
+
+### palestine action clown cash
+![palestine action clown cash -w](memes/palestine%20action%20clown%20cash%20-w.jpg)
+
+### palestine action moment
+![palestine action moment -w](memes/palestine%20action%20moment%20-w.jpg)
+
+### palestine action tshirt
+![palestine action tshirt -w](memes/palestine%20action%20tshirt%20-w.jpg)
+
+### propaganda
+![propaganda -w](memes/propaganda%20-w.jpg)
+
+### skip the limbs
+![skip the limbs -w](memes/skip%20the%20limbs%20-w.jpg)
+
+### starvatin
+![starvatin - built](memes/starvatin%20-%20built.jpg)
+
+### starvation role
+![starvation role - built](memes/starvation%20role%20-%20built.jpg)
+
+### suitcases of cash
+![suitcases of cash -w](memes/suitcases%20of%20cash%20-w.jpg)
+
+### support to israel war policy
+![support to israel war policy - built](memes/support%20to%20israel%20war%20policy%20-%20built.jpeg)
+
+### supporting justice
+![supporting justice -w](memes/supporting%20justice%20-w.jpg)
+
+### terrorist arrested
+![terrorist arrested -w](memes/terrorist%20arrested%20-w.jpg)
+
+### tonnage of bombs
+![tonnage of bombs -w](memes/tonnage%20of%20bombs%20-w.jpg)
+
+### trust us not them
+![trust us not them -w](memes/trust%20us%20not%20them%20-w.jpg)
+
+### we are all palestine action
+![we are all palestine action -w](memes/we%20are%20all%20palestine%20action%20-w.jpg)
+
+### white rabbit judge commentary
+![white rabbit judge commentary -w](memes/white%20rabbit%20judge%20commentary%20-w.jpg)
+
+### with a dog
+![with a dog -w](memes/with%20a%20dog%20-w.jpg)
+
+### withdraw consent
+![withdraw consent - built](memes/withdraw%20consent%20-%20built.jpeg)
+
+### yvette cooper 3 organisations 1 vote
+![yvette cooper 3 organisations 1 vote -w](memes/yvette%20cooper%203%20organisations%201%20vote%20-w.jpg)
+
+### yvette cooper arrest
+![yvette cooper arrest -w](memes/yvette%20cooper%20arrest%20-w.jpg)
+
+### yvette cooper complicity
+![yvette cooper complicity-w](memes/yvette%20cooper%20complicity-w.jpg)
