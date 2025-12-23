@@ -2,7 +2,7 @@
 
 This collection of memes, stored in the `memes` directory, addresses themes related to Gaza, often with a satirical or activist perspective.
 
-Files are listed alphabetically, so the order is essentially random.
+Files are listed alphabetically (most of the time).
 
 Context is provided for memes where the meaning or references might not be immediately clear.
 
@@ -12,6 +12,7 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 ![anti anti zionists -w](memes/anti%20anti%20zionists%20-w.jpg)
 
 ### assassination
+**CONTEXT:** https://en.wikipedia.org/wiki/Israeli_attack_on_Doha
 ![assassination -t](memes/assassination%20-t.jpg)
 
 ### axis of evil
@@ -24,6 +25,7 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 ![boycott complicity - built](memes/boycott%20complicity%20-%20built.jpg)
 
 ### bullets in the head
+**CONTEXT:** https://www.volkskrant.nl/kijkverder/v/2025/gunshot-palestine-children-israel-war~v1819649/
 ![bullets in the head -w](memes/bullets%20in%20the%20head%20-w.jpg)
 
 ### bunch of questions
@@ -68,7 +70,11 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 ### idf peace loving army
 ![idf peace loving army -w](memes/idf%20peace%20loving%20army%20-w.jpg)
 
+### hunger strike
+![hunger strike](memes/hunger%20strike%20-%20built.jpeg)
+
 ### it was coming
+**CONTEXT:** it did not happen yet, but if it happens the meme is ready
 ![it was coming -w](memes/it%20was%20coming%20-w.jpg)
 
 ### justice will come
@@ -141,6 +147,7 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 ![white rabbit judge commentary -w](memes/white%20rabbit%20judge%20commentary%20-w.jpg)
 
 ### with a dog
+**CONTEXT:** https://novaramedia.com/2025/11/25/israeli-prison-guards-are-using-dogs-to-rape-palestinians-former-detainees-say/
 ![with a dog -w](memes/with%20a%20dog%20-w.jpg)
 
 ### withdraw consent
