@@ -89,6 +89,8 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 ![mental gymnastics -w](memes/mental%20gymnastics%20-w.jpg)
 
 ### morale of the troops
+> https://www.youtube.com/watch?v=WewZZXvEYmE
+> https://english.wafa.ps/Pages/Details/164797 ➡️ Israel's far-right National Security Minister Itamar Ben-Gvir has decided to promote the commander of the undercover unit in the occupied West Bank to the rank of colonel, one day after members of the unit executed two unarmed young men in Jenin after they had just surrendered.
 ![morale of the troops -w](memes/morale%20of%20the%20troops%20-w.jpg)
 
 ### netanyahu trump fox
