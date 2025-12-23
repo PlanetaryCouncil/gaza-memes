@@ -96,6 +96,7 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 ![netanyahu trump prize -t](memes/netanyahu%20trump%20prize%20-t.jpg)
 
 ### organs harvesting
+**CONTEXT**: https://www.middleeastmonitor.com/20251120-israeli-media-israel-investigates-optimal-way-to-execute-palestinian-prisoners/
 ![organs harvesting -w](memes/organs%20harvesting%20-w.jpg)
 
 ### orwell 2025
@@ -157,7 +158,8 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 ![yvette cooper 3 organisations 1 vote -w](memes/yvette%20cooper%203%20organisations%201%20vote%20-w.jpg)
 
 ### yvette cooper arrest
+**CONTEXT:** https://www.craigmurray.org.uk/archives/2025/08/yvette-cooper-is-lying/
 ![yvette cooper arrest -w](memes/yvette%20cooper%20arrest%20-w.jpg)
 
-### yvette cooper complicity
-![yvette cooper complicity-w](memes/yvette%20cooper%20complicity-w.jpg)
+### yvette cooper war crimes
+![yvette cooper war crimes -w.jpg](memes/yvette%20cooper%20war%20crimes%20-w.jpg)
