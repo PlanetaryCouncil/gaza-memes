@@ -16,6 +16,7 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 ![assassination -t](memes/assassination%20-t.jpg)
 
 ### axis of evil
+**CONTEXT:** back then there were 3 evil countries
 ![axis of evil -t](memes/axis%20of%20evil%20-t.jpg)
 
 ### blueprint for peace
@@ -32,6 +33,7 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 ![bunch of questions -w](memes/bunch%20of%20questions%20-w.jpg)
 
 ### cannot comment
+**CONTEXT:** no matter the facts, antisemitic comments incoming
 ![cannot comment - built](memes/cannot%20comment%20-%20built.jpg)
 
 ### enough is enough
@@ -106,10 +108,15 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 ![palestine action clown cash -w](memes/palestine%20action%20clown%20cash%20-w.jpg)
 
 ### palestine action moment
+**CONTEXT**: this could be seen as contrarian but many people became involved only after the obscene / frivolous / grotesque / bizarre / obnoxious / sickening terrorist designation. 
 ![palestine action moment -w](memes/palestine%20action%20moment%20-w.jpg)
 
 ### palestine action tshirt
 ![palestine action tshirt -w](memes/palestine%20action%20tshirt%20-w.jpg)
+
+### private police
+**CONTEXT**: `2025-12-23` Greta arrested in London, released on bail
+![](memes/private%20police%20-w.jpg)
 
 ### propaganda
 ![propaganda -w](memes/propaganda%20-w.jpg)
@@ -145,10 +152,13 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 ![we are all palestine action -w](memes/we%20are%20all%20palestine%20action%20-w.jpg)
 
 ### white rabbit judge commentary
+**CONTEXT:** https://github.com/PlanetaryCouncil/planetarycouncil.org/issues/1
 ![white rabbit judge commentary -w](memes/white%20rabbit%20judge%20commentary%20-w.jpg)
 
 ### with a dog
-**CONTEXT:** https://novaramedia.com/2025/11/25/israeli-prison-guards-are-using-dogs-to-rape-palestinians-former-detainees-say/
+**CONTEXT:** 
+* https://novaramedia.com/2025/11/25/israeli-prison-guards-are-using-dogs-to-rape-palestinians-former-detainees-say/
+* https://braveneweurope.com/caitlin-johnstone-sorry-if-this-is-antisemitic-but-i-think-its-wrong-to-train-dogs-to-rape-prisoners
 ![with a dog -w](memes/with%20a%20dog%20-w.jpg)
 
 ### withdraw consent
