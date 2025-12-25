@@ -153,6 +153,10 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 ## tonnage of bombs
 ![tonnage of bombs -w](memes/tonnage%20of%20bombs%20-w.jpg)
 
+## trump gaza riviera
+**CONTEXT:** https://www.instagram.com/reel/DGhfpgHsOg6/ (the most common first reaction "is this official profile")
+![](memes/trump%20gaza%20riviera%20-w.jpg)
+
 ## trust us not them
 ![trust us not them -w](memes/trust%20us%20not%20them%20-w.jpg)
 
@@ -177,6 +181,12 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 
 ## rape with dog 3
 ![with a dog -w](memes/rape%20with%20dog%203%20-w.jpg)
+
+## where are my legs
+**CONTEXT:** 
+* Dylan Collins video exposing 13th October 2023 https://www.youtube.com/watch?v=ywaOyHzqDxw
+* Person without legs: https://www.instagram.com/christinaassi/
+![](memes/where%20are%20my%20legs%20-w.jpg)
 
 ## withdraw consent
 ![withdraw consent - built](memes/withdraw%20consent%20-%20built.jpeg)
