@@ -2,14 +2,37 @@
 
 This collection of memes addressing themes related to Gaza.
 
-Files are mostly alphabetically (not always).
-
 Context is provided for memes where the meaning or references might not be immediately clear.
 
 If you think we've misjudged what's "obvious," feel free to open an issue or share feedback!
 
 ## everything propaganda
 ![](memes/everything%20propaganda%202%20-w.jpg)
+
+## do not question
+![](memes/do%20not%20question%20-w.jpg)
+
+## bunch of questions
+![bunch of questions -w](memes/bunch%20of%20questions%20-w.jpg)
+
+## bullets in the head
+**CONTEXT:** https://www.volkskrant.nl/kijkverder/v/2025/gunshot-palestine-children-israel-war~v1819649/
+![bullets in the head -w](memes/bullets%20in%20the%20head%20-w.jpg)
+
+## glitch the matrix
+![glitch the matrix -w](memes/glitch%20the%20matrix%20-w.jpg)
+
+## where are my legs
+**CONTEXT:** 
+* Dylan Collins video exposing 13th October 2023 https://www.youtube.com/watch?v=ywaOyHzqDxw
+* Person without legs: https://www.instagram.com/christinaassi/
+![](memes/where%20are%20my%20legs%20-w.jpg)
+
+## skip the limbs
+![skip the limbs -w](memes/skip%20the%20limbs%20-w.jpg)
+
+## propaganda
+![propaganda -w](memes/propaganda%20-w.jpg)
 
 ## anti anti zionists
 ![anti anti zionists -w](memes/anti%20anti%20zionists%20-w.jpg)
@@ -18,25 +41,18 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 **CONTEXT:** https://en.wikipedia.org/wiki/Israeli_attack_on_Doha
 ![assassination -t](memes/assassination%20-t.jpg)
 
+## medium is message - israel unifies
+![medium is message - israel unifies -w](memes/medium%20is%20message%20-%20israel%20unifies%20-w.jpg)
+
 ## blueprint for peace
 ![blueprint for peace - built](memes/blueprint%20for%20peace%20-%20built.jpeg)
 
 ## boycott complicity
 ![boycott complicity - built](memes/boycott%20complicity%20-%20built.jpg)
 
-## bullets in the head
-**CONTEXT:** https://www.volkskrant.nl/kijkverder/v/2025/gunshot-palestine-children-israel-war~v1819649/
-![bullets in the head -w](memes/bullets%20in%20the%20head%20-w.jpg)
-
-## bunch of questions
-![bunch of questions -w](memes/bunch%20of%20questions%20-w.jpg)
-
 ## cannot comment
 **CONTEXT:** no matter the facts, antisemitic comments incoming
 ![cannot comment - built](memes/cannot%20comment%20-%20built.jpg)
-
-## do not question
-![](memes/do%20not%20question%20-w.jpg)
 
 ## enough is enough
 ![enough is enough -w](memes/enough%20is%20enough%20-w.jpg)
@@ -55,9 +71,6 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 
 ## francesca legend
 ![francesca legend -w](memes/francesca%20legend%20-w.jpg)
-
-## glitch the matrix
-![glitch the matrix -w](memes/glitch%20the%20matrix%20-w.jpg)
 
 ## global peace
 ![global peace - built](memes/global%20peace%20-%20built.jpeg)
@@ -83,9 +96,6 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 
 ## justice will come
 ![justice will come -w](memes/justice%20will%20come%20-w.jpg)
-
-## medium is message - israel unifies
-![medium is message - israel unifies -w](memes/medium%20is%20message%20-%20israel%20unifies%20-w.jpg)
 
 ## mental gymnastics
 ![mental gymnastics -w](memes/mental%20gymnastics%20-w.jpg)
@@ -123,17 +133,9 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 **CONTEXT**: `2025-12-23` Greta arrested in London, released on bail
 ![](memes/private%20police%20-w.jpg)
 
-## propaganda
-![propaganda -w](memes/propaganda%20-w.jpg)
-
-<!-- this one is out of alphabetical order because didn't want certain symbols to appear too soon -->
-
 ## axis of evil
 **CONTEXT:** back then there were 3 evil countries
 ![axis of evil -t](memes/axis%20of%20evil%20-t.jpg)
-
-## skip the limbs
-![skip the limbs -w](memes/skip%20the%20limbs%20-w.jpg)
 
 ## starvatin
 ![starvatin - built](memes/starvatin%20-%20built.jpg)
@@ -184,12 +186,6 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 
 ## rape with dog 3
 ![with a dog -w](memes/rape%20with%20dog%203%20-w.jpg)
-
-## where are my legs
-**CONTEXT:** 
-* Dylan Collins video exposing 13th October 2023 https://www.youtube.com/watch?v=ywaOyHzqDxw
-* Person without legs: https://www.instagram.com/christinaassi/
-![](memes/where%20are%20my%20legs%20-w.jpg)
 
 ## withdraw consent
 ![withdraw consent - built](memes/withdraw%20consent%20-%20built.jpeg)
