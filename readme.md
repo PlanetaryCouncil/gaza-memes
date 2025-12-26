@@ -1,12 +1,15 @@
 # Gaza Memes
 
-This collection of memes, stored in the `memes` directory, addresses themes related to Gaza, often with a satirical or activist perspective.
+This collection of memes addressing themes related to Gaza.
 
-Files are listed alphabetically (most of the time).
+Files are mostly alphabetically (not always).
 
 Context is provided for memes where the meaning or references might not be immediately clear.
 
 If you think we've misjudged what's "obvious," feel free to open an issue or share feedback!
+
+## everything propaganda
+![](memes/everything%20propaganda%202%20-w.jpg)
 
 ## anti anti zionists
 ![anti anti zionists -w](memes/anti%20anti%20zionists%20-w.jpg)
