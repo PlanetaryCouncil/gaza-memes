@@ -9,8 +9,11 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 ## everything propaganda
 ![](memes/everything%20propaganda%202%20-w.jpg)
 
-## do not question
-![](memes/do%20not%20question%20-w.jpg)
+## where are my legs
+**CONTEXT:** 
+* Dylan Collins video exposing 13th October 2023 https://www.youtube.com/watch?v=ywaOyHzqDxw
+* Person without legs: https://www.instagram.com/christinaassi/
+![](memes/where%20are%20my%20legs%20-w.jpg)
 
 ## bunch of questions
 ![bunch of questions -w](memes/bunch%20of%20questions%20-w.jpg)
@@ -21,12 +24,6 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 
 ## glitch the matrix
 ![glitch the matrix -w](memes/glitch%20the%20matrix%20-w.jpg)
-
-## where are my legs
-**CONTEXT:** 
-* Dylan Collins video exposing 13th October 2023 https://www.youtube.com/watch?v=ywaOyHzqDxw
-* Person without legs: https://www.instagram.com/christinaassi/
-![](memes/where%20are%20my%20legs%20-w.jpg)
 
 ## skip the limbs
 ![skip the limbs -w](memes/skip%20the%20limbs%20-w.jpg)
@@ -118,6 +115,9 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 
 ## orwell 2025
 ![orwell 2025 -t](memes/orwell%202025%20-t.jpg)
+
+## do not question
+![](memes/do%20not%20question%20-w.jpg)
 
 ## palestine action clown cash
 ![palestine action clown cash -w](memes/palestine%20action%20clown%20cash%20-w.jpg)
