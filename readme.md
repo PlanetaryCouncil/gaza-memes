@@ -22,6 +22,13 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 **CONTEXT:** https://www.volkskrant.nl/kijkverder/v/2025/gunshot-palestine-children-israel-war~v1819649/
 ![bullets in the head -w](memes/bullets%20in%20the%20head%20-w.jpg)
 
+## standdown order
+**CONTEXT:** [Knesset testimony](https://primal.net/e/nevent1qqs0ja9yewe6tylx654a7duvghvhj5jvkw82tk7u08zkjn2kf8gezpgvh7sd5)
+![standdown order -w](memes/standdown%20order%20-w.jpg)
+
+## terrorist is a label
+![terrorist is a label -w](memes/terrorist%20is%20a%20label%20-w.jpg)
+
 ## glitch the matrix
 ![glitch the matrix -w](memes/glitch%20the%20matrix%20-w.jpg)
 
@@ -93,6 +100,9 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 
 ## justice will come
 ![justice will come -w](memes/justice%20will%20come%20-w.jpg)
+
+## jokes must be labelled
+![jokes must be labelled -w](memes/jokes%20must%20be%20labelled%20-w.jpg)
 
 ## mental gymnastics
 ![mental gymnastics -w](memes/mental%20gymnastics%20-w.jpg)
@@ -199,6 +209,33 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 
 ## yvette cooper war crimes
 ![yvette cooper war crimes -w.jpg](memes/yvette%20cooper%20war%20crimes%20-w.jpg)
+
+## cannot blame the algorithm
+![cannot blame the algorithm -w](memes/cannot%20blame%20the%20algorithm%20-w.jpg)
+
+## gaza tears
+![gaza tears -w](memes/gaza%20tears%20-w.jpg)
+
+## 1111 portal
+![1111 portal -w](memes/1111%20portal%20-w.jpg)
+
+## bombing for peace
+![bombing for peace -w](memes/bombing%20for%20peace%20-w.jpg)
+
+## why gaza is different
+![why gaza is different -w](memes/why%20gaza%20is%20different%20-w.jpg)
+
+## bodies not kosher
+**CONTEXT:** apologies for "AI slop", AI typically does not allow violence, here some elements triggered a warning and it became problematic to continue to improve this layout
+![bodies not kosher -w](memes/bodies%20not%20kosher%20-w.jpg)
+
+## bodies not kosher - linguistical nuance
+**CONTEXT:** order of the wording matters
+![bodies not kosher - linguistical nuance -w](memes/bodies%20not%20kosher%20-%20linguistical%20nuance%20-w.jpg)
+
+## children amputees
+**CONTEXT:** https://www.ohchr.org/en/meeting-summaries/2025/08/percentage-persons-disabilities-gaza-has-increased-because-excessive-use
+![children amputees -w](memes/children%20amputees%20-w.jpg)
 
 ## how many children died in gaza since yesterday?
 **CONTEXT:**
