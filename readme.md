@@ -1,16 +1,28 @@
+# Coming from the source
+Enter through 👀 and stay in 💖 and 🧠
+
+![](meme-entry.png)
+
+![](part-of-the-source-code.png)
+
+![](make-memes-not-war.jpg)
+
 # Gaza memes
 
-This collection of memes addressing themes related to Gaza.
+This is a collection of memes related to Gaza.
 
-Context is provided for memes where the meaning or references might not be immediately clear.
+Sometimes it is obvious. Sometimes it is a self-contained infographic. Sometimes additional context is provided.
 
-If you think we've misjudged what's "obvious," feel free to open an issue or share feedback!
+If you think we've misjudged what is "obvious" - feel free to share feedback!
 
 # Other memes (open for work)
 
-Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.com/2025-12-10_memes_of_mass_awakening.pdf) (35 pages, 12MB). I've developed an unique style and pretty sharp commentary. Looking to colloborate with media outlets and indpendent journalists to spread the memes and WIN WIN to reach wider audience 🙏
+Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.com/2025-12-10_memes_of_mass_awakening.pdf) (35 pages, 12MB). I've developed an unique style and pretty sharp commentary. Looking to colloborate with media outlets and indpendent journalists to spread the memes and WIN WIN WIN and reach wider audience 🙏
 
 **BEST CONTACT:** marsXRobertson@gmail.com
+
+## propaganda
+![propaganda -w](memes/propaganda%20-w.jpg)
 
 ## everything propaganda
 ![](memes/everything%20propaganda%202%20-w.jpg)
@@ -40,9 +52,6 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 
 ## skip the limbs
 ![skip the limbs -w](memes/skip%20the%20limbs%20-w.jpg)
-
-## propaganda
-![propaganda -w](memes/propaganda%20-w.jpg)
 
 ## anti anti zionists
 ![anti anti zionists -w](memes/anti%20anti%20zionists%20-w.jpg)
@@ -119,6 +128,7 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ![jokes must be labelled -w](memes/jokes%20must%20be%20labelled%20-w.jpg)
 
 ## mental gymnastics
+**CONTEXT:** Screenshot from the judgment [posted here](https://primal.net/e/nevent1qqs8hn8w6skj4a0qhz92afjceec09rkaqvw7nfm4dtyvv9gk8xdlsgqpqnjdk)
 ![mental gymnastics -w](memes/mental%20gymnastics%20-w.jpg)
 
 ## morale of the troops
