@@ -1,10 +1,16 @@
-# Gaza Memes
+# Gaza memes
 
 This collection of memes addressing themes related to Gaza.
 
 Context is provided for memes where the meaning or references might not be immediately clear.
 
 If you think we've misjudged what's "obvious," feel free to open an issue or share feedback!
+
+## Other memes
+
+Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.com/2025-12-10_memes_of_mass_awakening.pdf) (35 pages, 12MB). I've developed an unique style and pretty sharp commentary. Looking to colloborate with media outlets and indpendent journalists to spread the memes and WIN WIN to reach wider audience 🙏
+
+**BEST CONTACT:** marsXRobertson@gmail.com
 
 ## everything propaganda
 ![](memes/everything%20propaganda%202%20-w.jpg)
@@ -91,6 +97,14 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 ## idf peace loving army
 ![idf peace loving army -w](memes/idf%20peace%20loving%20army%20-w.jpg)
 
+## murder families
+**CONTEXT:**
+* https://www.aljazeera.com/news/2025/12/28/israel-kills-over-700-relatives-of-palestinian-journalists-in-gaza-report
+* https://manassa.news/en/news/29387
+* Primary source in Arabic: https://pjs.ps/ar/page-3485.html
+* > **translated to English:** According to monitoring and documentation by the Freedoms Committee of the Palestinian Journalists Syndicate, targeting journalists' families has become a systematic and recurring pattern during the years 2023, 2024, and 2025, claiming the lives of approximately 706 members of journalists' families in the Gaza Strip. All indicators confirm that these targetings are not accidental incidents resulting from the conditions of war.
+![](murder%20families%20-w.jpg)
+
 ## hunger strike
 ![hunger strike](memes/hunger%20strike%20-%20built.jpeg)
 
@@ -119,9 +133,36 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 ## netanyahu trump prize
 ![netanyahu trump prize -t](memes/netanyahu%20trump%20prize%20-t.jpg)
 
-## organs harvesting
+## organs harvesting that saves lives
 **CONTEXT**: https://www.middleeastmonitor.com/20251120-israeli-media-israel-investigates-optimal-way-to-execute-palestinian-prisoners/
 ![organs harvesting -w](memes/organs%20harvesting%20-w.jpg)
+
+## bodies not kosher
+**CONTEXT:** 
+* https://www.solidarity-ps.org/en/Stealing_Martyrs_Organs
+* https://www.bbc.com/news/articles/c5ypwqwlnn2o
+* https://www.theguardian.com/world/2025/oct/15/palestinian-bodies-returned-by-israel-show-signs-of-torture-and-execution-say-doctors
+
+![bodies not kosher -w](memes/bodies%20not%20kosher%20-w.jpg)
+
+PS. Apologies for "AI slop" (some elements repeated). AI typically does not allow violence, here some elements triggered a warning and it became laborious to continue to improve this layout. If needed, if requested: I'll spend more time and energy on that 🙏
+
+## Gaza English
+**CONTEXT:** https://braveneweurope.com/caitlin-johnstone-sorry-if-this-is-antisemitic-but-i-think-its-wrong-to-train-dogs-to-rape-prisoners
+![gaza grammar (3xmeme) -w.jpg](memes/gaza%20grammar%20(3xmeme)%20-w.jpg.jpg)
+
+## rape with dog 2
+![with a dog -w](memes/rape%20with%20dog%202%20-w.jpg)
+
+## rape with dog 1
+![with a dog -w](memes/rape%20with%20dog%201%20-w.jpg)
+
+## rape with dog 3
+**CONTEXT:**
+* https://novaramedia.com/2025/11/25/israeli-prison-guards-are-using-dogs-to-rape-palestinians-former-detainees-say/
+* > “They know once they rape someone with a dog or with a stick that these people won’t be able to carry out their jobs or live their lives normally”
+* I intentionally twised the narrative, similar to the bulldozer operator who can no longer eat meat: https://edition.cnn.com/2024/10/21/middleeast/gaza-war-israeli-soldiers-ptsd-suicide-intl
+![with a dog -w](memes/rape%20with%20dog%203%20-w.jpg)
 
 ## orwell 2025
 ![orwell 2025 -t](memes/orwell%202025%20-t.jpg)
@@ -182,21 +223,6 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 **CONTEXT:** https://github.com/PlanetaryCouncil/planetarycouncil.org/issues/1
 ![white rabbit judge commentary -w](memes/white%20rabbit%20judge%20commentary%20-w.jpg)
 
-## with a dog
-**CONTEXT:** 
-* https://novaramedia.com/2025/11/25/israeli-prison-guards-are-using-dogs-to-rape-palestinians-former-detainees-say/
-* https://braveneweurope.com/caitlin-johnstone-sorry-if-this-is-antisemitic-but-i-think-its-wrong-to-train-dogs-to-rape-prisoners
-![with a dog -w](memes/with%20a%20dog%20-w.jpg)
-
-## rape with dog 1
-![with a dog -w](memes/rape%20with%20dog%201%20-w.jpg)
-
-## rape with dog 2
-![with a dog -w](memes/rape%20with%20dog%202%20-w.jpg)
-
-## rape with dog 3
-![with a dog -w](memes/rape%20with%20dog%203%20-w.jpg)
-
 ## withdraw consent
 ![withdraw consent - built](memes/withdraw%20consent%20-%20built.jpeg)
 
@@ -224,14 +250,6 @@ If you think we've misjudged what's "obvious," feel free to open an issue or sha
 
 ## why gaza is different
 ![why gaza is different -w](memes/why%20gaza%20is%20different%20-w.jpg)
-
-## bodies not kosher
-**CONTEXT:** apologies for "AI slop", AI typically does not allow violence, here some elements triggered a warning and it became problematic to continue to improve this layout
-![bodies not kosher -w](memes/bodies%20not%20kosher%20-w.jpg)
-
-## bodies not kosher - linguistical nuance
-**CONTEXT:** order of the wording matters
-![bodies not kosher - linguistical nuance -w](memes/bodies%20not%20kosher%20-%20linguistical%20nuance%20-w.jpg)
 
 ## children amputees
 **CONTEXT:** https://www.ohchr.org/en/meeting-summaries/2025/08/percentage-persons-disabilities-gaza-has-increased-because-excessive-use
