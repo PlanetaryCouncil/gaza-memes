@@ -6,7 +6,7 @@ Context is provided for memes where the meaning or references might not be immed
 
 If you think we've misjudged what's "obvious," feel free to open an issue or share feedback!
 
-## Other memes
+# Other memes (open for work)
 
 Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.com/2025-12-10_memes_of_mass_awakening.pdf) (35 pages, 12MB). I've developed an unique style and pretty sharp commentary. Looking to colloborate with media outlets and indpendent journalists to spread the memes and WIN WIN to reach wider audience 🙏
 
@@ -103,7 +103,7 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 * https://manassa.news/en/news/29387
 * Primary source in Arabic: https://pjs.ps/ar/page-3485.html
 * > **translated to English:** According to monitoring and documentation by the Freedoms Committee of the Palestinian Journalists Syndicate, targeting journalists' families has become a systematic and recurring pattern during the years 2023, 2024, and 2025, claiming the lives of approximately 706 members of journalists' families in the Gaza Strip. All indicators confirm that these targetings are not accidental incidents resulting from the conditions of war.
-![](murder%20families%20-w.jpg)
+![](memes/murder%20families%20-w.jpg)
 
 ## hunger strike
 ![hunger strike](memes/hunger%20strike%20-%20built.jpeg)
@@ -149,19 +149,19 @@ PS. Apologies for "AI slop" (some elements repeated). AI typically does not allo
 
 ## Gaza English
 **CONTEXT:** https://braveneweurope.com/caitlin-johnstone-sorry-if-this-is-antisemitic-but-i-think-its-wrong-to-train-dogs-to-rape-prisoners
-![gaza grammar (3xmeme) -w.jpg](memes/gaza%20grammar%20(3xmeme)%20-w.jpg.jpg)
+![gaza grammar (3xmeme) -w.jpg](memes/gaza%20grammar%20(3xmeme)%20-w.jpg)
 
-## rape with dog 2
+## rape with dog - human animals
 ![with a dog -w](memes/rape%20with%20dog%202%20-w.jpg)
 
-## rape with dog 1
-![with a dog -w](memes/rape%20with%20dog%201%20-w.jpg)
+<!-- ## rape with dog 1 (REMOVED AS TOO LAME AND TAME)
+![with a dog -w](memes/rape%20with%20dog%201%20-w.jpg) -->
 
 ## rape with dog 3
 **CONTEXT:**
 * https://novaramedia.com/2025/11/25/israeli-prison-guards-are-using-dogs-to-rape-palestinians-former-detainees-say/
 * > “They know once they rape someone with a dog or with a stick that these people won’t be able to carry out their jobs or live their lives normally”
-* I intentionally twised the narrative, similar to the bulldozer operator who can no longer eat meat: https://edition.cnn.com/2024/10/21/middleeast/gaza-war-israeli-soldiers-ptsd-suicide-intl
+* I intentionally twisted the narrative, similar to the bulldozer operator who can no longer eat meat: https://edition.cnn.com/2024/10/21/middleeast/gaza-war-israeli-soldiers-ptsd-suicide-intl
 ![with a dog -w](memes/rape%20with%20dog%203%20-w.jpg)
 
 ## orwell 2025
