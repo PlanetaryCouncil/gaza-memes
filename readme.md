@@ -19,13 +19,22 @@ If you think we've misjudged what is "obvious" - feel free to share feedback!
 
 Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.com/2025-12-10_memes_of_mass_awakening.pdf) (35 pages, 12MB). I've developed an unique style and pretty sharp commentary. Looking to colloborate with media outlets and indpendent journalists to spread the memes and WIN WIN WIN and reach wider audience 🙏
 
-**BEST CONTACT:** marsXRobertson@gmail.com
+**BEST CONTACT:** Telegram https://t.me/marsXR or Twitter https://x.com/marsXRobertson/
 
 ## propaganda
 ![propaganda -w](memes/propaganda%20-w.jpg)
 
 ## everything propaganda
 ![](memes/everything%20propaganda%202%20-w.jpg)
+
+## drop memes not bombs
+![drop memes not bombs -w](memes/drop%20memes%20not%20bombs%20-w.jpg)
+
+## amendment
+![amendment -w](memes/amendment%20-w.jpg)
+
+## freedom of speech
+![freedom of speech -w](memes/freedom%20of%20speech%20-w.jpg)
 
 ## where are my legs
 **CONTEXT:** 
@@ -62,6 +71,30 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 
 ## medium is message - israel unifies
 ![medium is message - israel unifies -w](memes/medium%20is%20message%20-%20israel%20unifies%20-w.jpg)
+
+## bombastic wedding
+![bombastic wedding -w](memes/bombastic%20wedding%20-w.jpg)
+
+## did not happen
+![did not happen -w](memes/did%20not%20happen%20-w.jpg)
+
+## just a number
+![just a number -w](memes/just%20a%20number%20-w.jpg)
+
+## motca
+![motca -w](memes/motca%20-w.jpg)
+
+## right to rape riots
+![right to rape riots -w](memes/right%20to%20rape%20riots%20-w.jpg)
+
+## sactioned so did not happen
+![sactioned so did not happen -w](memes/sactioned%20so%20did%20not%20happen%20-w.jpg)
+
+## sickness diagnosis
+![sickness diagnosis -w](memes/sickness%20diagnosis%20-w.jpg)
+
+## types of war
+![types of war -w](memes/types%20of%20war%20-w.jpg)
 
 ## blueprint for peace
 ![blueprint for peace - built](memes/blueprint%20for%20peace%20-%20built.jpeg)
