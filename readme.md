@@ -1,11 +1,14 @@
-# Coming from the source
-Enter through 👀 and stay in 💖 and 🧠
+# Memetic warfare
+
+![](make-memes-not-war.jpg)
 
 ![](meme-entry.png)
 
+![propaganda -w](memes/propaganda%20-w.jpg)
+
 ![](part-of-the-source-code.png)
 
-![](make-memes-not-war.jpg)
+![](meme-entry-4x-together.jpg)
 
 # Gaza memes
 
@@ -15,14 +18,17 @@ Sometimes it is obvious. Sometimes it is a self-contained infographic. Sometimes
 
 If you think we've misjudged what is "obvious" - feel free to share feedback!
 
+# Media training
+
+![](media-training/media%20training%20v5.jpg)
+
+Open for work in media 🙏
+
 # Other memes (open for work)
 
 Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.com/2025-12-10_memes_of_mass_awakening.pdf) (35 pages, 12MB). I've developed an unique style and pretty sharp commentary. Looking to colloborate with media outlets and indpendent journalists to spread the memes and WIN WIN WIN and reach wider audience 🙏
 
 **BEST CONTACT:** Telegram https://t.me/marsXR or Twitter https://x.com/marsXRobertson/
-
-## propaganda
-![propaganda -w](memes/propaganda%20-w.jpg)
 
 ## everything propaganda
 ![](memes/everything%20propaganda%202%20-w.jpg)
@@ -30,17 +36,32 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## drop memes not bombs
 ![drop memes not bombs -w](memes/drop%20memes%20not%20bombs%20-w.jpg)
 
-## amendment
-![amendment -w](memes/amendment%20-w.jpg)
-
-## freedom of speech
-![freedom of speech -w](memes/freedom%20of%20speech%20-w.jpg)
-
 ## where are my legs
 **CONTEXT:** 
 * Dylan Collins video exposing 13th October 2023 https://www.youtube.com/watch?v=ywaOyHzqDxw
 * Person without legs: https://www.instagram.com/christinaassi/
 ![](memes/where%20are%20my%20legs%20-w.jpg)
+
+## did not happen
+![did not happen -w](memes/did%20not%20happen%20-w.jpg)
+
+## just a number
+![just a number -w](memes/just%20a%20number%20-w.jpg)
+
+## bombastic wedding
+![bombastic wedding -w](memes/bombastic%20wedding%20-w.jpg)
+
+## right to rape riots
+![right to rape riots -w](memes/right%20to%20rape%20riots%20-w.jpg)
+
+## sactioned so did not happen
+![sactioned so did not happen -w](memes/sactioned%20so%20did%20not%20happen%20-w.jpg)
+
+## sickness diagnosis
+![sickness diagnosis -w](memes/sickness%20diagnosis%20-w.jpg)
+
+## types of war
+![types of war -w](memes/types%20of%20war%20-w.jpg)
 
 ## bunch of questions
 ![bunch of questions -w](memes/bunch%20of%20questions%20-w.jpg)
@@ -72,29 +93,8 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## medium is message - israel unifies
 ![medium is message - israel unifies -w](memes/medium%20is%20message%20-%20israel%20unifies%20-w.jpg)
 
-## bombastic wedding
-![bombastic wedding -w](memes/bombastic%20wedding%20-w.jpg)
-
-## did not happen
-![did not happen -w](memes/did%20not%20happen%20-w.jpg)
-
-## just a number
-![just a number -w](memes/just%20a%20number%20-w.jpg)
-
 ## motca
 ![motca -w](memes/motca%20-w.jpg)
-
-## right to rape riots
-![right to rape riots -w](memes/right%20to%20rape%20riots%20-w.jpg)
-
-## sactioned so did not happen
-![sactioned so did not happen -w](memes/sactioned%20so%20did%20not%20happen%20-w.jpg)
-
-## sickness diagnosis
-![sickness diagnosis -w](memes/sickness%20diagnosis%20-w.jpg)
-
-## types of war
-![types of war -w](memes/types%20of%20war%20-w.jpg)
 
 ## blueprint for peace
 ![blueprint for peace - built](memes/blueprint%20for%20peace%20-%20built.jpeg)
@@ -145,6 +145,7 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 * https://manassa.news/en/news/29387
 * Primary source in Arabic: https://pjs.ps/ar/page-3485.html
 * > **translated to English:** According to monitoring and documentation by the Freedoms Committee of the Palestinian Journalists Syndicate, targeting journalists' families has become a systematic and recurring pattern during the years 2023, 2024, and 2025, claiming the lives of approximately 706 members of journalists' families in the Gaza Strip. All indicators confirm that these targetings are not accidental incidents resulting from the conditions of war.
+
 ![](memes/murder%20families%20-w.jpg)
 
 ## hunger strike
@@ -206,6 +207,12 @@ PS. Apologies for "AI slop" (some elements repeated). AI typically does not allo
 * > “They know once they rape someone with a dog or with a stick that these people won’t be able to carry out their jobs or live their lives normally”
 * I intentionally twisted the narrative, similar to the bulldozer operator who can no longer eat meat: https://edition.cnn.com/2024/10/21/middleeast/gaza-war-israeli-soldiers-ptsd-suicide-intl
 ![with a dog -w](memes/rape%20with%20dog%203%20-w.jpg)
+
+## amendment
+![amendment -w](memes/amendment%20-w.jpg)
+
+## freedom of speech
+![freedom of speech -w](memes/freedom%20of%20speech%20-w.jpg)
 
 ## orwell 2025
 ![orwell 2025 -t](memes/orwell%202025%20-t.jpg)
