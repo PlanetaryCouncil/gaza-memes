@@ -36,17 +36,29 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## drop memes not bombs
 ![drop memes not bombs -w](memes/drop%20memes%20not%20bombs%20-w.jpg)
 
+## jokes must be labelled
+![jokes must be labelled -w](memes/jokes%20must%20be%20labelled%20-w.jpg)
+
+## bunch of questions
+![bunch of questions -w](memes/bunch%20of%20questions%20-w.jpg)
+
 ## where are my legs
 **CONTEXT:** 
 * Dylan Collins video exposing 13th October 2023 https://www.youtube.com/watch?v=ywaOyHzqDxw
 * Person without legs: https://www.instagram.com/christinaassi/
 ![](memes/where%20are%20my%20legs%20-w.jpg)
 
+## idf peace loving army
+![idf peace loving army -w](memes/idf%20peace%20loving%20army%20-w.jpg)
+
 ## did not happen
 ![did not happen -w](memes/did%20not%20happen%20-w.jpg)
 
 ## just a number
 ![just a number -w](memes/just%20a%20number%20-w.jpg)
+
+## types of war
+![types of war -w](memes/types%20of%20war%20-w.jpg)
 
 ## bombastic wedding
 ![bombastic wedding -w](memes/bombastic%20wedding%20-w.jpg)
@@ -59,12 +71,6 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 
 ## sickness diagnosis
 ![sickness diagnosis -w](memes/sickness%20diagnosis%20-w.jpg)
-
-## types of war
-![types of war -w](memes/types%20of%20war%20-w.jpg)
-
-## bunch of questions
-![bunch of questions -w](memes/bunch%20of%20questions%20-w.jpg)
 
 ## bullets in the head
 **CONTEXT:** https://www.volkskrant.nl/kijkverder/v/2025/gunshot-palestine-children-israel-war~v1819649/
@@ -80,11 +86,21 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## glitch the matrix
 ![glitch the matrix -w](memes/glitch%20the%20matrix%20-w.jpg)
 
+## orwell 2025
+![orwell 2025 -t](memes/orwell%202025%20-t.jpg)
+
 ## skip the limbs
 ![skip the limbs -w](memes/skip%20the%20limbs%20-w.jpg)
 
 ## anti anti zionists
 ![anti anti zionists -w](memes/anti%20anti%20zionists%20-w.jpg)
+
+## zionism
+**CONTEXT:** https://www.youtube.com/watch?v=KOjMgpVCY_Q
+![anti anti zionists -w](memes/zionism%20-w.jpg)
+
+## symbiozionism
+![symbiozionism -w](memes/symbiozionism%20-w.jpg)
 
 ## assassination
 **CONTEXT:** https://en.wikipedia.org/wiki/Israeli_attack_on_Doha
@@ -136,30 +152,11 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## ibm holocaust
 ![ibm holocaust -w](memes/ibm%20holocaust%20-w.jpg)
 
-## idf peace loving army
-![idf peace loving army -w](memes/idf%20peace%20loving%20army%20-w.jpg)
-
-## murder families
-**CONTEXT:**
-* https://www.aljazeera.com/news/2025/12/28/israel-kills-over-700-relatives-of-palestinian-journalists-in-gaza-report
-* https://manassa.news/en/news/29387
-* Primary source in Arabic: https://pjs.ps/ar/page-3485.html
-* > **translated to English:** According to monitoring and documentation by the Freedoms Committee of the Palestinian Journalists Syndicate, targeting journalists' families has become a systematic and recurring pattern during the years 2023, 2024, and 2025, claiming the lives of approximately 706 members of journalists' families in the Gaza Strip. All indicators confirm that these targetings are not accidental incidents resulting from the conditions of war.
-
-![](memes/murder%20families%20-w.jpg)
-
 ## hunger strike
 ![hunger strike](memes/hunger%20strike%20-%20built.jpeg)
 
-## it was coming
-**CONTEXT:** it did not happen yet, but if it happens the meme is ready
-![it was coming -w](memes/it%20was%20coming%20-w.jpg)
-
 ## justice will come
 ![justice will come -w](memes/justice%20will%20come%20-w.jpg)
-
-## jokes must be labelled
-![jokes must be labelled -w](memes/jokes%20must%20be%20labelled%20-w.jpg)
 
 ## mental gymnastics
 **CONTEXT:** Screenshot from the judgment [posted here](https://primal.net/e/nevent1qqs8hn8w6skj4a0qhz92afjceec09rkaqvw7nfm4dtyvv9gk8xdlsgqpqnjdk)
@@ -169,6 +166,7 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 > https://www.youtube.com/watch?v=WewZZXvEYmE
 
 > https://english.wafa.ps/Pages/Details/164797 ➡️ Israel's far-right National Security Minister Itamar Ben-Gvir has decided to promote the commander of the undercover unit in the occupied West Bank to the rank of colonel, one day after members of the unit executed two unarmed young men in Jenin after they had just surrendered.
+
 ![morale of the troops -w](memes/morale%20of%20the%20troops%20-w.jpg)
 
 ## netanyahu trump fox
@@ -190,32 +188,6 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ![bodies not kosher -w](memes/bodies%20not%20kosher%20-w.jpg)
 
 PS. Apologies for "AI slop" (some elements repeated). AI typically does not allow violence, here some elements triggered a warning and it became laborious to continue to improve this layout. If needed, if requested: I'll spend more time and energy on that 🙏
-
-## Gaza English
-**CONTEXT:** https://braveneweurope.com/caitlin-johnstone-sorry-if-this-is-antisemitic-but-i-think-its-wrong-to-train-dogs-to-rape-prisoners
-![gaza grammar (3xmeme) -w.jpg](memes/gaza%20grammar%20(3xmeme)%20-w.jpg)
-
-## rape with dog - human animals
-![with a dog -w](memes/rape%20with%20dog%202%20-w.jpg)
-
-<!-- ## rape with dog 1 (REMOVED AS TOO LAME AND TAME)
-![with a dog -w](memes/rape%20with%20dog%201%20-w.jpg) -->
-
-## rape with dog 3
-**CONTEXT:**
-* https://novaramedia.com/2025/11/25/israeli-prison-guards-are-using-dogs-to-rape-palestinians-former-detainees-say/
-* > “They know once they rape someone with a dog or with a stick that these people won’t be able to carry out their jobs or live their lives normally”
-* I intentionally twisted the narrative, similar to the bulldozer operator who can no longer eat meat: https://edition.cnn.com/2024/10/21/middleeast/gaza-war-israeli-soldiers-ptsd-suicide-intl
-![with a dog -w](memes/rape%20with%20dog%203%20-w.jpg)
-
-## amendment
-![amendment -w](memes/amendment%20-w.jpg)
-
-## freedom of speech
-![freedom of speech -w](memes/freedom%20of%20speech%20-w.jpg)
-
-## orwell 2025
-![orwell 2025 -t](memes/orwell%202025%20-t.jpg)
 
 ## do not question
 ![](memes/do%20not%20question%20-w.jpg)
@@ -244,9 +216,6 @@ PS. Apologies for "AI slop" (some elements repeated). AI typically does not allo
 ## starvation role
 ![starvation role - built](memes/starvation%20role%20-%20built.jpg)
 
-## suitcases of cash
-![suitcases of cash -w](memes/suitcases%20of%20cash%20-w.jpg)
-
 ## support to israel war policy
 ![support to israel war policy - built](memes/support%20to%20israel%20war%20policy%20-%20built.jpeg)
 
@@ -262,9 +231,6 @@ PS. Apologies for "AI slop" (some elements repeated). AI typically does not allo
 ## trump gaza riviera
 **CONTEXT:** https://www.instagram.com/reel/DGhfpgHsOg6/ (the most common first reaction "is this official profile")
 ![](memes/trump%20gaza%20riviera%20-w.jpg)
-
-## trust us not them
-![trust us not them -w](memes/trust%20us%20not%20them%20-w.jpg)
 
 ## we are all palestine action
 ![we are all palestine action -w](memes/we%20are%20all%20palestine%20action%20-w.jpg)
