@@ -33,14 +33,23 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## everything propaganda
 ![](memes/everything%20propaganda%202%20-w.jpg)
 
+## bunch of questions
+![bunch of questions -w](memes/bunch%20of%20questions%20-w.jpg)
+
+## just a number
+![just a number -w](memes/just%20a%20number%20-w.jpg)
+
+## types of war
+![types of war -w](memes/types%20of%20war%20-w.jpg)
+
+## holocaust comparison
+![](holocaust/holocaust%20together.jpg)
+
 ## drop memes not bombs
 ![drop memes not bombs -w](memes/drop%20memes%20not%20bombs%20-w.jpg)
 
 ## jokes must be labelled
 ![jokes must be labelled -w](memes/jokes%20must%20be%20labelled%20-w.jpg)
-
-## bunch of questions
-![bunch of questions -w](memes/bunch%20of%20questions%20-w.jpg)
 
 ## where are my legs
 **CONTEXT:** 
@@ -53,12 +62,6 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 
 ## did not happen
 ![did not happen -w](memes/did%20not%20happen%20-w.jpg)
-
-## just a number
-![just a number -w](memes/just%20a%20number%20-w.jpg)
-
-## types of war
-![types of war -w](memes/types%20of%20war%20-w.jpg)
 
 ## bombastic wedding
 ![bombastic wedding -w](memes/bombastic%20wedding%20-w.jpg)
