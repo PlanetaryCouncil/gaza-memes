@@ -10,6 +10,22 @@
 
 ![](meme-entry-4x-together.jpg)
 
+# Collage of the finest
+
+![](propaganda.jpg)
+
+**FULL RES:** https://planetarycouncil.org/propaganda.jpg
+
+_(6301 × 6073 pixels, 16.9 MB)_
+
+Another insane collage tha is beaming from beyond event horizon:
+
+![](collage.jpg)
+
+**FULL RES:** https://planetarycouncil.org/collage.jpg
+
+_(8890 x 6600 pixels, 30.6MB)_
+
 # Gaza memes
 
 This is a collection of memes related to Gaza.
@@ -26,11 +42,15 @@ Open for work in media 🙏
 
 # Other memes (open for work)
 
+Check this [generic](https://github.com/PlanetaryCouncil/gaza-memes/tree/main/generic) folder.
+
+Check this: https://giphy.com/marsrobertson (2m views and growing fast)
+
 Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.com/2025-12-10_memes_of_mass_awakening.pdf) (35 pages, 12MB). I've developed an unique style and pretty sharp commentary. Looking to colloborate with media outlets and indpendent journalists to spread the memes and WIN WIN WIN and reach wider audience 🙏
 
 **BEST CONTACT:** Telegram https://t.me/marsXR or Twitter https://x.com/marsXRobertson/
 
-# may-contain-thinking.jpg
+## may-contain-thinking.jpg
 ![](generic/may-contain-thinking.jpg)
 
 ## jokes must be labelled
@@ -123,6 +143,8 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ![](memes/rafah%20was%20a%20city%20-w.jpg)
 
 ## swine protection act
+**CONTEXT:** Death penalty and researching the most appriopriate way... Note: there is no definition of appriopriatness, the "most appriopriate" can mean literally anything.
+
 ![](memes/swine%20protection%20act%20-w.jpg)
 
 ## terms you should know
