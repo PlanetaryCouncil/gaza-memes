@@ -30,6 +30,21 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 
 **BEST CONTACT:** Telegram https://t.me/marsXR or Twitter https://x.com/marsXRobertson/
 
+# may-contain-thinking.jpg
+![](generic/may-contain-thinking.jpg)
+
+## jokes must be labelled
+![jokes must be labelled -w](memes/jokes%20must%20be%20labelled%20-w.jpg)
+
+## mt everest -w.jpg
+**CONTEXT:** No more memes. Tired. Exhausted. Drained. Burnt out. Thank you bye. Seriously not making anyone, it was a genuine energy drain and nothing ever changes.
+
+![](memes/mt%20everest%20-w.jpg)
+
+## blueprint for peace
+**CONTEXT:** 20 memes to change the world here: https://planetarycouncil.org/payload/
+![blueprint for peace - built](memes/blueprint%20for%20peace%20-%20built.jpeg)
+
 ## everything propaganda
 ![](memes/everything%20propaganda%202%20-w.jpg)
 
@@ -42,13 +57,11 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## types of war
 ![types of war -w](memes/types%20of%20war%20-w.jpg)
 
-## mt everest -w.jpg
-**CONTEXT:** No more memes. Tired. Exhausted. Drained. Burnt out. Thank you bye.
-
-![](memes/mt%20everest%20-w.jpg)
-
-## there was a pretext.jpg
+## there was a pretext
 ![](memes/there%20was%20a%20pretext.jpg)
+
+## starvatin
+![starvatin - built](memes/starvatin%20-%20built.jpg)
 
 ## holocaust comparison
 **CONTEXT:** When multiple AI allow research it highly suggest the facts are aligned with reality.
@@ -57,11 +70,8 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## drop memes not bombs
 ![drop memes not bombs -w](memes/drop%20memes%20not%20bombs%20-w.jpg)
 
-## jokes must be labelled
-![jokes must be labelled -w](memes/jokes%20must%20be%20labelled%20-w.jpg)
-
 ## gaza hits differently
-![gaza hits differently](memes/gaza%hits%20differently.jpg)
+![gaza hits differently](memes/gaza%20hits%20differently.jpg)
 
 ## where are my legs
 **CONTEXT:** 
@@ -73,52 +83,52 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## idf peace loving army
 ![idf peace loving army -w](memes/idf%20peace%20loving%20army%20-w.jpg)
 
-## comply narrative -w.jpg
+## comply narrative
 ![](memes/comply%20narrative%20-w.jpg)
 
-## comply narrative fucker -w.jpg
+## comply narrative fucker
 ![](memes/comply%20narrative%20fucker%20-w.jpg)
 
-## gaza english organs missing -w.jpg
+## gaza english organs missing
 ![](memes/gaza%20english%20organs%20missing%20-w.jpg)
 
-## gaza-riviera -w.jpg
+## gaza-riviera
 ![](memes/gaza-riviera%20-w.jpg)
 
-## humans right to live.jpg
+## humans right to live
 ![](memes/humans%20right%20to%20live.jpg)
 
-## israel is winning.jpg
+## israel is winning
 ![](memes/israel%20is%20winning.jpg)
 
-## spin of the year.jpg
-!#[](memes/spin%20of%20the%20year.jpg)
+## spin of the year
+![](memes/spin%20of%20the%20year.jpg)
 
-## we-did-not-know.jpg
+## we-did-not-know
 ![](memes/we-did-not-know.jpg)
 
-## discourse awareness -w.jpg
+## discourse awareness
 ![](memes/discourse%20awareness%20-w.jpg)
 
-## hide and seek -w.jpg
+## hide and seek
 ![](memes/hide%20and%20seek%20-w.jpg)
 
-## law and morality -w.jpg
+## law and morality
 ![](memes/law%20and%20morality%20-w.jpg)
 
-## palestine action clarity -w.jpg
+## palestine action clarity
 ![](memes/palestine%20action%20clarity%20-w.jpg)
 
-## rafah was a city -w.jpg
+## rafah was a city
 ![](memes/rafah%20was%20a%20city%20-w.jpg)
 
-## swine protection act -w.jpg
+## swine protection act
 ![](memes/swine%20protection%20act%20-w.jpg)
 
-## terms you should know -w.jpg
+## terms you should know
 ![](memes/terms%20you%20should%20know%20-w.jpg)
 
-## torture as policy -w.jpg
+## torture as policy
 ![](memes/torture%20as%20policy%20-w.jpg)
 
 ## did not happen
@@ -175,9 +185,6 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 
 ## motca
 ![motca -w](memes/motca%20-w.jpg)
-
-## blueprint for peace
-![blueprint for peace - built](memes/blueprint%20for%20peace%20-%20built.jpeg)
 
 ## boycott complicity
 ![boycott complicity - built](memes/boycott%20complicity%20-%20built.jpg)
@@ -274,9 +281,6 @@ PS. Apologies for "AI slop" (some elements repeated). AI typically does not allo
 **CONTEXT:** back then there were 3 evil countries
 ![axis of evil -t](memes/axis%20of%20evil%20-t.jpg)
 
-## starvatin
-![starvatin - built](memes/starvatin%20-%20built.jpg)
-
 ## starvation role
 ![starvation role - built](memes/starvation%20role%20-%20built.jpg)
 
@@ -327,9 +331,6 @@ PS. Apologies for "AI slop" (some elements repeated). AI typically does not allo
 
 ## bombing for peace
 ![bombing for peace -w](memes/bombing%20for%20peace%20-w.jpg)
-
-## why gaza is different
-![why gaza is different -w](memes/why%20gaza%20is%20different%20-w.jpg)
 
 ## children amputees
 **CONTEXT:** https://www.ohchr.org/en/meeting-summaries/2025/08/percentage-persons-disabilities-gaza-has-increased-because-excessive-use

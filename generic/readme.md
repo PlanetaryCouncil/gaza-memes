@@ -16,9 +16,6 @@
 # global peace treaty.jpg
 ![](global%20peace%20treaty.jpg)
 
-# may-contain-thinking.jpg
-![](may-contain-thinking.jpg)
-
 # official narrative.jpg
 ![](official%20narrative.jpg)
 
