@@ -61,6 +61,33 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## idf peace loving army
 ![idf peace loving army -w](memes/idf%20peace%20loving%20army%20-w.jpg)
 
+# comply narrative fucker -w.jpg
+![](memes/comply%20narrative%20fucker%20-w.jpg)
+
+# gaza english organs missing -w.jpg
+![](memes/gaza%20english%20organs%20missing%20-w.jpg)
+
+# gaza-riviera -w.jpg
+![](memes/gaza-riviera%20-w.jpg)
+
+# gaza-riviera -w.jpg
+![](memes/gaza-riviera%20-w.jpg)
+
+# humans right to live.jpg
+![](memes/humans%20right%20to%20live.jpg)
+
+# israel is winning.jpg
+![](memes/israel%20is%20winning.jpg)
+
+# spin of the year.jpg
+![](memes/spin%20of%20the%20year.jpg)
+
+# there was a pretext.jpg
+![](memes/there%20was%20a%20pretext.jpg)
+
+# we-did-not-know.jpg
+![](memes/we-did-not-know.jpg)
+
 ## did not happen
 ![did not happen -w](memes/did%20not%20happen%20-w.jpg)
 
