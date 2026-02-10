@@ -55,6 +55,7 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 **CONTEXT:** 
 * Dylan Collins video exposing 13th October 2023 https://www.youtube.com/watch?v=ywaOyHzqDxw
 * Person without legs: https://www.instagram.com/christinaassi/
+
 ![](memes/where%20are%20my%20legs%20-w.jpg)
 
 ## idf peace loving army
