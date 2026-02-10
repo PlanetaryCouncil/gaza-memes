@@ -70,9 +70,6 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 # gaza-riviera -w.jpg
 ![](memes/gaza-riviera%20-w.jpg)
 
-# gaza-riviera -w.jpg
-![](memes/gaza-riviera%20-w.jpg)
-
 # humans right to live.jpg
 ![](memes/humans%20right%20to%20live.jpg)
 
