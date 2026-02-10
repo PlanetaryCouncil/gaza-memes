@@ -42,7 +42,16 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## types of war
 ![types of war -w](memes/types%20of%20war%20-w.jpg)
 
+## mt everest -w.jpg
+**CONTEXT:** No more memes. Tired. Exhausted. Drained. Burnt out. Thank you bye.
+
+![](memes/mt%20everest%20-w.jpg)
+
+## there was a pretext.jpg
+![](memes/there%20was%20a%20pretext.jpg)
+
 ## holocaust comparison
+**CONTEXT:** When multiple AI allow research it highly suggest the facts are aligned with reality.
 ![](holocaust/holocaust%20together.jpg)
 
 ## drop memes not bombs
@@ -50,6 +59,9 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 
 ## jokes must be labelled
 ![jokes must be labelled -w](memes/jokes%20must%20be%20labelled%20-w.jpg)
+
+## gaza hits differently
+![gaza hits differently](memes/gaza%hits%20differently.jpg)
 
 ## where are my legs
 **CONTEXT:** 
@@ -61,58 +73,52 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## idf peace loving army
 ![idf peace loving army -w](memes/idf%20peace%20loving%20army%20-w.jpg)
 
-# comply narrative fucker -w.jpg
-![](memes/comply%20narrative%20fucker%20-w.jpg)
-
-# gaza english organs missing -w.jpg
-![](memes/gaza%20english%20organs%20missing%20-w.jpg)
-
-# gaza-riviera -w.jpg
-![](memes/gaza-riviera%20-w.jpg)
-
-# humans right to live.jpg
-![](memes/humans%20right%20to%20live.jpg)
-
-# israel is winning.jpg
-![](memes/israel%20is%20winning.jpg)
-
-# spin of the year.jpg
-![](memes/spin%20of%20the%20year.jpg)
-
-# there was a pretext.jpg
-![](memes/there%20was%20a%20pretext.jpg)
-
-# we-did-not-know.jpg
-![](memes/we-did-not-know.jpg)
-
-# comply narrative -w.jpg
+## comply narrative -w.jpg
 ![](memes/comply%20narrative%20-w.jpg)
 
-# discourse awareness -w.jpg
+## comply narrative fucker -w.jpg
+![](memes/comply%20narrative%20fucker%20-w.jpg)
+
+## gaza english organs missing -w.jpg
+![](memes/gaza%20english%20organs%20missing%20-w.jpg)
+
+## gaza-riviera -w.jpg
+![](memes/gaza-riviera%20-w.jpg)
+
+## humans right to live.jpg
+![](memes/humans%20right%20to%20live.jpg)
+
+## israel is winning.jpg
+![](memes/israel%20is%20winning.jpg)
+
+## spin of the year.jpg
+!#[](memes/spin%20of%20the%20year.jpg)
+
+## we-did-not-know.jpg
+![](memes/we-did-not-know.jpg)
+
+## discourse awareness -w.jpg
 ![](memes/discourse%20awareness%20-w.jpg)
 
-# hide and seek -w.jpg
+## hide and seek -w.jpg
 ![](memes/hide%20and%20seek%20-w.jpg)
 
-# law and morality -w.jpg
+## law and morality -w.jpg
 ![](memes/law%20and%20morality%20-w.jpg)
 
-# mt everest -w.jpg
-![](memes/mt%20everest%20-w.jpg)
-
-# palestine action clarity -w.jpg
+## palestine action clarity -w.jpg
 ![](memes/palestine%20action%20clarity%20-w.jpg)
 
-# rafah was a city -w.jpg
+## rafah was a city -w.jpg
 ![](memes/rafah%20was%20a%20city%20-w.jpg)
 
-# swine protection act -w.jpg
+## swine protection act -w.jpg
 ![](memes/swine%20protection%20act%20-w.jpg)
 
-# terms you should know -w.jpg
+## terms you should know -w.jpg
 ![](memes/terms%20you%20should%20know%20-w.jpg)
 
-# torture as policy -w.jpg
+## torture as policy -w.jpg
 ![](memes/torture%20as%20policy%20-w.jpg)
 
 ## did not happen
