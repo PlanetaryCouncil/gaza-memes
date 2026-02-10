@@ -85,6 +85,36 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 # we-did-not-know.jpg
 ![](memes/we-did-not-know.jpg)
 
+# comply narrative -w.jpg
+![](memes/comply%20narrative%20-w.jpg)
+
+# discourse awareness -w.jpg
+![](memes/discourse%20awareness%20-w.jpg)
+
+# hide and seek -w.jpg
+![](memes/hide%20and%20seek%20-w.jpg)
+
+# law and morality -w.jpg
+![](memes/law%20and%20morality%20-w.jpg)
+
+# mt everest -w.jpg
+![](memes/mt%20everest%20-w.jpg)
+
+# palestine action clarity -w.jpg
+![](memes/palestine%20action%20clarity%20-w.jpg)
+
+# rafah was a city -w.jpg
+![](memes/rafah%20was%20a%20city%20-w.jpg)
+
+# swine protection act -w.jpg
+![](memes/swine%20protection%20act%20-w.jpg)
+
+# terms you should know -w.jpg
+![](memes/terms%20you%20should%20know%20-w.jpg)
+
+# torture as policy -w.jpg
+![](memes/torture%20as%20policy%20-w.jpg)
+
 ## did not happen
 ![did not happen -w](memes/did%20not%20happen%20-w.jpg)
 
