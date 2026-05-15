@@ -236,12 +236,6 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## global peace
 ![global peace - built](memes/global%20peace%20-%20built.jpeg)
 
-## hummus not hamas 2
-![hummus not hamas 2 -w](memes/hummus%20not%20hamas%202%20-w.jpg)
-
-## hummus not hamas
-![hummus not hamas-w](memes/hummus%20not%20hamas-w.jpg)
-
 ## ibm holocaust
 ![ibm holocaust -w](memes/ibm%20holocaust%20-w.jpg)
 
