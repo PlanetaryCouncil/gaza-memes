@@ -56,20 +56,40 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## jokes must be labelled
 ![jokes must be labelled -w](memes/jokes%20must%20be%20labelled%20-w.jpg)
 
+## democracy rule of law
+**CONTEXT:** the main reason why these images are being created is the Palestine Action (system reset glitch signal)
+![](memes/democracy%20rule%20of%20law.jpg)
+
+## detention v2
+**COUNTEXT:** Someone should do something about it, but who is someone, what is something?
+
+* @novaramedia ➡️ https://novaramedia.com/2025/10/29/israeli-military-accused-of-palestinian-organ-theft-again/
+* @Mondoweiss ➡️ https://mondoweiss.net/2025/10/israel-returns-195-dead-bodies-to-gaza-many-mutilated-with-hands-bound-signs-of-torture/
+* @anadoluagency ➡️ https://aa.com.tr/en/middle-east/gaza-authorities-accuse-israel-of-stealing-organs-from-released-palestinian-bodies/3719641
+* @NewIndianXpress ➡️ https://newindianexpress.com/world/2025/Oct/19/gaza-authorities-flag-missing-organs-signs-of-torture-in-palestinian-bodies-returned-by-israel
+* @Guardian ➡️ https://theguardian.com/world/2025/oct/15/palestinian-bodies-returned-by-israel-show-signs-of-torture-and-execution-say-doctors
+* @BBC ➡️ https://bbc.com/news/articles/c4gz3r46e37o
+* Translating Falasteen (Palestine) ➡️ https://x.com/translatingpal/status/1979271388767666669
+
+![](memes/detention%20v2.png)
+
+<!-- ## detention
+![](memes/detention.png)
+ -->
+
+## cbs propaganda
+**CONTEXT:** Watching interview with hardly any pushback was 🤯
+
+![](memes/cbs%20propaganda.png)
+
 ## winners write history
 ![](memes/winners%20write%20history.png)
 
 ## terrorist state
 ![](memes/terrorist%20state.jpg)
 
-## antisemantic-latest-v2
-![](memes/antisemantic-latest-v2.jpg)
-
 ## thermobaric
 ![](memes/thermobaric.jpg)
-
-## democracy rule of law
-![](memes/democracy%20rule%20of%20law.jpg)
 
 ## barrister closing speech
 ![](memes/barrister%20closing%20speech.png)
@@ -95,17 +115,15 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## death penalty nazi
 ![](memes/death%20penalty%20nazi.jpg)
 
-## detention v2
-![](memes/detention%20v2.png)
-
-<!-- ## detention
-![](memes/detention.png)
- -->
 ## flotilla narrative
 ![](memes/flotilla%20narrative.jpg)
 
 ## flotilla
 ![](memes/flotilla.png)
+
+## flotilla narrative inspection squared
+![](memes/flotilla%20narrative%20inspection%20squared.png)
+
 
 ## francesca witch
 ![](memes/francesca%20witch.png)
@@ -113,7 +131,7 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## funeral airstrikes
 ![](memes/funeral%20airstrikes.png)
 
-## good pr
+## good pr (hitler)
 ![](memes/good%20pr.png)
 
 ## jordana
@@ -122,7 +140,7 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## journalist terrorist is a rhyme (narrive recycles)
 ![](memes/journalist%20terrorist%20is%20a%20rhyme.png)
 
-## journalists
+## journalists (not targetting)
 ![](memes/journalists.png)
 
 <!-- ## lebensraum v1
