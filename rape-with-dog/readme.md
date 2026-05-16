@@ -36,6 +36,9 @@
 ## rape with dog 3 -w
 ![](rape%20with%20dog%203%20-w.jpg)
 
+## prediction markets
+![](prediction%20markets.jpeg)
+
 <!-- ## dog sexual violence
 ![](dog%20sexual%20violence.jpeg)
 

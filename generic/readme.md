@@ -1,3 +1,30 @@
+## military funding
+![](generic/military%20funding.png)
+
+## boycott
+![](generic/boycott.png)
+
+## concerns
+![](generic/concerns.png)
+
+## bearded woman
+![](generic/bearded%20woman.jpeg)
+
+## climate debt
+![](generic/climate%20debt.png)
+
+## lying with straight face
+![](generic/lying%20with%20straight%20face.png)
+
+## offended of 5th degree
+![](generic/offended%20of%205th%20degree.png)
+
+## total control v2 (EU related)
+![](generic/total%20control%20v2.png)
+
+<!-- ## total control
+![](generic/total%20control.png) -->
+
 # arms trading.jpg
 ![](arms%20trading.jpg)
 
