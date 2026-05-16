@@ -48,7 +48,7 @@ Check this: https://giphy.com/marsrobertson (2m views and growing fast)
 
 Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.com/2025-12-10_memes_of_mass_awakening.pdf) (35 pages, 12MB). I've developed an unique style and pretty sharp commentary. Looking to colloborate with media outlets and indpendent journalists to spread the memes and WIN WIN WIN and reach wider audience 🙏
 
-**BEST CONTACT:** Telegram https://t.me/marsXR or Twitter https://x.com/marsXRobertson/
+**BEST CONTACT:** Telegram https://t.me/marsXR or Twitter https://x.com/MarsitaTheUltra/
 
 ## may-contain-thinking.jpg
 ![](generic/may-contain-thinking.jpg)
@@ -56,8 +56,106 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## jokes must be labelled
 ![jokes must be labelled -w](memes/jokes%20must%20be%20labelled%20-w.jpg)
 
+## winners write history
+![](memes/winners%20write%20history.png)
+
+## terrorist state
+![](memes/terrorist%20state.jpg)
+
+## antisemantic-latest-v2
+![](memes/antisemantic-latest-v2.jpg)
+
+## thermobaric
+![](memes/thermobaric.jpg)
+
+## democracy rule of law
+![](memes/democracy%20rule%20of%20law.jpg)
+
+## barrister closing speech
+![](memes/barrister%20closing%20speech.png)
+
+## truth will prevail -w
+![](memes/truth%20will%20prevail%20-w.jpg)
+
+## airstrikes and funeral
+![](memes/airstrikes%20and%20funeral.png)
+
+## ambulance quotas
+![](memes/ambulance%20quotas.png)
+
+## ashamed
+![](memes/ashamed.jpg)
+
+## rats on stick
+![](memes/rats%20on%20stick.jpg)
+
+## activists on fire v2
+![](memes/activists%20on%20fire%20v2.png)
+
+## death penalty nazi
+![](memes/death%20penalty%20nazi.jpg)
+
+## detention v2
+![](memes/detention%20v2.png)
+
+<!-- ## detention
+![](memes/detention.png)
+ -->
+## flotilla narrative
+![](memes/flotilla%20narrative.jpg)
+
+## flotilla
+![](memes/flotilla.png)
+
+## francesca witch
+![](memes/francesca%20witch.png)
+
+## funeral airstrikes
+![](memes/funeral%20airstrikes.png)
+
+## good pr
+![](memes/good%20pr.png)
+
+## jordana
+![](memes/jordana.png)
+
+## journalist terrorist is a rhyme (narrive recycles)
+![](memes/journalist%20terrorist%20is%20a%20rhyme.png)
+
+## journalists
+![](memes/journalists.png)
+
+<!-- ## lebensraum v1
+![](memes/lebensraum%20v1.png) -->
+
+## lebensraum v2
+![](memes/lebensraum%20v2.png)
+
+## narrative shifted
+![](memes/narrative%20shifted.png)
+
+## narrative shifting
+![](memes/narrative%20shifting.png)
+
+## netanyahu-maneuvre
+![](memes/netanyahu-maneuvre.png)
+
+## not suporting (palestine action)
+![](memes/not%20suporting.jpeg)
+
+## proactive censorship -w
+![](memes/proactive%20censorship%20-w.jpg)
+
+## offensive lawfare
+![](memes/offensive%20lawfare.png)
+
+## war crimes safari
+![](memes/war%20crimes%20safari.png)
+
+
 ## mt everest -w.jpg
 **CONTEXT:** No more memes. Tired. Exhausted. Drained. Burnt out. Thank you bye. Seriously not making anyone, it was a genuine energy drain and nothing ever changes.
+**NOT EASY THOUGH:** The memetic warfare is intellectually stimulating, I'm using my unique edge.
 
 ![](memes/mt%20everest%20-w.jpg)
 
