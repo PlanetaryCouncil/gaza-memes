@@ -1,6 +1,12 @@
 # Memetic warfare
 
+These memes are authorised by `Planetary Council, ministry of memes and better propaganda`
+
 ![](make-memes-not-war.jpg)
+
+![](hack%20visual.png)
+
+![](hack-audio.png)
 
 ![](meme-entry.png)
 
@@ -10,7 +16,7 @@
 
 ![](meme-entry-4x-together.jpg)
 
-# Collage of the finest
+# Collages
 
 ![](propaganda.jpg)
 
@@ -18,13 +24,17 @@
 
 _(6301 × 6073 pixels, 16.9 MB)_
 
-Another insane collage tha is beaming from beyond event horizon:
+Other collages:
+* Singularity: https://planetarycouncil.org/singularity.jpg *(5118 × 4089 , 6.1 MB)*
+* Meme realism: https://planetarycouncil.org/realism.jpg *(5427 × 3567px, 10.3 MB)*
+* Vibe: https://planetarycouncil.org/vibe.jpg *(4890 × 4486px 13.5 MB)*
+* Collage: https://planetarycouncil.org/collage.jpg *(8890 × 6600px, 30.6 MB)*
+* All: https://planetarycouncil.org/all.jpg *(13780 × 12345 60.2 MB)*
+* Simple: https://planetarycouncil.org/simple.jpg *(3072 × 3072, 5.7 MB)*
 
-![](collage.jpg)
-
-**FULL RES:** https://planetarycouncil.org/collage.jpg
-
-_(8890 x 6600 pixels, 30.6MB)_
+Other sources:
+* Payload: https://planetarycouncil.org/payload/ (20 images to change the world)
+* PDF that generates hope: https://planetarycouncil.org/peace.pdf
 
 # Gaza memes
 
@@ -40,11 +50,18 @@ If you think we've misjudged what is "obvious" - feel free to share feedback!
 
 Open for work in media 🙏
 
+![](work%201.png)
+
+![](work%202.png)
+
+![](work%203.png)
+
+
 # Other memes (open for work)
 
-Check this [generic](https://github.com/PlanetaryCouncil/gaza-memes/tree/main/generic) folder.
+Check (or do not check) other folders in this repo.
 
-Check this: https://giphy.com/marsrobertson (2m views and growing fast)
+Check animated GIFs: https://giphy.com/marsrobertson (19m views and growing fast)
 
 Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.com/2025-12-10_memes_of_mass_awakening.pdf) (35 pages, 12MB). I've developed an unique style and pretty sharp commentary. Looking to colloborate with media outlets and indpendent journalists to spread the memes and WIN WIN WIN and reach wider audience 🙏
 
@@ -78,7 +95,7 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
  -->
 
 ## cbs propaganda
-**CONTEXT:** Watching interview with hardly any pushback was 🤯
+**CONTEXT:** Watching interview with no hardly any pushback was 🤯 Ownership of the platform matters.
 
 ![](memes/cbs%20propaganda.png)
 
@@ -87,6 +104,10 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 
 ## terrorist state
 ![](memes/terrorist%20state.jpg)
+
+## playing drums
+**CONTEXT:** https://x.com/anadoluagency/status/2055611261950300250
+![](memes/dog%20drums%20v2.png)
 
 ## thermobaric
 ![](memes/thermobaric.jpg)
