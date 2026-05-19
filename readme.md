@@ -1,6 +1,6 @@
-# Memetic warfare
+# Ministry of Memes and Better Propaganda
 
-These memes are authorised by `Planetary Council, ministry of memes and better propaganda`
+Authorised by **Planetary Council, ministry of memes and better propaganda**
 
 ![](make-memes-not-war.jpg)
 
@@ -8,29 +8,33 @@ These memes are authorised by `Planetary Council, ministry of memes and better p
 
 ![](hack-audio.png)
 
-![](meme-entry.png)
+![](messiah-is-here.jpg)
+[Messiah Is Here? (Shalom, Salaam, One World, One Heart)](https://www.youtube.com/watch?v=OvrYSbfkExw) on YouTube
+
+![](global-peace.jpg)
+[Global Peace (186 BPM minimal hypnotic drum & bass punches you in the face and you feel it in your gut mix](https://www.youtube.com/watch?v=VRNTi2rFiRo) on YouTube
+
+<!-- ![](meme-entry.png) -->
 
 ![propaganda -w](memes/propaganda%20-w.jpg)
 
 ![](part-of-the-source-code.png)
 
-![](meme-entry-4x-together.jpg)
+<!-- ![](meme-entry-4x-together.jpg) -->
 
 # Collages
 
 ![](propaganda.jpg)
 
-**FULL RES:** https://planetarycouncil.org/propaganda.jpg
-
-_(6301 × 6073 pixels, 16.9 MB)_
+**FULL RES:** https://planetarycouncil.org/propaganda.jpg _(6301 × 6073px, 16.9 MB)_
 
 Other collages:
-* Singularity: https://planetarycouncil.org/singularity.jpg *(5118 × 4089 , 6.1 MB)*
+* Singularity: https://planetarycouncil.org/singularity.jpg *(5118 × 4089px, 6.1 MB)*
 * Meme realism: https://planetarycouncil.org/realism.jpg *(5427 × 3567px, 10.3 MB)*
 * Vibe: https://planetarycouncil.org/vibe.jpg *(4890 × 4486px 13.5 MB)*
 * Collage: https://planetarycouncil.org/collage.jpg *(8890 × 6600px, 30.6 MB)*
-* All: https://planetarycouncil.org/all.jpg *(13780 × 12345 60.2 MB)*
-* Simple: https://planetarycouncil.org/simple.jpg *(3072 × 3072, 5.7 MB)*
+* All: https://planetarycouncil.org/all.jpg *(13780 × 12345px, 60.2 MB)*
+* Simple: https://planetarycouncil.org/simple.jpg *(3072 × 3072px, 5.7 MB)*
 
 Other sources:
 * Payload: https://planetarycouncil.org/payload/ (20 images to change the world)
@@ -102,15 +106,34 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## winners write history
 ![](memes/winners%20write%20history.png)
 
+## blueprint for peace
+**CONTEXT:** 20 memes to change the world here: https://planetarycouncil.org/payload/
+![blueprint for peace - built](memes/blueprint%20for%20peace%20-%20built.jpeg)
+
+## everything propaganda
+![](memes/everything%20propaganda%202%20-w.jpg)
+
+## bunch of questions
+![bunch of questions -w](memes/bunch%20of%20questions%20-w.jpg)
+
+## just a number
+![just a number -w](memes/just%20a%20number%20-w.jpg)
+
+## types of war
+![types of war -w](memes/types%20of%20war%20-w.jpg)
+
+## there was a pretext
+![](memes/there%20was%20a%20pretext.jpg)
+
+## starvatin
+![starvatin - built](memes/starvatin%20-%20built.jpg)
+
 ## terrorist state
 ![](memes/terrorist%20state.jpg)
 
 ## playing drums
 **CONTEXT:** https://x.com/anadoluagency/status/2055611261950300250
 ![](memes/dog%20drums%20v2.png)
-
-## thermobaric
-![](memes/thermobaric.jpg)
 
 ## barrister closing speech
 ![](memes/barrister%20closing%20speech.png)
@@ -176,6 +199,9 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## narrative shifting
 ![](memes/narrative%20shifting.png)
 
+## thermobaric
+![](memes/thermobaric.jpg)
+
 ## netanyahu-maneuvre
 ![](memes/netanyahu-maneuvre.png)
 
@@ -197,28 +223,6 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 **NOT EASY THOUGH:** The memetic warfare is intellectually stimulating, I'm using my unique edge.
 
 ![](memes/mt%20everest%20-w.jpg)
-
-## blueprint for peace
-**CONTEXT:** 20 memes to change the world here: https://planetarycouncil.org/payload/
-![blueprint for peace - built](memes/blueprint%20for%20peace%20-%20built.jpeg)
-
-## everything propaganda
-![](memes/everything%20propaganda%202%20-w.jpg)
-
-## bunch of questions
-![bunch of questions -w](memes/bunch%20of%20questions%20-w.jpg)
-
-## just a number
-![just a number -w](memes/just%20a%20number%20-w.jpg)
-
-## types of war
-![types of war -w](memes/types%20of%20war%20-w.jpg)
-
-## there was a pretext
-![](memes/there%20was%20a%20pretext.jpg)
-
-## starvatin
-![starvatin - built](memes/starvatin%20-%20built.jpg)
 
 ## holocaust comparison
 **CONTEXT:** When multiple AI allow research it highly suggest the facts are aligned with reality.
