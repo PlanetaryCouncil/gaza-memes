@@ -1,14 +1,29 @@
+# nukes
+![](nukes.png)
+
+# cia memes
+![](cia%20memees.png)
+
+# hitler lost
+![](hitler%20ghost%20lost.png)
+
+# legal review
+![](legal%20review.png)
+
+# supernova explosion
+![](supernova%20explosion.png)
+
 # military funding
 ![](generic/military%20funding.png)
+
+# war profiteering
+![](generic/war%profiteering.png)
 
 # boycott
 ![](generic/boycott.png)
 
 # concerns
 ![](generic/concerns.png)
-
-# bearded woman
-![](generic/bearded%20woman.jpeg)
 
 # climate debt
 ![](generic/climate%20debt.png)
