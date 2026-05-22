@@ -81,35 +81,6 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 **CONTEXT:** the main reason why these images are being created is the Palestine Action (system reset glitch signal)
 ![](memes/democracy%20rule%20of%20law.jpg)
 
-## detention v2
-**COUNTEXT:** Someone should do something about it, but who is someone, what is something?
-
-* @novaramedia ➡️ https://novaramedia.com/2025/10/29/israeli-military-accused-of-palestinian-organ-theft-again/
-* @Mondoweiss ➡️ https://mondoweiss.net/2025/10/israel-returns-195-dead-bodies-to-gaza-many-mutilated-with-hands-bound-signs-of-torture/
-* @anadoluagency ➡️ https://aa.com.tr/en/middle-east/gaza-authorities-accuse-israel-of-stealing-organs-from-released-palestinian-bodies/3719641
-* @NewIndianXpress ➡️ https://newindianexpress.com/world/2025/Oct/19/gaza-authorities-flag-missing-organs-signs-of-torture-in-palestinian-bodies-returned-by-israel
-* @Guardian ➡️ https://theguardian.com/world/2025/oct/15/palestinian-bodies-returned-by-israel-show-signs-of-torture-and-execution-say-doctors
-* @BBC ➡️ https://bbc.com/news/articles/c4gz3r46e37o
-* Translating Falasteen (Palestine) ➡️ https://x.com/translatingpal/status/1979271388767666669
-
-![](memes/detention%20v2.png)
-
-<!-- ## detention
-![](memes/detention.png)
- -->
-
-## cbs propaganda
-**CONTEXT:** Watching interview with no hardly any pushback was 🤯 Ownership of the platform matters.
-
-![](memes/cbs%20propaganda.png)
-
-## winners write history
-![](memes/winners%20write%20history.png)
-
-## blueprint for peace
-**CONTEXT:** 20 memes to change the world here: https://planetarycouncil.org/payload/
-![blueprint for peace - built](memes/blueprint%20for%20peace%20-%20built.jpeg)
-
 ## everything propaganda
 ![](memes/everything%20propaganda%202%20-w.jpg)
 
@@ -127,6 +98,85 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 
 ## starvatin
 ![starvatin - built](memes/starvatin%20-%20built.jpg)
+
+## detention v2
+**CONTEXT:** Someone should do something about it, but who is someone, what is something?
+
+* @novaramedia ➡️ https://novaramedia.com/2025/10/29/israeli-military-accused-of-palestinian-organ-theft-again/
+* @Mondoweiss ➡️ https://mondoweiss.net/2025/10/israel-returns-195-dead-bodies-to-gaza-many-mutilated-with-hands-bound-signs-of-torture/
+* @anadoluagency ➡️ https://aa.com.tr/en/middle-east/gaza-authorities-accuse-israel-of-stealing-organs-from-released-palestinian-bodies/3719641
+* @NewIndianXpress ➡️ https://newindianexpress.com/world/2025/Oct/19/gaza-authorities-flag-missing-organs-signs-of-torture-in-palestinian-bodies-returned-by-israel
+* @Guardian ➡️ https://theguardian.com/world/2025/oct/15/palestinian-bodies-returned-by-israel-show-signs-of-torture-and-execution-say-doctors
+* @BBC ➡️ https://bbc.com/news/articles/c4gz3r46e37o
+* Translating Falasteen (Palestine) ➡️ https://x.com/translatingpal/status/1979271388767666669
+
+![](memes/detention%20v2.png)
+
+<!-- ## detention
+![](memes/detention.png)
+ -->
+
+## Do Not Interfere
+**CONTEXT:** "will have consequences" (but to whom is left as ambiguity)
+![](memes/do%20not%20interfere.jpeg)
+
+## Accountability Theater
+![](memes/accountability%20theater.png)
+
+## Another Day in the Office
+![](memes/another%20day%20in%20the%20office.png)
+
+## Behind Closed Doors
+![](memes/flotilla%20closed%20doors.png)
+
+## Flotilla Bruises
+![](memes/flotilla%20bruises.png)
+
+## Genocide Trial
+![](memes/genocide%20trial.png)
+
+## Human Right Propaganda Budget v3
+![](memes/human%20right%20propaganda%20budget%20v3.png)
+
+<!-- ## Human Right Propaganda Budget v2
+![](memes/human%20right%20propaganda%20budget%20v2.png)
+
+## Human Right Propaganda Budget
+![](memes/human%20right%20propaganda%20budget.png) -->
+
+## Israel Good
+![](memes/israel%20good.png)
+
+## Lebanon Real Photo
+![](memes/lebanon%20real%20photo.png)
+
+## Paradox of Impunity Inverse
+![](memes/paradox%20of%20impunity%20inverse.png)
+
+## Paradox of Impunity
+![](memes/paradox%20of%20impunity.png)
+
+## Shield of a Critic v3
+![](memes/shield%20of%20a%20critic%20v3.png)
+
+<!-- ## Shield of a Critic v2
+![](memes/shield%20of%20a%20critic%20v2.png)
+
+## Shield of a Critic
+![](memes/shield%20of%20a%20critic.png)
+ -->
+
+## cbs propaganda
+**CONTEXT:** Watching interview with no hardly any pushback was 🤯 Ownership of the platform matters.
+
+![](memes/cbs%20propaganda.png)
+
+## winners write history
+![](memes/winners%20write%20history.png)
+
+## blueprint for peace
+**CONTEXT:** 20 memes to change the world here: https://planetarycouncil.org/payload/
+![blueprint for peace - built](memes/blueprint%20for%20peace%20-%20built.jpeg)
 
 ## kick cat
 **CONTEXT:** https://x.com/Parodyjeffx/status/2056708716733370716
