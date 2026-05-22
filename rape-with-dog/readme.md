@@ -1,5 +1,8 @@
 # Dogs are difficult to work with because of the content warnings
 
+## raping not traning
+![](raping%20not%20training.jpg)
+
 ## dog-canine-lust v2
 ![](dog-canine-lust%20v2.jpg)
 
