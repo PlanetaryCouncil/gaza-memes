@@ -12,7 +12,7 @@ Authorised by **Planetary Council, ministry of memes and better propaganda**
 [Messiah Is Here? (Shalom, Salaam, One World, One Heart)](https://www.youtube.com/watch?v=OvrYSbfkExw) on YouTube
 
 ![](global-peace.jpg)
-[Global Peace (186 BPM minimal hypnotic drum & bass punches you in the face and you feel it in your gut mix](https://www.youtube.com/watch?v=VRNTi2rFiRo) on YouTube
+[Global Peace (186 BPM minimal hypnotic drum & bass punches you in the face and you feel it in your gut mix)](https://www.youtube.com/watch?v=VRNTi2rFiRo) on YouTube
 
 <!-- ![](meme-entry.png) -->
 
@@ -127,6 +127,10 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 
 ## starvatin
 ![starvatin - built](memes/starvatin%20-%20built.jpg)
+
+## kick cat
+**CONTEXT:** https://x.com/Parodyjeffx/status/2056708716733370716
+![](memes/kick%20cat.png)
 
 ## terrorist state
 ![](memes/terrorist%20state.jpg)
