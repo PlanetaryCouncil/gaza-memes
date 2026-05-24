@@ -9,7 +9,8 @@ const state = {
   authReady: false,
   captchaToken: null,
   captchaWidgetId: null,
-  score: 5
+  score: 5,
+  hoverScore: null
 };
 
 const els = {
@@ -49,6 +50,20 @@ async function boot() {
 
 function wireEvents() {
   buildStarRating();
+
+  els.starRating.addEventListener("mousemove", (event) => {
+    state.hoverScore = getScoreFromContainer(event.clientX);
+    renderScoreState();
+  });
+
+  els.starRating.addEventListener("click", (event) => {
+    setScore(getScoreFromContainer(event.clientX));
+  });
+
+  els.starRating.addEventListener("mouseleave", () => {
+    state.hoverScore = null;
+    renderScoreState();
+  });
 
   els.skipButton.addEventListener("click", () => {
     renderRandomImage();
@@ -263,38 +278,55 @@ function buildStarRating() {
     button.dataset.whole = String(whole);
     button.setAttribute("aria-label", `${whole} star rating`);
     button.setAttribute("role", "radio");
-    button.addEventListener("click", (event) => {
-      const rect = button.getBoundingClientRect();
-      const isLeftHalf = event.clientX - rect.left < rect.width / 2;
-      const value = whole - (isLeftHalf ? 0.5 : 0);
-      setScore(value);
-    });
     fragment.appendChild(button);
   }
 
   els.starRating.appendChild(fragment);
-  setScore(state.score);
+  renderScoreState();
 }
 
 function setScore(value) {
   state.score = Number(value.toFixed(1));
-  els.scoreValue.textContent = state.score.toFixed(1);
+  state.hoverScore = null;
+  renderScoreState();
+}
+
+function renderScoreState() {
+  const displayScore = state.hoverScore ?? state.score;
+  els.scoreValue.textContent = displayScore.toFixed(1);
 
   const buttons = els.starRating.querySelectorAll(".star-button");
   buttons.forEach((button) => {
     const whole = Number(button.dataset.whole);
     let fill = 0;
 
-    if (state.score >= whole) {
+    if (displayScore >= whole) {
       fill = 1;
-    } else if (state.score === whole - 0.5) {
+    } else if (displayScore === whole - 0.5) {
       fill = 0.5;
     }
 
     button.style.setProperty("--fill", String(fill));
     button.classList.toggle("is-active", fill > 0);
+    button.classList.toggle("is-preview", state.hoverScore !== null);
     button.setAttribute("aria-checked", state.score === whole || state.score === whole - 0.5 ? "true" : "false");
   });
+}
+
+function getScoreFromContainer(pointerX) {
+  const buttons = els.starRating.querySelectorAll(".star-button");
+  if (!buttons.length) {
+    return state.score;
+  }
+
+  const firstRect = buttons[0].getBoundingClientRect();
+  const lastRect = buttons[buttons.length - 1].getBoundingClientRect();
+  const leftEdge = firstRect.left;
+  const rightEdge = lastRect.right;
+  const width = Math.max(rightEdge - leftEdge, 1);
+  const relativeX = Math.min(Math.max(pointerX - leftEdge, 0), width);
+  const halfSteps = Math.max(1, Math.min(20, Math.ceil((relativeX / width) * 20)));
+  return halfSteps / 2;
 }
 
 function prettifyName(name) {

@@ -254,10 +254,17 @@ code {
   width: calc(var(--fill, 0) * 100%);
   overflow: hidden;
   justify-content: start;
+  text-shadow: 0 0 0 transparent;
+  transition: width 70ms linear, text-shadow 90ms ease, transform 90ms ease;
 }
 
 .star-button.is-active::before {
   color: rgba(87, 70, 32, 0.22);
+}
+
+.star-button.is-preview::after {
+  text-shadow: 0 0 14px rgba(246, 189, 24, 0.42);
+  transform: translateY(-1px);
 }
 
 .star-button:focus-visible {
