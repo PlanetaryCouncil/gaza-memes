@@ -23,20 +23,6 @@
 **CONTEXT:** https://braveneweurope.com/caitlin-johnstone-sorry-if-this-is-antisemitic-but-i-think-its-wrong-to-train-dogs-to-rape-prisoners
 ![gaza grammar (3xmeme) -w.jpg](memes/gaza%20grammar%20(3xmeme)%20-w.jpg)
 
-## rape with dog - human animals
-![with a dog -w](memes/rape%20with%20dog%202%20-w.jpg)
-
-<!-- ## rape with dog 1 (REMOVED AS TOO LAME AND TAME)
-![with a dog -w](memes/rape%20with%20dog%201%20-w.jpg) -->
-
-## rape with dog 3
-**CONTEXT:**
-* https://novaramedia.com/2025/11/25/israeli-prison-guards-are-using-dogs-to-rape-palestinians-former-detainees-say/
-* > “They know once they rape someone with a dog or with a stick that these people won’t be able to carry out their jobs or live their lives normally”
-* I intentionally twisted the narrative, similar to the bulldozer operator who can no longer eat meat: https://edition.cnn.com/2024/10/21/middleeast/gaza-war-israeli-soldiers-ptsd-suicide-intl
-
-![with a dog -w](memes/rape%20with%20dog%203%20-w.jpg)
-
 ## amendment
 ![amendment -w](memes/amendment%20-w.jpg)
 
