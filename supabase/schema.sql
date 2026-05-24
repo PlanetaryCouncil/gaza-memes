@@ -6,7 +6,7 @@ create table if not exists public.image_ratings (
   image_path text not null,
   image_folder text not null,
   image_name text not null,
-  score integer not null check (score between 0 and 10),
+  score numeric(3,1) not null check (score between 0 and 10 and score * 2 = trunc(score * 2)),
   negative_feedback text not null default '',
   neutral_feedback text not null default '',
   positive_feedback text not null default '',

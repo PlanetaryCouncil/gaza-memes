@@ -8,7 +8,8 @@ const state = {
   ratedImages: loadLocalSession(),
   authReady: false,
   captchaToken: null,
-  captchaWidgetId: null
+  captchaWidgetId: null,
+  score: 5
 };
 
 const els = {
@@ -20,8 +21,8 @@ const els = {
   ratingForm: document.querySelector("#rating-form"),
   submitButton: document.querySelector("#submit-button"),
   formStatus: document.querySelector("#form-status"),
-  score: document.querySelector("#score"),
   scoreValue: document.querySelector("#score-value"),
+  starRating: document.querySelector("#star-rating"),
   allowSeen: document.querySelector("#seen-toggle"),
   sessionButton: document.querySelector("#session-button"),
   connectionStatus: document.querySelector("#connection-status"),
@@ -47,9 +48,7 @@ async function boot() {
 }
 
 function wireEvents() {
-  els.score.addEventListener("input", () => {
-    els.scoreValue.textContent = els.score.value;
-  });
+  buildStarRating();
 
   els.skipButton.addEventListener("click", () => {
     renderRandomImage();
@@ -215,7 +214,7 @@ async function submitRating(event) {
     image_path: state.currentImage.path,
     image_folder: state.currentImage.folder,
     image_name: state.currentImage.name,
-    score: Number(formData.get("score")),
+    score: state.score,
     negative_feedback: String(formData.get("negative") || "").trim(),
     neutral_feedback: String(formData.get("neutral") || "").trim(),
     positive_feedback: String(formData.get("positive") || "").trim()
@@ -251,8 +250,51 @@ async function submitRating(event) {
 
 function clearForm() {
   els.ratingForm.reset();
-  els.score.value = "5";
-  els.scoreValue.textContent = "5";
+  setScore(5);
+}
+
+function buildStarRating() {
+  const fragment = document.createDocumentFragment();
+
+  for (let whole = 1; whole <= 10; whole += 1) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "star-button";
+    button.dataset.whole = String(whole);
+    button.setAttribute("aria-label", `${whole} star rating`);
+    button.setAttribute("role", "radio");
+    button.addEventListener("click", (event) => {
+      const rect = button.getBoundingClientRect();
+      const isLeftHalf = event.clientX - rect.left < rect.width / 2;
+      const value = whole - (isLeftHalf ? 0.5 : 0);
+      setScore(value);
+    });
+    fragment.appendChild(button);
+  }
+
+  els.starRating.appendChild(fragment);
+  setScore(state.score);
+}
+
+function setScore(value) {
+  state.score = Number(value.toFixed(1));
+  els.scoreValue.textContent = state.score.toFixed(1);
+
+  const buttons = els.starRating.querySelectorAll(".star-button");
+  buttons.forEach((button) => {
+    const whole = Number(button.dataset.whole);
+    let fill = 0;
+
+    if (state.score >= whole) {
+      fill = 1;
+    } else if (state.score === whole - 0.5) {
+      fill = 0.5;
+    }
+
+    button.style.setProperty("--fill", String(fill));
+    button.classList.toggle("is-active", fill > 0);
+    button.setAttribute("aria-checked", state.score === whole || state.score === whole - 0.5 ? "true" : "false");
+  });
 }
 
 function prettifyName(name) {

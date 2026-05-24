@@ -23,7 +23,7 @@
       </header>
 
       <main class="layout">
-        <section class="panel stage-panel">
+        <section class="panel app-panel">
           <div class="stage-toolbar">
             <div>
               <p class="toolbar-label">Current image</p>
@@ -42,41 +42,20 @@
               Open original
             </a>
           </div>
-        </section>
-
-        <aside class="panel form-panel">
-          <section class="config-block">
-            <div class="section-heading">
-              <p class="toolbar-label">Connection</p>
-              <h2>Supabase session</h2>
-            </div>
-            <p class="section-copy">
-              Add your Supabase credentials to <code>supabase-config.js</code>, then start an
-              anonymous session before collecting ratings.
-            </p>
-            <div id="connection-status" class="status-card status-warn">
-              Supabase is not configured yet.
-            </div>
-            <div id="captcha-slot" class="captcha-slot"></div>
-            <button id="session-button" class="primary-button" type="button">
-              Start anonymous session
-            </button>
-          </section>
 
           <form id="rating-form" class="rating-form">
-            <section class="section-heading">
-              <p class="toolbar-label">Rating</p>
-              <h2>Submit feedback</h2>
+            <section class="section-heading rating-heading">
+              <div>
+                <p class="toolbar-label">Rating</p>
+                <h2>Score this image</h2>
+              </div>
+              <p class="score-pill"><strong id="score-value">5.0</strong><span>/10</span></p>
             </section>
 
-            <label class="field-group" for="score">
-              <span>Score: <strong id="score-value">5</strong>/10</span>
-              <input id="score" name="score" type="range" min="0" max="10" step="1" value="5">
-              <div class="range-labels">
-                <span>0</span>
-                <span>10</span>
-              </div>
-            </label>
+            <fieldset class="star-field">
+              <legend class="sr-only">Score from 0 to 10 in half-point steps</legend>
+              <div id="star-rating" class="star-rating" role="radiogroup" aria-label="Image score"></div>
+            </fieldset>
 
             <label class="field-group" for="negative">
               <span>Negative</span>
@@ -116,6 +95,24 @@
               <span>Allow already rated images back into the random rotation</span>
             </label>
 
+            <section class="config-block">
+              <div class="section-heading">
+                <p class="toolbar-label">Connection</p>
+                <h2>Supabase session</h2>
+              </div>
+              <p class="section-copy">
+                Add your Supabase credentials to <code>supabase-config.js</code>, then start an
+                anonymous session before collecting ratings.
+              </p>
+              <div id="connection-status" class="status-card status-warn">
+                Supabase is not configured yet.
+              </div>
+              <div id="captcha-slot" class="captcha-slot"></div>
+              <button id="session-button" class="primary-button" type="button">
+                Start anonymous session
+              </button>
+            </section>
+
             <button id="submit-button" class="primary-button" type="submit">
               Save rating
             </button>
@@ -124,7 +121,7 @@
           <div id="form-status" class="status-card status-muted">
             Waiting for configuration.
           </div>
-        </aside>
+        </section>
       </main>
     </div>
 

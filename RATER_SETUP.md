@@ -46,3 +46,17 @@ When you add or remove images, run:
 ```
 
 That will refresh `data/images.txt`.
+
+## Fractional scores
+
+The current UI stores scores in `0.5` steps from `0.0` to `10.0`.
+
+If you already created the table with the earlier integer schema, run this once in Supabase:
+
+```sql
+alter table public.image_ratings
+  alter column score type numeric(3,1) using score::numeric,
+  drop constraint if exists image_ratings_score_check,
+  add constraint image_ratings_score_check
+    check (score between 0 and 10 and score * 2 = trunc(score * 2));
+```
