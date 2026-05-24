@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Planetary Council Image Rater</title>
+    <meta
+      name="description"
+      content="Randomized image rating tool with Supabase-backed feedback collection."
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Planetary Council</p>
+        <h1>Image Rater</h1>
+        <p class="hero-copy">
+          Review images one at a time, score them from 0 to 10, and leave short feedback
+          across negative, neutral, and positive framing.
+        </p>
+      </header>
+
+      <main class="layout">
+        <section class="panel stage-panel">
+          <div class="stage-toolbar">
+            <div>
+              <p class="toolbar-label">Current image</p>
+              <h2 id="image-title">Loading images...</h2>
+            </div>
+            <button id="skip-button" class="ghost-button" type="button">Skip image</button>
+          </div>
+
+          <div class="image-frame">
+            <img id="image-view" alt="Image being rated">
+          </div>
+
+          <div class="image-meta">
+            <span id="image-folder" class="meta-pill">Folder</span>
+            <a id="image-link" class="meta-link" href="#" target="_blank" rel="noreferrer">
+              Open original
+            </a>
+          </div>
+        </section>
+
+        <aside class="panel form-panel">
+          <section class="config-block">
+            <div class="section-heading">
+              <p class="toolbar-label">Connection</p>
+              <h2>Supabase session</h2>
+            </div>
+            <p class="section-copy">
+              Add your Supabase credentials to <code>supabase-config.js</code>, then start an
+              anonymous session before collecting ratings.
+            </p>
+            <div id="connection-status" class="status-card status-warn">
+              Supabase is not configured yet.
+            </div>
+            <div id="captcha-slot" class="captcha-slot"></div>
+            <button id="session-button" class="primary-button" type="button">
+              Start anonymous session
+            </button>
+          </section>
+
+          <form id="rating-form" class="rating-form">
+            <section class="section-heading">
+              <p class="toolbar-label">Rating</p>
+              <h2>Submit feedback</h2>
+            </section>
+
+            <label class="field-group" for="score">
+              <span>Score: <strong id="score-value">5</strong>/10</span>
+              <input id="score" name="score" type="range" min="0" max="10" step="1" value="5">
+              <div class="range-labels">
+                <span>0</span>
+                <span>10</span>
+              </div>
+            </label>
+
+            <label class="field-group" for="negative">
+              <span>Negative</span>
+              <textarea
+                id="negative"
+                name="negative"
+                rows="3"
+                maxlength="280"
+                placeholder="What hurts the image?"
+              ></textarea>
+            </label>
+
+            <label class="field-group" for="neutral">
+              <span>Neutral</span>
+              <textarea
+                id="neutral"
+                name="neutral"
+                rows="3"
+                maxlength="280"
+                placeholder="Balanced or informational notes"
+              ></textarea>
+            </label>
+
+            <label class="field-group" for="positive">
+              <span>Positive</span>
+              <textarea
+                id="positive"
+                name="positive"
+                rows="3"
+                maxlength="280"
+                placeholder="What works well?"
+              ></textarea>
+            </label>
+
+            <label class="field-group checkbox-row" for="seen-toggle">
+              <input id="seen-toggle" name="allowSeen" type="checkbox">
+              <span>Allow already rated images back into the random rotation</span>
+            </label>
+
+            <button id="submit-button" class="primary-button" type="submit">
+              Save rating
+            </button>
+          </form>
+
+          <div id="form-status" class="status-card status-muted">
+            Waiting for configuration.
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
