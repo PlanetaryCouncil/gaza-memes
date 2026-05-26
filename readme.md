@@ -112,9 +112,17 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 
 ![](memes/detention%20v2.png)
 
-<!-- ## detention
-![](memes/detention.png)
- -->
+## israel good guys
+![](israel%20good%20guys.png)
+
+## paradox of impunity v2
+![](paradox%20of%20impunity%20v2.png)
+
+## wasteland
+![](wasteland%20-w.png)
+
+## weaponisation antisemitism
+![](weaponisation%20antisemitism.png)
 
 ## Do Not Interfere
 **CONTEXT:** "will have consequences" (but to whom is left as ambiguity)
