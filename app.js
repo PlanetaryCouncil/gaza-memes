@@ -4,6 +4,7 @@ const SESSION_STORAGE_KEY = "planetary-council-rater";
 const state = {
   supabase: null,
   currentImage: null,
+  currentIndex: -1,
   images: [],
   ratedImages: loadLocalSession(),
   captchaToken: null,
@@ -17,13 +18,13 @@ const els = {
   imageView: document.querySelector("#image-view"),
   imageFolder: document.querySelector("#image-folder"),
   imageLink: document.querySelector("#image-link"),
-  skipButton: document.querySelector("#skip-button"),
+  previousButton: document.querySelector("#previous-button"),
+  nextButton: document.querySelector("#next-button"),
   ratingForm: document.querySelector("#rating-form"),
   submitButton: document.querySelector("#submit-button"),
   formStatus: document.querySelector("#form-status"),
   scoreValue: document.querySelector("#score-value"),
   starRating: document.querySelector("#star-rating"),
-  allowSeen: document.querySelector("#seen-toggle"),
   connectionStatus: document.querySelector("#connection-status"),
   captchaSlot: document.querySelector("#captcha-slot")
 };
@@ -31,18 +32,43 @@ const els = {
 boot();
 
 async function boot() {
+  if (!hasRequiredElements()) {
+    console.error("Image Rater: required DOM elements are missing.");
+    return;
+  }
+
   wireEvents();
-  els.skipButton.disabled = true;
+  els.previousButton.disabled = true;
+  els.nextButton.disabled = true;
 
   try {
     state.images = await loadImages();
     renderRandomImage();
-    els.skipButton.disabled = false;
+    els.previousButton.disabled = false;
+    els.nextButton.disabled = false;
   } catch (error) {
     setStatus(els.formStatus, `Could not load image manifest: ${error.message}`, "error");
   }
 
   setupSupabase();
+}
+
+function hasRequiredElements() {
+  return Boolean(
+    els.imageTitle &&
+    els.imageView &&
+    els.imageFolder &&
+    els.imageLink &&
+    els.previousButton &&
+    els.nextButton &&
+    els.ratingForm &&
+    els.submitButton &&
+    els.formStatus &&
+    els.scoreValue &&
+    els.starRating &&
+    els.connectionStatus &&
+    els.captchaSlot
+  );
 }
 
 function wireEvents() {
@@ -62,8 +88,13 @@ function wireEvents() {
     renderScoreState();
   });
 
-  els.skipButton.addEventListener("click", () => {
-    renderRandomImage();
+  els.previousButton.addEventListener("click", () => {
+    stepImage(-1);
+    clearForm();
+  });
+
+  els.nextButton.addEventListener("click", () => {
+    stepImage(1);
     clearForm();
   });
 
@@ -77,7 +108,7 @@ async function loadImages() {
   }
 
   const text = await response.text();
-  return text
+  const images = text
     .split("\n")
     .map((line) => line.trim())
     .filter(Boolean)
@@ -86,6 +117,7 @@ async function loadImages() {
       folder: path.includes("/") ? path.slice(0, path.lastIndexOf("/")) : "root",
       name: path.split("/").pop()
     }));
+  return shuffle(images);
 }
 
 function setupSupabase() {
@@ -186,12 +218,29 @@ function renderRandomImage() {
     return;
   }
 
-  const allowSeen = els.allowSeen.checked;
-  const unseen = state.images.filter((image) => !state.ratedImages[image.path]);
-  const pool = !allowSeen && unseen.length ? unseen : state.images;
-  const nextImage = pool[Math.floor(Math.random() * pool.length)];
-  state.currentImage = nextImage;
+  state.currentIndex = Math.floor(Math.random() * state.images.length);
+  state.currentImage = state.images[state.currentIndex];
+  renderCurrentImage();
+}
 
+function stepImage(direction) {
+  if (!state.images.length || !state.currentImage) {
+    return;
+  }
+
+  state.currentIndex = state.currentIndex === -1
+    ? 0
+    : (state.currentIndex + direction + state.images.length) % state.images.length;
+  state.currentImage = state.images[state.currentIndex];
+  renderCurrentImage();
+}
+
+function renderCurrentImage() {
+  if (!state.currentImage) {
+    return;
+  }
+
+  const nextImage = state.currentImage;
   els.imageTitle.textContent = prettifyName(nextImage.name);
   els.imageView.src = encodeURI(nextImage.path);
   els.imageView.alt = nextImage.name;
@@ -331,6 +380,15 @@ function prettifyName(name) {
 function setStatus(element, message, tone) {
   element.textContent = message;
   element.className = `status-card status-${tone}`;
+}
+
+function shuffle(items) {
+  const copy = [...items];
+  for (let index = copy.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]];
+  }
+  return copy;
 }
 
 function loadLocalSession() {

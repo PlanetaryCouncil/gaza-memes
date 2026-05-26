@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Planetary Council Image Rater</title>
+    <title>Image Rater</title>
     <meta
       name="description"
       content="Randomized image rating tool with Supabase-backed feedback collection."
@@ -13,23 +13,16 @@
   </head>
   <body>
     <div class="page-shell">
-      <header class="hero">
-        <p class="eyebrow">Planetary Council</p>
-        <h1>Image Rater</h1>
-        <p class="hero-copy">
-          Review images one at a time, score them from 0 to 10, and leave short feedback
-          across negative, neutral, and positive framing.
-        </p>
-      </header>
-
       <main class="layout">
         <section class="panel app-panel">
-          <div class="stage-toolbar">
-            <div>
-              <p class="toolbar-label">Current image</p>
-              <h2 id="image-title">Loading images...</h2>
-            </div>
-            <button id="skip-button" class="ghost-button" type="button">Skip image</button>
+          <div class="stage-toolbar compact-toolbar">
+            <button id="previous-button" class="nav-button" type="button" aria-label="Previous image">
+              &#8592;
+            </button>
+            <h1 id="image-title">Loading images...</h1>
+            <button id="next-button" class="nav-button" type="button" aria-label="Next image">
+              &#8594;
+            </button>
           </div>
 
           <div class="image-frame">
@@ -90,31 +83,13 @@
               ></textarea>
             </label>
 
-            <label class="field-group checkbox-row" for="seen-toggle">
-              <input id="seen-toggle" name="allowSeen" type="checkbox">
-              <span>Allow already rated images back into the random rotation</span>
-            </label>
-
-            <section class="config-block">
-              <div class="section-heading">
-                <p class="toolbar-label">Connection</p>
-                <h2>Bot protection</h2>
-              </div>
-              <p class="section-copy">
-                Add your Supabase credentials to <code>supabase-config.js</code>. When CAPTCHA is
-                enabled, the app signs in anonymously automatically during save.
-              </p>
-              <div id="connection-status" class="status-card status-warn">
-                Supabase is not configured yet.
-              </div>
-              <div id="captcha-slot" class="captcha-slot"></div>
-            </section>
-
             <button id="submit-button" class="primary-button" type="submit">
               Save rating
             </button>
           </form>
 
+          <div id="captcha-slot" class="captcha-slot"></div>
+          <div id="connection-status" class="status-card status-muted"></div>
           <div id="form-status" class="status-card status-muted">
             Waiting for configuration.
           </div>
