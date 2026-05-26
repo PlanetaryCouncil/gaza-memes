@@ -19,3 +19,8 @@
 <!-- ## school-bombing-signed
 ![](iran-memes/school-bombing-signed.png) -->
 
+## cannot bomb
+![](cannot%20bomb.png)
+
+## turnover
+![](turnover.png)

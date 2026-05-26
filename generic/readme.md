@@ -1,3 +1,12 @@
+# choose version of reality
+![](choose%20version%20of%20reality.png)
+
+# oopsie mishap
+![](oopsie%20mishap.png)
+
+# untangling
+![](untangling.png)
+
 # nukes
 ![](nukes.png)
 
