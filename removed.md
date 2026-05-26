@@ -1,4 +1,6 @@
-# Removed (relegated)
+# Removed
+
+(but still live in the main folder, maybe should live in the "weak")
 
 * too complex
 * too complicated

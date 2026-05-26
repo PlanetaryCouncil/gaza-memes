@@ -2,31 +2,31 @@
 
 ![](animated/good%20guys%20better%20propaganda%20small.gif)
 
-![](ministry-of-memes.png)
+![](memes-homepage/ministry-of-memes.png)
 
-![](make-memes-not-war.jpg)
+![](memes-homepage/make-memes-not-war.jpg)
 
-![](hack%20visual.png)
+![](memes-homepage/hack%20visual.png)
 
-![](hack-audio.png)
+![](memes-homepage/hack-audio.png)
 
-![](messiah-is-here.jpg)
+![](memes-homepage/messiah-is-here.jpg)
 [Messiah Is Here? (Shalom, Salaam, One World, One Heart)](https://www.youtube.com/watch?v=OvrYSbfkExw) on YouTube
 
-![](global-peace.jpg)
+![](memes-homepage/global-peace.jpg)
 [Global Peace (186 BPM minimal hypnotic drum & bass punches you in the face and you feel it in your gut mix)](https://www.youtube.com/watch?v=VRNTi2rFiRo) on YouTube
 
 <!-- ![](meme-entry.png) -->
 
 ![propaganda -w](memes/propaganda%20-w.jpg)
 
-![](part-of-the-source-code.png)
+![](memes-homepage/part-of-the-source-code.png)
 
 <!-- ![](meme-entry-4x-together.jpg) -->
 
 # Collages
 
-![](propaganda.jpg)
+![](memes-homepage/propaganda.jpg)
 
 **FULL RES:** https://planetarycouncil.org/propaganda.jpg _(6301 × 6073px, 16.9 MB)_
 
@@ -56,18 +56,18 @@ If you think we've misjudged what is "obvious" - feel free to share feedback!
 
 Open for work in media 🙏
 
-![](work%201.png)
+![](memes-homepage/work%201.png)
 
-![](work%202.png)
+![](memes-homepage/work%202.png)
 
-![](work%203.png)
+![](memes-homepage/work%203.png)
 
 
 # Other memes (open for work)
 
 Check (or do not check) other folders in this repo.
 
-Check animated GIFs: https://giphy.com/marsrobertson (19m views and growing fast)
+Check animated GIFs: https://giphy.com/marsrobertson (22m views and growing fast)
 
 Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.com/2025-12-10_memes_of_mass_awakening.pdf) (35 pages, 12MB). I've developed an unique style and pretty sharp commentary. Looking to colloborate with media outlets and indpendent journalists to spread the memes and WIN WIN WIN and reach wider audience 🙏
 
