@@ -79,6 +79,8 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ## jokes must be labelled
 ![jokes must be labelled -w](memes/jokes%20must%20be%20labelled%20-w.jpg)
 
+<!-- MEMES TO BE RATED BELOW THIS LINE -->
+
 ## democracy rule of law
 **CONTEXT:** the main reason why these images are being created is the Palestine Action (system reset glitch signal)
 ![](memes/democracy%20rule%20of%20law.jpg)

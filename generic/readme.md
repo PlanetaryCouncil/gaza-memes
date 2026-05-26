@@ -11,7 +11,7 @@
 ![](nukes.png)
 
 # cia memes
-![](cia%20memees.png)
+![](cia%20memes.png)
 
 # hitler lost
 ![](hitler%20ghost%20lost.png)
@@ -26,7 +26,7 @@
 ![](generic/military%20funding.png)
 
 # war profiteering
-![](generic/war%profiteering.png)
+![](generic/war%20profiteering.png)
 
 # boycott
 ![](generic/boycott.png)
