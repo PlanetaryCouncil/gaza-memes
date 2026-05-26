@@ -98,19 +98,16 @@
             <section class="config-block">
               <div class="section-heading">
                 <p class="toolbar-label">Connection</p>
-                <h2>Supabase session</h2>
+                <h2>Bot protection</h2>
               </div>
               <p class="section-copy">
-                Add your Supabase credentials to <code>supabase-config.js</code>, then start an
-                anonymous session before collecting ratings.
+                Add your Supabase credentials to <code>supabase-config.js</code>. When CAPTCHA is
+                enabled, the app signs in anonymously automatically during save.
               </p>
               <div id="connection-status" class="status-card status-warn">
                 Supabase is not configured yet.
               </div>
               <div id="captcha-slot" class="captcha-slot"></div>
-              <button id="session-button" class="primary-button" type="button">
-                Start anonymous session
-              </button>
             </section>
 
             <button id="submit-button" class="primary-button" type="submit">

@@ -6,7 +6,6 @@ const state = {
   currentImage: null,
   images: [],
   ratedImages: loadLocalSession(),
-  authReady: false,
   captchaToken: null,
   captchaWidgetId: null,
   score: 5,
@@ -25,7 +24,6 @@ const els = {
   scoreValue: document.querySelector("#score-value"),
   starRating: document.querySelector("#star-rating"),
   allowSeen: document.querySelector("#seen-toggle"),
-  sessionButton: document.querySelector("#session-button"),
   connectionStatus: document.querySelector("#connection-status"),
   captchaSlot: document.querySelector("#captcha-slot")
 };
@@ -34,7 +32,6 @@ boot();
 
 async function boot() {
   wireEvents();
-  els.submitButton.disabled = true;
   els.skipButton.disabled = true;
 
   try {
@@ -70,7 +67,6 @@ function wireEvents() {
     clearForm();
   });
 
-  els.sessionButton.addEventListener("click", startAnonymousSession);
   els.ratingForm.addEventListener("submit", submitRating);
 }
 
@@ -108,7 +104,9 @@ function setupSupabase() {
   state.supabase = window.supabase.createClient(config.supabaseUrl, config.supabaseAnonKey);
   setStatus(
     els.connectionStatus,
-    "Supabase configured. Start an anonymous session to enable saving.",
+    config.requireCaptchaForAuth
+      ? "Supabase configured. Complete CAPTCHA when you are ready to save."
+      : "Supabase configured. Ratings will sign in and save automatically.",
     "ok"
   );
 
@@ -121,7 +119,7 @@ function setupSupabase() {
           state.captchaToken = token;
           setStatus(
             els.connectionStatus,
-            "CAPTCHA solved. You can start the anonymous session now.",
+            "CAPTCHA solved. Your next save will sign in automatically.",
             "ok"
           );
         },
@@ -143,47 +141,43 @@ function waitForTurnstile(callback) {
   window.setTimeout(() => waitForTurnstile(callback), 150);
 }
 
-async function startAnonymousSession() {
+async function ensureAnonymousSession() {
   if (!state.supabase) {
-    setStatus(els.connectionStatus, "Add Supabase config before starting a session.", "warn");
-    return;
+    throw new Error("Add Supabase config before saving ratings.");
   }
 
   const config = window.SUPABASE_CONFIG || {};
+  const {
+    data: { session }
+  } = await state.supabase.auth.getSession();
+
+  if (session) {
+    return session;
+  }
+
   if (config.requireCaptchaForAuth && !state.captchaToken) {
-    setStatus(
-      els.connectionStatus,
-      "Complete the CAPTCHA first so anonymous sign-in is harder to abuse.",
-      "warn"
-    );
-    return;
+    throw new Error("Complete the CAPTCHA first so anonymous sign-in is harder to abuse.");
   }
 
-  els.sessionButton.disabled = true;
-  try {
-    const options = state.captchaToken ? { captchaToken: state.captchaToken } : undefined;
-    const { error } = await state.supabase.auth.signInAnonymously({ options });
+  const options = state.captchaToken ? { captchaToken: state.captchaToken } : undefined;
+  const { error, data } = await state.supabase.auth.signInAnonymously({ options });
 
-    if (error) {
-      throw error;
-    }
-
-    state.authReady = true;
-    els.submitButton.disabled = false;
-    setStatus(
-      els.connectionStatus,
-      "Anonymous session ready. Ratings will be saved to Supabase.",
-      "ok"
-    );
-    setStatus(
-      els.formStatus,
-      "Session ready. Pick a score and submit your feedback.",
-      "muted"
-    );
-  } catch (error) {
-    els.sessionButton.disabled = false;
-    setStatus(els.connectionStatus, `Could not start session: ${error.message}`, "error");
+  if (error) {
+    throw error;
   }
+
+  state.captchaToken = null;
+  if (state.captchaWidgetId !== null && window.turnstile) {
+    window.turnstile.reset(state.captchaWidgetId);
+  }
+
+  setStatus(
+    els.connectionStatus,
+    "Protected session ready. Ratings will be saved to Supabase.",
+    "ok"
+  );
+
+  return data.session;
 }
 
 function renderRandomImage() {
@@ -208,37 +202,38 @@ function renderRandomImage() {
 async function submitRating(event) {
   event.preventDefault();
 
-  if (!state.authReady || !state.supabase || !state.currentImage) {
-    setStatus(els.formStatus, "Start a session before submitting ratings.", "warn");
+  if (!state.supabase || !state.currentImage) {
+    setStatus(els.formStatus, "Add Supabase config before submitting ratings.", "warn");
     return;
   }
 
   const formData = new FormData(els.ratingForm);
-  const {
-    data: { user },
-    error: authError
-  } = await state.supabase.auth.getUser();
-
-  if (authError || !user) {
-    setStatus(els.formStatus, "Could not resolve the active user session.", "error");
-    return;
-  }
-
-  const payload = {
-    user_id: user.id,
-    image_path: state.currentImage.path,
-    image_folder: state.currentImage.folder,
-    image_name: state.currentImage.name,
-    score: state.score,
-    negative_feedback: String(formData.get("negative") || "").trim(),
-    neutral_feedback: String(formData.get("neutral") || "").trim(),
-    positive_feedback: String(formData.get("positive") || "").trim()
-  };
-
   els.submitButton.disabled = true;
-  setStatus(els.formStatus, "Saving rating...", "muted");
+  setStatus(els.formStatus, "Preparing protected save...", "muted");
 
   try {
+    await ensureAnonymousSession();
+    const {
+      data: { user },
+      error: authError
+    } = await state.supabase.auth.getUser();
+
+    if (authError || !user) {
+      throw new Error("Could not resolve the active user session.");
+    }
+
+    const payload = {
+      user_id: user.id,
+      image_path: state.currentImage.path,
+      image_folder: state.currentImage.folder,
+      image_name: state.currentImage.name,
+      score: state.score,
+      negative_feedback: String(formData.get("negative") || "").trim(),
+      neutral_feedback: String(formData.get("neutral") || "").trim(),
+      positive_feedback: String(formData.get("positive") || "").trim()
+    };
+
+    setStatus(els.formStatus, "Saving rating...", "muted");
     const { error } = await state.supabase
       .from((window.SUPABASE_CONFIG || {}).ratingsTable || "image_ratings")
       .insert(payload);
@@ -259,7 +254,7 @@ async function submitRating(event) {
   } catch (error) {
     setStatus(els.formStatus, `Save failed: ${error.message}`, "error");
   } finally {
-    els.submitButton.disabled = !state.authReady;
+    els.submitButton.disabled = false;
   }
 }
 

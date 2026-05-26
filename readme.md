@@ -121,7 +121,7 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 ![](memes/paradox%20of%20impunity%20v2.png)
 
 ## wasteland
-![](memes/wasteland%20-w.png)
+![](memes/wasteland%20-w.jpg)
 
 ## weaponisation antisemitism
 ![](memes/weaponisation%20antisemitism.png)
