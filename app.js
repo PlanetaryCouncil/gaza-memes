@@ -1,11 +1,10 @@
 const IMAGE_MANIFEST_PATH = "data/images.txt";
+const DEFAULT_PAGE_TITLE = "Ministry of Memes and Better Propaganda";
 
 const state = {
   supabase: null,
   currentImage: null,
   currentIndex: -1,
-  history: [],
-  historyCursor: -1,
   images: [],
   totalCount: 0,
   skippedCount: 0,
@@ -50,7 +49,7 @@ async function boot() {
 
   try {
     state.images = await loadImages();
-    renderRandomImage();
+    renderInitialImage();
     els.previousButton.disabled = false;
     els.nextButton.disabled = false;
   } catch (error) {
@@ -105,6 +104,7 @@ function wireEvents() {
   });
 
   els.ratingForm.addEventListener("submit", submitRating);
+  window.addEventListener("hashchange", handleHashNavigation);
 }
 
 async function loadImages() {
@@ -216,25 +216,32 @@ async function ensureAnonymousSession() {
   return data.session;
 }
 
-function renderRandomImage() {
+function renderInitialImage() {
   if (!state.images.length) {
     els.imageTitle.textContent = "No images found";
+    document.title = DEFAULT_PAGE_TITLE;
+    return;
+  }
+
+  const hashIndex = getIndexFromHash();
+  if (hashIndex !== -1) {
+    state.currentIndex = hashIndex;
+    renderCurrentImage();
     return;
   }
 
   state.currentIndex = Math.floor(Math.random() * state.images.length);
-  state.history = [state.currentIndex];
-  state.historyCursor = 0;
   renderCurrentImage();
 }
 
 function navigatePrevious() {
-  if (state.historyCursor <= 0) {
+  if (!state.images.length) {
     return;
   }
 
-  state.historyCursor -= 1;
-  state.currentIndex = state.history[state.historyCursor];
+  state.currentIndex = state.currentIndex <= 0
+    ? state.images.length - 1
+    : state.currentIndex - 1;
   renderCurrentImage();
 }
 
@@ -250,18 +257,9 @@ function navigateNext() {
     renderCounters();
   }
 
-  if (state.historyCursor < state.history.length - 1) {
-    state.historyCursor += 1;
-    state.currentIndex = state.history[state.historyCursor];
-    renderCurrentImage();
-    return;
-  }
-
   state.currentIndex = state.currentIndex === -1
     ? 0
     : (state.currentIndex + 1 + state.images.length) % state.images.length;
-  state.history.push(state.currentIndex);
-  state.historyCursor = state.history.length - 1;
   renderCurrentImage();
 }
 
@@ -274,7 +272,42 @@ function renderCurrentImage() {
   els.imageTitle.textContent = prettifyName(state.currentImage.name);
   els.imageView.src = encodeURI(state.currentImage.path);
   els.imageView.alt = state.currentImage.name;
+  document.title = `${prettifyName(state.currentImage.name)} | ${DEFAULT_PAGE_TITLE}`;
+  syncHashToCurrentImage();
   hydrateFormFromCurrentImage();
+}
+
+function getIndexFromHash() {
+  const rawHash = window.location.hash.slice(1);
+  if (!rawHash) {
+    return -1;
+  }
+
+  const decodedPath = decodeURIComponent(rawHash);
+  return state.images.findIndex((image) => image.path === decodedPath);
+}
+
+function syncHashToCurrentImage() {
+  if (!state.currentImage) {
+    return;
+  }
+
+  const nextHash = `#${encodeURIComponent(state.currentImage.path)}`;
+  if (window.location.hash === nextHash) {
+    return;
+  }
+
+  window.history.replaceState(null, "", nextHash);
+}
+
+function handleHashNavigation() {
+  const hashIndex = getIndexFromHash();
+  if (hashIndex === -1 || hashIndex === state.currentIndex) {
+    return;
+  }
+
+  state.currentIndex = hashIndex;
+  renderCurrentImage();
 }
 
 async function submitRating(event) {

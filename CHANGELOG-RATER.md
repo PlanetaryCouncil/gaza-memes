@@ -18,6 +18,9 @@
 
 - Replaced old skip behavior with `Previous` and `Next`.
 - Uses a shuffled deck so the session is random but navigable.
+- Restored circular deck navigation after an intermediate history-only model proved to be the wrong UX.
+- `save ➡️` now advances to the next image while still allowing `Previous` to return to the image just rated.
+- Added URL-hash deep links so each image can be shared directly.
 
 ## Rating UX
 
@@ -62,9 +65,26 @@
 - Commented-out image references are ignored.
 - URL-escaped paths are decoded.
 - Non-existent files are excluded from the final manifest.
+- Fixed a bug where the last folder in `data/folders_to_include.txt` could be skipped if the file had no trailing newline.
 
 ## Supporting docs
 
 - Added `scripts/readme.md` with script usage instructions.
 - Added `ACCEPTANCE_CRITERIA.md` for behavioral requirements.
 - Added this `CHANGELOG-RATER.md` for practical project memory across toolchains.
+
+## Sharing and metadata
+
+- Added Open Graph metadata for page-level link previews.
+- Added Twitter card metadata for page-level link previews.
+- Set the default share image to `memes-homepage/ministry-of-memes.png`.
+- Noted the limitation that hash-based image links are great for humans, but social crawlers still use page-level metadata.
+
+## Test coverage
+
+- Added Playwright E2E coverage.
+- Current E2E checks cover:
+  - save → next → previous restore flow
+  - skipped counter behavior
+  - hash-based deep linking to an exact image
+  - circular `Previous` navigation through the shuffled deck

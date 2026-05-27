@@ -94,3 +94,34 @@ test("skipped counter only increases when moving next from a new unrated image",
   await page.locator("#next-button").click();
   await expect(skipped).toHaveText("1");
 });
+
+test("current image is reflected in the hash and can be restored from a shared URL", async ({ page }) => {
+  await page.goto("/");
+
+  const currentImage = page.locator("#image-view");
+  const initialSrc = await currentImage.getAttribute("src");
+  const currentHash = await page.evaluate(() => window.location.hash);
+
+  expect(currentHash).toBeTruthy();
+  expect(decodeURIComponent(currentHash.slice(1))).toBe(decodeURIComponent(initialSrc ?? ""));
+
+  await page.locator("#next-button").click();
+  const nextHash = await page.evaluate(() => window.location.hash);
+  expect(nextHash).not.toBe(currentHash);
+
+  await page.goto(`/${nextHash}`);
+  await expect(page.locator("#image-view")).toHaveAttribute("src", decodeURIComponent(nextHash.slice(1)));
+});
+
+test("previous wraps through the shuffled deck instead of stopping at visit history", async ({ page }) => {
+  await page.goto("/");
+
+  const initialHash = await page.evaluate(() => window.location.hash);
+
+  await page.locator("#previous-button").click();
+  const previousHash = await page.evaluate(() => window.location.hash);
+  expect(previousHash).not.toBe(initialHash);
+
+  await page.locator("#next-button").click();
+  await expect.poll(async () => page.evaluate(() => window.location.hash)).toBe(initialHash);
+});
