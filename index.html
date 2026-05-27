@@ -39,8 +39,7 @@
   <body>
     <section id="intro-overlay" class="intro-overlay" aria-label="Intro screen">
       <video
-        id="intro-video"
-        class="intro-video"
+        class="intro-video intro-video-blur"
         autoplay
         muted
         loop
@@ -49,6 +48,21 @@
       >
         <source src="animated/post%20rule%20of%20law%20-%20looped.mp4" type="video/mp4">
       </video>
+      <div class="intro-stage">
+        <div class="intro-video-frame">
+          <video
+            id="intro-video"
+            class="intro-video intro-video-main"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+          >
+            <source src="animated/post%20rule%20of%20law%20-%20looped.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
       <div class="intro-scrim"></div>
       <div class="intro-copy">
         <p class="intro-kicker">Ministry of Memes</p>
