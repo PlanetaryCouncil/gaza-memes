@@ -117,7 +117,7 @@ build_from_root_readme() {
 
 : > "$output_file"
 
-while IFS= read -r folder; do
+while IFS= read -r folder || [[ -n "$folder" ]]; do
   [[ -z "$folder" ]] && continue
   if [[ -f "$repo_root/$folder/readme.md" ]]; then
     build_from_folder_readme "$folder" >> "$output_file"
