@@ -158,6 +158,15 @@ body.modal-open {
   outline-offset: 4px;
 }
 
+.intro-note {
+  margin: 16px auto 0;
+  max-width: 44rem;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  color: rgba(255, 248, 238, 0.88);
+  text-wrap: balance;
+}
+
 img {
   display: block;
   max-width: 100%;
