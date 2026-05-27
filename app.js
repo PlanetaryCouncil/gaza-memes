@@ -24,6 +24,8 @@ const state = {
 };
 
 const els = {
+  introOverlay: document.querySelector("#intro-overlay"),
+  introProceed: document.querySelector("#intro-proceed"),
   imageTitle: document.querySelector("#image-title"),
   imageView: document.querySelector("#image-view"),
   previousButton: document.querySelector("#previous-button"),
@@ -88,6 +90,8 @@ function hasRequiredElements() {
     els.starRating &&
     els.connectionStatus &&
     els.captchaSlot &&
+    els.introOverlay &&
+    els.introProceed &&
     els.modalOverlay &&
     els.modalTitle &&
     els.modalContent &&
@@ -122,6 +126,7 @@ function wireEvents() {
   });
 
   els.ratingForm.addEventListener("submit", submitRating);
+  els.introProceed.addEventListener("click", dismissIntro);
   els.footerButtons.forEach((button) => {
     button.addEventListener("click", () => {
       openFragmentModal(button.dataset.fragment || "", button.textContent?.trim() || "");
@@ -138,6 +143,11 @@ function wireEvents() {
   window.addEventListener("resize", updateStarSizing);
   window.addEventListener("load", updateStarSizing);
   setupStarResizeObserver();
+}
+
+function dismissIntro() {
+  els.introOverlay.hidden = true;
+  document.body.classList.remove("intro-open");
 }
 
 async function openFragmentModal(fragmentName, label) {

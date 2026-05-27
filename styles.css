@@ -34,8 +34,96 @@ body {
     linear-gradient(180deg, var(--bg) 0%, #efe6d6 100%);
 }
 
+body.intro-open {
+  overflow: hidden;
+}
+
 body.modal-open {
   overflow: hidden;
+}
+
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+.intro-overlay[hidden] {
+  display: none;
+}
+
+.intro-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(6, 12, 10, 0.16) 0%, rgba(6, 12, 10, 0.38) 48%, rgba(6, 12, 10, 0.84) 100%);
+}
+
+.intro-copy {
+  position: relative;
+  z-index: 1;
+  width: min(760px, calc(100% - 32px));
+  padding: 0 0 36px;
+  text-align: center;
+  color: #fff8ee;
+}
+
+.intro-kicker {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.84;
+}
+
+.intro-copy h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 6vw, 4.8rem);
+  line-height: 0.95;
+  text-wrap: balance;
+  text-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.intro-button {
+  margin-top: 22px;
+  min-height: 58px;
+  padding: 0 26px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f2d58a, #f7e1a7);
+  color: #12392b;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.26);
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+.intro-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+}
+
+.intro-button:focus-visible {
+  outline: 2px solid rgba(255, 248, 238, 0.9);
+  outline-offset: 4px;
 }
 
 img {

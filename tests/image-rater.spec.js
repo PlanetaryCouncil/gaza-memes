@@ -53,8 +53,16 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
+async function dismissIntro(page) {
+  const proceed = page.locator("#intro-proceed");
+  if (await proceed.isVisible()) {
+    await proceed.click();
+  }
+}
+
 test("save then previous returns to the same rated image with data restored", async ({ page }) => {
   await page.goto("/");
+  await dismissIntro(page);
 
   const title = page.locator("#image-title");
   const beforeSaveTitle = await title.textContent();
@@ -78,6 +86,7 @@ test("save then previous returns to the same rated image with data restored", as
 
 test("skipped counter only increases when moving next from a new unrated image", async ({ page }) => {
   await page.goto("/");
+  await dismissIntro(page);
 
   const skipped = page.locator("#skipped-count");
   const previousButton = page.locator("#previous-button");
@@ -98,6 +107,7 @@ test("skipped counter only increases when moving next from a new unrated image",
 
 test("current image is reflected in the hash and can be restored from a shared URL", async ({ page }) => {
   await page.goto("/");
+  await dismissIntro(page);
 
   const currentImage = page.locator("#image-view");
   const initialSrc = await currentImage.getAttribute("src");
@@ -121,6 +131,7 @@ test("current image is reflected in the hash and can be restored from a shared U
 
 test("previous stops at the first item instead of wrapping around", async ({ page }) => {
   await page.goto("/");
+  await dismissIntro(page);
 
   const title = page.locator("#image-title");
   const previousButton = page.locator("#previous-button");
@@ -147,6 +158,7 @@ test("previous stops at the first item instead of wrapping around", async ({ pag
 test("mobile keeps all ten stars on a single row", async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 800 });
   await page.goto("/");
+  await dismissIntro(page);
 
   const starButtons = page.locator("#star-rating .star-button");
   await expect(starButtons).toHaveCount(10);

@@ -37,6 +37,28 @@
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   </head>
   <body>
+    <section id="intro-overlay" class="intro-overlay" aria-label="Intro screen">
+      <video
+        id="intro-video"
+        class="intro-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+      >
+        <source src="animated/post%20rule%20of%20law%20-%20looped.mp4" type="video/mp4">
+      </video>
+      <div class="intro-scrim"></div>
+      <div class="intro-copy">
+        <p class="intro-kicker">Ministry of Memes</p>
+        <h1>Help decide which memes hit hardest.</h1>
+        <button id="intro-proceed" class="intro-button" type="button">
+          Help improve the memes
+        </button>
+      </div>
+    </section>
+
     <div class="page-shell">
       <main class="layout">
         <section class="panel app-panel">
