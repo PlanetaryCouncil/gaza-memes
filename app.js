@@ -13,6 +13,7 @@ const state = {
   skippedPaths: new Set(),
   captchaToken: null,
   captchaWidgetId: null,
+  starResizeObserver: null,
   score: null,
   hoverScore: null
 };
@@ -80,6 +81,7 @@ function hasRequiredElements() {
 
 function wireEvents() {
   buildStarRating();
+  updateStarSizing();
 
   els.starRating.addEventListener("mousemove", (event) => {
     state.hoverScore = getScoreFromContainer(event.clientX);
@@ -105,6 +107,9 @@ function wireEvents() {
 
   els.ratingForm.addEventListener("submit", submitRating);
   window.addEventListener("hashchange", handleHashNavigation);
+  window.addEventListener("resize", updateStarSizing);
+  window.addEventListener("load", updateStarSizing);
+  setupStarResizeObserver();
 }
 
 async function loadImages() {
@@ -413,6 +418,33 @@ function buildStarRating() {
 
   els.starRating.appendChild(fragment);
   renderScoreState();
+}
+
+function setupStarResizeObserver() {
+  if (!("ResizeObserver" in window)) {
+    return;
+  }
+
+  state.starResizeObserver?.disconnect();
+  state.starResizeObserver = new window.ResizeObserver(() => {
+    updateStarSizing();
+  });
+  state.starResizeObserver.observe(els.starRating);
+}
+
+function updateStarSizing() {
+  const buttons = els.starRating.querySelectorAll(".star-button");
+  if (!buttons.length) {
+    return;
+  }
+
+  const styles = window.getComputedStyle(els.starRating);
+  const paddingLeft = Number.parseFloat(styles.paddingLeft) || 0;
+  const paddingRight = Number.parseFloat(styles.paddingRight) || 0;
+  const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0;
+  const availableWidth = els.starRating.clientWidth - paddingLeft - paddingRight;
+  const starSize = Math.max(18, Math.min(44, Math.floor((availableWidth - gap * 9) / 10)));
+  els.starRating.style.setProperty("--star-size", `${starSize}px`);
 }
 
 function setScore(value) {

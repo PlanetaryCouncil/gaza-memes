@@ -61,18 +61,20 @@
 
           <form id="rating-form" class="rating-form">
             <section class="rating-row">
-              <div class="rating-side">
-                <p class="score-pill"><strong id="score-value">...</strong><span>/10</span></p>
-              </div>
-
               <fieldset class="star-field">
                 <legend class="sr-only">Score from 0 to 10 in half-point steps</legend>
                 <div id="star-rating" class="star-rating" role="radiogroup" aria-label="Image score"></div>
               </fieldset>
 
-              <button id="submit-button" class="primary-button save-button" type="submit">
-                save ➡️
-              </button>
+              <div class="rating-meta">
+                <div class="rating-side">
+                  <p class="score-pill"><strong id="score-value">...</strong><span>/10</span></p>
+                </div>
+
+                <button id="submit-button" class="primary-button save-button" type="submit">
+                  save ➡️
+                </button>
+              </div>
             </section>
 
             <label class="field-group" for="negative">

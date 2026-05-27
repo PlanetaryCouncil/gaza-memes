@@ -110,7 +110,12 @@ test("current image is reflected in the hash and can be restored from a shared U
   expect(nextHash).not.toBe(currentHash);
 
   await page.goto(`/${nextHash}`);
-  await expect(page.locator("#image-view")).toHaveAttribute("src", decodeURIComponent(nextHash.slice(1)));
+  await expect
+    .poll(async () => {
+      const src = await page.locator("#image-view").getAttribute("src");
+      return decodeURIComponent(src ?? "");
+    })
+    .toBe(decodeURIComponent(nextHash.slice(1)));
 });
 
 test("previous wraps through the shuffled deck instead of stopping at visit history", async ({ page }) => {
@@ -124,4 +129,18 @@ test("previous wraps through the shuffled deck instead of stopping at visit hist
 
   await page.locator("#next-button").click();
   await expect.poll(async () => page.evaluate(() => window.location.hash)).toBe(initialHash);
+});
+
+test("mobile keeps all ten stars on a single row", async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 800 });
+  await page.goto("/");
+
+  const starButtons = page.locator("#star-rating .star-button");
+  await expect(starButtons).toHaveCount(10);
+
+  const tops = await starButtons.evaluateAll((nodes) =>
+    nodes.map((node) => Math.round(node.getBoundingClientRect().top))
+  );
+
+  expect(new Set(tops).size).toBe(1);
 });

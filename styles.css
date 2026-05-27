@@ -193,9 +193,15 @@ code {
 }
 
 .rating-row {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rating-meta {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 14px;
 }
 
@@ -242,6 +248,7 @@ code {
   padding: 0;
   border: 0;
   min-width: 0;
+  width: 100%;
 }
 
 .sr-only {
@@ -257,21 +264,25 @@ code {
 }
 
 .star-rating {
+  --star-size: 44px;
+  --star-gap: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-wrap: nowrap;
+  gap: var(--star-gap);
   padding: 18px 12px;
   border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(57, 41, 23, 0.1);
+  overflow: hidden;
 }
 
 .star-button {
   position: relative;
-  width: 44px;
-  height: 44px;
+  width: var(--star-size);
+  height: var(--star-size);
+  flex: 0 0 auto;
   border: 0;
   padding: 0;
   background: transparent;
@@ -285,7 +296,7 @@ code {
   inset: 0;
   display: grid;
   place-items: center;
-  font-size: 2.5rem;
+  font-size: calc(var(--star-size) * 0.95);
   line-height: 1;
 }
 
@@ -370,8 +381,8 @@ button:focus {
 }
 
 .save-button {
-  align-self: center;
   white-space: nowrap;
+  margin-left: auto;
 }
 
 .primary-button:hover {
@@ -442,7 +453,10 @@ button:focus {
   }
 
   .rating-row {
-    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .rating-meta {
     gap: 10px;
   }
 
@@ -491,18 +505,9 @@ button:focus {
   }
 
   .star-rating {
-    gap: 6px;
-    padding: 14px 8px;
-  }
-
-  .star-button {
-    width: 32px;
-    height: 32px;
-  }
-
-  .star-button::before,
-  .star-button::after {
-    font-size: 1.9rem;
+    --star-size: 24px;
+    --star-gap: 2px;
+    padding: 12px 4px;
   }
 
   .score-pill {
