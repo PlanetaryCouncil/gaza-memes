@@ -20,6 +20,11 @@
               &#8592;
             </button>
             <h1 id="image-title">Loading images...</h1>
+            <div class="header-counters" aria-label="Session counters">
+              <p><span>Total</span><strong id="total-count">0</strong></p>
+              <p><span>Skipped</span><strong id="skipped-count">0</strong></p>
+              <p><span>Rated</span><strong id="rated-count">0</strong></p>
+            </div>
             <button id="next-button" class="nav-button" type="button" aria-label="Next image">
               &#8594;
             </button>
@@ -29,51 +34,24 @@
             <img id="image-view" alt="Image being rated">
           </div>
 
-          <div class="image-meta">
-            <span id="image-folder" class="meta-pill">Folder</span>
-            <a id="image-link" class="meta-link" href="#" target="_blank" rel="noreferrer">
-              Open original
-            </a>
-          </div>
-
           <form id="rating-form" class="rating-form">
-            <section class="section-heading rating-heading">
-              <div>
-                <p class="toolbar-label">Rating</p>
-                <h2>Score this image</h2>
+            <section class="rating-row">
+              <div class="rating-side">
+                <p class="score-pill"><strong id="score-value">...</strong><span>/10</span></p>
               </div>
-              <p class="score-pill"><strong id="score-value">5.0</strong><span>/10</span></p>
+
+              <fieldset class="star-field">
+                <legend class="sr-only">Score from 0 to 10 in half-point steps</legend>
+                <div id="star-rating" class="star-rating" role="radiogroup" aria-label="Image score"></div>
+              </fieldset>
+
+              <button id="submit-button" class="primary-button save-button" type="submit">
+                save ➡️
+              </button>
             </section>
 
-            <fieldset class="star-field">
-              <legend class="sr-only">Score from 0 to 10 in half-point steps</legend>
-              <div id="star-rating" class="star-rating" role="radiogroup" aria-label="Image score"></div>
-            </fieldset>
-
             <label class="field-group" for="negative">
-              <span>Negative</span>
-              <textarea
-                id="negative"
-                name="negative"
-                rows="3"
-                maxlength="280"
-                placeholder="What hurts the image?"
-              ></textarea>
-            </label>
-
-            <label class="field-group" for="neutral">
-              <span>Neutral</span>
-              <textarea
-                id="neutral"
-                name="neutral"
-                rows="3"
-                maxlength="280"
-                placeholder="Balanced or informational notes"
-              ></textarea>
-            </label>
-
-            <label class="field-group" for="positive">
-              <span>Positive</span>
+              <span>✅ Positive</span>
               <textarea
                 id="positive"
                 name="positive"
@@ -83,16 +61,40 @@
               ></textarea>
             </label>
 
-            <button id="submit-button" class="primary-button" type="submit">
-              Save rating
-            </button>
+            <label class="field-group" for="neutral">
+              <span>🔄 Neutral</span>
+              <textarea
+                id="neutral"
+                name="neutral"
+                rows="3"
+                maxlength="280"
+                placeholder="Balanced or informational notes"
+              ></textarea>
+            </label>
+
+            <label class="field-group" for="negative">
+              <span>⛔️ Negative</span>
+              <textarea
+                id="negative"
+                name="negative"
+                rows="3"
+                maxlength="280"
+                placeholder="What hurts the image?"
+              ></textarea>
+            </label>
           </form>
 
           <div id="captcha-slot" class="captcha-slot"></div>
           <div id="connection-status" class="status-card status-muted"></div>
-          <div id="form-status" class="status-card status-muted">
-            Waiting for configuration.
-          </div>
+          <div id="form-status" class="status-card status-muted"></div>
+        </section>
+
+        <section class="panel about-panel">
+          <h2>About</h2>
+          <p>
+            Rate the image from 0.0 to 10.0, add positive, neutral, and negative feedback,
+            then save to move on to another random image from the curated set.
+          </p>
         </section>
       </main>
     </div>

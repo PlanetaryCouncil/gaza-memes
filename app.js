@@ -1,29 +1,35 @@
 const IMAGE_MANIFEST_PATH = "data/images.txt";
-const SESSION_STORAGE_KEY = "planetary-council-rater";
 
 const state = {
   supabase: null,
   currentImage: null,
   currentIndex: -1,
+  history: [],
+  historyCursor: -1,
   images: [],
-  ratedImages: loadLocalSession(),
+  totalCount: 0,
+  skippedCount: 0,
+  ratedCount: 0,
+  ratedByPath: {},
+  skippedPaths: new Set(),
   captchaToken: null,
   captchaWidgetId: null,
-  score: 5,
+  score: null,
   hoverScore: null
 };
 
 const els = {
   imageTitle: document.querySelector("#image-title"),
   imageView: document.querySelector("#image-view"),
-  imageFolder: document.querySelector("#image-folder"),
-  imageLink: document.querySelector("#image-link"),
   previousButton: document.querySelector("#previous-button"),
   nextButton: document.querySelector("#next-button"),
   ratingForm: document.querySelector("#rating-form"),
   submitButton: document.querySelector("#submit-button"),
   formStatus: document.querySelector("#form-status"),
   scoreValue: document.querySelector("#score-value"),
+  totalCount: document.querySelector("#total-count"),
+  skippedCount: document.querySelector("#skipped-count"),
+  ratedCount: document.querySelector("#rated-count"),
   starRating: document.querySelector("#star-rating"),
   connectionStatus: document.querySelector("#connection-status"),
   captchaSlot: document.querySelector("#captcha-slot")
@@ -38,6 +44,7 @@ async function boot() {
   }
 
   wireEvents();
+  els.submitButton.disabled = true;
   els.previousButton.disabled = true;
   els.nextButton.disabled = true;
 
@@ -57,14 +64,15 @@ function hasRequiredElements() {
   return Boolean(
     els.imageTitle &&
     els.imageView &&
-    els.imageFolder &&
-    els.imageLink &&
     els.previousButton &&
     els.nextButton &&
     els.ratingForm &&
     els.submitButton &&
     els.formStatus &&
     els.scoreValue &&
+    els.totalCount &&
+    els.skippedCount &&
+    els.ratedCount &&
     els.starRating &&
     els.connectionStatus &&
     els.captchaSlot
@@ -89,13 +97,11 @@ function wireEvents() {
   });
 
   els.previousButton.addEventListener("click", () => {
-    stepImage(-1);
-    clearForm();
+    navigatePrevious();
   });
 
   els.nextButton.addEventListener("click", () => {
-    stepImage(1);
-    clearForm();
+    navigateNext();
   });
 
   els.ratingForm.addEventListener("submit", submitRating);
@@ -117,6 +123,8 @@ async function loadImages() {
       folder: path.includes("/") ? path.slice(0, path.lastIndexOf("/")) : "root",
       name: path.split("/").pop()
     }));
+  state.totalCount = images.length;
+  renderCounters();
   return shuffle(images);
 }
 
@@ -149,11 +157,7 @@ function setupSupabase() {
         theme: "light",
         callback(token) {
           state.captchaToken = token;
-          setStatus(
-            els.connectionStatus,
-            "CAPTCHA solved. Your next save will sign in automatically.",
-            "ok"
-          );
+          clearStatus(els.connectionStatus);
         },
         "expired-callback"() {
           state.captchaToken = null;
@@ -219,33 +223,58 @@ function renderRandomImage() {
   }
 
   state.currentIndex = Math.floor(Math.random() * state.images.length);
-  state.currentImage = state.images[state.currentIndex];
+  state.history = [state.currentIndex];
+  state.historyCursor = 0;
   renderCurrentImage();
 }
 
-function stepImage(direction) {
+function navigatePrevious() {
+  if (state.historyCursor <= 0) {
+    return;
+  }
+
+  state.historyCursor -= 1;
+  state.currentIndex = state.history[state.historyCursor];
+  renderCurrentImage();
+}
+
+function navigateNext() {
   if (!state.images.length || !state.currentImage) {
+    return;
+  }
+
+  const currentPath = state.currentImage.path;
+  if (state.score === null && !state.ratedByPath[currentPath] && !state.skippedPaths.has(currentPath)) {
+    state.skippedPaths.add(currentPath);
+    state.skippedCount += 1;
+    renderCounters();
+  }
+
+  if (state.historyCursor < state.history.length - 1) {
+    state.historyCursor += 1;
+    state.currentIndex = state.history[state.historyCursor];
+    renderCurrentImage();
     return;
   }
 
   state.currentIndex = state.currentIndex === -1
     ? 0
-    : (state.currentIndex + direction + state.images.length) % state.images.length;
-  state.currentImage = state.images[state.currentIndex];
+    : (state.currentIndex + 1 + state.images.length) % state.images.length;
+  state.history.push(state.currentIndex);
+  state.historyCursor = state.history.length - 1;
   renderCurrentImage();
 }
 
 function renderCurrentImage() {
-  if (!state.currentImage) {
+  if (!state.images.length || state.currentIndex < 0 || state.currentIndex >= state.images.length) {
     return;
   }
 
-  const nextImage = state.currentImage;
-  els.imageTitle.textContent = prettifyName(nextImage.name);
-  els.imageView.src = encodeURI(nextImage.path);
-  els.imageView.alt = nextImage.name;
-  els.imageFolder.textContent = nextImage.folder;
-  els.imageLink.href = encodeURI(nextImage.path);
+  state.currentImage = state.images[state.currentIndex];
+  els.imageTitle.textContent = prettifyName(state.currentImage.name);
+  els.imageView.src = encodeURI(state.currentImage.path);
+  els.imageView.alt = state.currentImage.name;
+  hydrateFormFromCurrentImage();
 }
 
 async function submitRating(event) {
@@ -253,6 +282,11 @@ async function submitRating(event) {
 
   if (!state.supabase || !state.currentImage) {
     setStatus(els.formStatus, "Add Supabase config before submitting ratings.", "warn");
+    return;
+  }
+
+  if (state.score === null) {
+    setStatus(els.formStatus, "Choose a score before saving.", "warn");
     return;
   }
 
@@ -285,21 +319,27 @@ async function submitRating(event) {
     setStatus(els.formStatus, "Saving rating...", "muted");
     const { error } = await state.supabase
       .from((window.SUPABASE_CONFIG || {}).ratingsTable || "image_ratings")
-      .insert(payload);
+      .upsert(payload, { onConflict: "user_id,image_path" });
 
     if (error) {
       throw error;
     }
 
-    state.ratedImages[state.currentImage.path] = {
-      score: payload.score,
-      savedAt: new Date().toISOString()
-    };
-    persistLocalSession();
+    const currentPath = state.currentImage.path;
+    const existingEntry = state.ratedByPath[currentPath];
+    if (!existingEntry) {
+      state.ratedCount += 1;
+    }
 
-    setStatus(els.formStatus, "Rating saved. Loading another random image...", "ok");
-    clearForm();
-    renderRandomImage();
+    state.ratedByPath[currentPath] = {
+      score: state.score,
+      positive: payload.positive_feedback,
+      neutral: payload.neutral_feedback,
+      negative: payload.negative_feedback
+    };
+    renderCounters();
+    setStatus(els.formStatus, "Rating saved. Loading next image...", "ok");
+    navigateNext();
   } catch (error) {
     setStatus(els.formStatus, `Save failed: ${error.message}`, "error");
   } finally {
@@ -309,7 +349,20 @@ async function submitRating(event) {
 
 function clearForm() {
   els.ratingForm.reset();
-  setScore(5);
+  setScore(null);
+}
+
+function hydrateFormFromCurrentImage() {
+  const entry = state.currentImage ? state.ratedByPath[state.currentImage.path] : null;
+  if (!entry) {
+    clearForm();
+    return;
+  }
+
+  document.querySelector("#positive").value = entry.positive || "";
+  document.querySelector("#neutral").value = entry.neutral || "";
+  document.querySelector("#negative").value = entry.negative || "";
+  setScore(entry.score ?? null);
 }
 
 function buildStarRating() {
@@ -330,30 +383,34 @@ function buildStarRating() {
 }
 
 function setScore(value) {
-  state.score = Number(value.toFixed(1));
+  state.score = value === null ? null : Number(value.toFixed(1));
   state.hoverScore = null;
   renderScoreState();
 }
 
 function renderScoreState() {
   const displayScore = state.hoverScore ?? state.score;
-  els.scoreValue.textContent = displayScore.toFixed(1);
+  els.scoreValue.textContent = displayScore === null ? "..." : displayScore.toFixed(1);
+  els.submitButton.disabled = state.score === null;
 
   const buttons = els.starRating.querySelectorAll(".star-button");
   buttons.forEach((button) => {
     const whole = Number(button.dataset.whole);
     let fill = 0;
 
-    if (displayScore >= whole) {
+    if (displayScore !== null && displayScore >= whole) {
       fill = 1;
-    } else if (displayScore === whole - 0.5) {
+    } else if (displayScore !== null && displayScore === whole - 0.5) {
       fill = 0.5;
     }
 
     button.style.setProperty("--fill", String(fill));
     button.classList.toggle("is-active", fill > 0);
     button.classList.toggle("is-preview", state.hoverScore !== null);
-    button.setAttribute("aria-checked", state.score === whole || state.score === whole - 0.5 ? "true" : "false");
+    button.setAttribute(
+      "aria-checked",
+      state.score !== null && (state.score === whole || state.score === whole - 0.5) ? "true" : "false"
+    );
   });
 }
 
@@ -369,17 +426,36 @@ function getScoreFromContainer(pointerX) {
   const rightEdge = lastRect.right;
   const width = Math.max(rightEdge - leftEdge, 1);
   const relativeX = Math.min(Math.max(pointerX - leftEdge, 0), width);
-  const halfSteps = Math.max(1, Math.min(20, Math.ceil((relativeX / width) * 20)));
+  if (relativeX <= width * 0.025) {
+    return 0;
+  }
+  const adjustedX = relativeX - width * 0.025;
+  const adjustedWidth = width * 0.975;
+  const halfSteps = Math.max(1, Math.min(20, Math.round((adjustedX / adjustedWidth) * 19) + 1));
   return halfSteps / 2;
 }
 
 function prettifyName(name) {
-  return name.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ");
+  return name
+    .replace(/\.[^.]+$/, "")
+    .replace(/\s-[A-Za-z]$/, "")
+    .replace(/[-_]+/g, " ");
 }
 
 function setStatus(element, message, tone) {
   element.textContent = message;
   element.className = `status-card status-${tone}`;
+}
+
+function clearStatus(element) {
+  element.textContent = "";
+  element.className = "status-card status-muted";
+}
+
+function renderCounters() {
+  els.totalCount.textContent = String(state.totalCount);
+  els.skippedCount.textContent = String(state.skippedCount);
+  els.ratedCount.textContent = String(state.ratedCount);
 }
 
 function shuffle(items) {
@@ -389,16 +465,4 @@ function shuffle(items) {
     [copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]];
   }
   return copy;
-}
-
-function loadLocalSession() {
-  try {
-    return JSON.parse(window.localStorage.getItem(SESSION_STORAGE_KEY) || "{}");
-  } catch {
-    return {};
-  }
-}
-
-function persistLocalSession() {
-  window.localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(state.ratedImages));
 }

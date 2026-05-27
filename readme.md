@@ -377,7 +377,7 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 
 ## bullets in the head
 **CONTEXT:** https://www.volkskrant.nl/kijkverder/v/2025/gunshot-palestine-children-israel-war~v1819649/
-![bullets in the head -w](memes/bullets%20in%20the%20head%20-w.jpg)
+![bullets in the head -w](memes/bullets%20in%20the%20head%20v2.jpg)
 
 ## standdown order
 **CONTEXT:** [Knesset testimony](https://primal.net/e/nevent1qqs0ja9yewe6tylx654a7duvghvhj5jvkw82tk7u08zkjn2kf8gezpgvh7sd5)
