@@ -80,15 +80,16 @@ test("skipped counter only increases when moving next from a new unrated image",
   await page.goto("/");
 
   const skipped = page.locator("#skipped-count");
+  const previousButton = page.locator("#previous-button");
   await expect(skipped).toHaveText("0");
+  await expect(previousButton).toBeDisabled();
 
-  await page.locator("#previous-button").click();
   await expect(skipped).toHaveText("0");
 
   await page.locator("#next-button").click();
   await expect(skipped).toHaveText("1");
 
-  await page.locator("#previous-button").click();
+  await previousButton.click();
   await expect(skipped).toHaveText("1");
 
   await page.locator("#next-button").click();
@@ -118,17 +119,29 @@ test("current image is reflected in the hash and can be restored from a shared U
     .toBe(decodeURIComponent(nextHash.slice(1)));
 });
 
-test("previous wraps through the shuffled deck instead of stopping at visit history", async ({ page }) => {
+test("previous stops at the first item instead of wrapping around", async ({ page }) => {
   await page.goto("/");
 
-  const initialHash = await page.evaluate(() => window.location.hash);
+  const title = page.locator("#image-title");
+  const previousButton = page.locator("#previous-button");
 
-  await page.locator("#previous-button").click();
-  const previousHash = await page.evaluate(() => window.location.hash);
-  expect(previousHash).not.toBe(initialHash);
+  await expect(title).toHaveText(/^\d+\.\s/);
+  await expect(title).toHaveText(/^1\.\s/);
+  await expect(previousButton).toBeDisabled();
 
   await page.locator("#next-button").click();
-  await expect.poll(async () => page.evaluate(() => window.location.hash)).toBe(initialHash);
+  await expect(title).toHaveText(/^2\.\s/);
+  await expect(previousButton).toBeEnabled();
+
+  await previousButton.click();
+  const firstHash = await page.evaluate(() => window.location.hash);
+  const firstTitle = await title.textContent();
+
+  expect(firstTitle ?? "").toMatch(/^1\.\s/);
+
+  await previousButton.click({ force: true });
+  await expect.poll(async () => page.evaluate(() => window.location.hash)).toBe(firstHash);
+  await expect(title).toHaveText(firstTitle ?? "");
 });
 
 test("mobile keeps all ten stars on a single row", async ({ page }) => {

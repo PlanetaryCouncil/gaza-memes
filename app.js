@@ -7,6 +7,7 @@ const state = {
   supabase: null,
   currentImage: null,
   currentIndex: -1,
+  startIndex: -1,
   images: [],
   contextByPath: {},
   totalCount: 0,
@@ -56,7 +57,6 @@ async function boot() {
     state.images = await loadImages();
     state.contextByPath = await loadContextByImagePath();
     renderInitialImage();
-    els.previousButton.disabled = false;
     els.nextButton.disabled = false;
   } catch (error) {
     setStatus(els.formStatus, `Could not load image manifest: ${error.message}`, "error");
@@ -303,16 +303,23 @@ function renderInitialImage() {
   const hashIndex = getIndexFromHash();
   if (hashIndex !== -1) {
     state.currentIndex = hashIndex;
+    state.startIndex = hashIndex;
     renderCurrentImage();
     return;
   }
 
   state.currentIndex = Math.floor(Math.random() * state.images.length);
+  state.startIndex = state.currentIndex;
   renderCurrentImage();
 }
 
 function navigatePrevious() {
   if (!state.images.length) {
+    return;
+  }
+
+  if (state.currentIndex === state.startIndex) {
+    renderCurrentImage();
     return;
   }
 
@@ -346,13 +353,23 @@ function renderCurrentImage() {
   }
 
   state.currentImage = state.images[state.currentIndex];
-  els.imageTitle.textContent = prettifyName(state.currentImage.name);
+  const displayTitle = `${getSequencePosition()}. ${prettifyName(state.currentImage.name)}`;
+  els.imageTitle.textContent = displayTitle;
   els.imageView.src = encodeURI(state.currentImage.path);
   els.imageView.alt = state.currentImage.name;
-  document.title = `${prettifyName(state.currentImage.name)} | ${DEFAULT_PAGE_TITLE}`;
+  els.previousButton.disabled = state.currentIndex === state.startIndex;
+  document.title = `${displayTitle} | ${DEFAULT_PAGE_TITLE}`;
   renderCurrentContext();
   syncHashToCurrentImage();
   hydrateFormFromCurrentImage();
+}
+
+function getSequencePosition() {
+  if (!state.images.length || state.currentIndex < 0 || state.startIndex < 0) {
+    return 1;
+  }
+
+  return ((state.currentIndex - state.startIndex + state.images.length) % state.images.length) + 1;
 }
 
 function renderCurrentContext() {
