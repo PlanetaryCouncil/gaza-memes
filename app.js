@@ -2,6 +2,7 @@ const IMAGE_MANIFEST_PATH = "data/images.txt";
 const README_CONTEXT_PATH = "readme.md";
 const DEFAULT_PAGE_TITLE = "Ministry of Memes and Better Propaganda";
 const RATING_MARKER = "<!-- MEMES TO BE RATED BELOW THIS LINE -->";
+const FRAGMENT_BASE_PATH = "html-fragments/";
 
 const state = {
   supabase: null,
@@ -37,7 +38,12 @@ const els = {
   imageContext: document.querySelector("#image-context"),
   starRating: document.querySelector("#star-rating"),
   connectionStatus: document.querySelector("#connection-status"),
-  captchaSlot: document.querySelector("#captcha-slot")
+  captchaSlot: document.querySelector("#captcha-slot"),
+  modalOverlay: document.querySelector("#modal-overlay"),
+  modalTitle: document.querySelector("#modal-title"),
+  modalContent: document.querySelector("#modal-content"),
+  modalClose: document.querySelector("#modal-close"),
+  footerButtons: document.querySelectorAll("[data-fragment]")
 };
 
 boot();
@@ -81,7 +87,11 @@ function hasRequiredElements() {
     els.imageContext &&
     els.starRating &&
     els.connectionStatus &&
-    els.captchaSlot
+    els.captchaSlot &&
+    els.modalOverlay &&
+    els.modalTitle &&
+    els.modalContent &&
+    els.modalClose
   );
 }
 
@@ -112,10 +122,56 @@ function wireEvents() {
   });
 
   els.ratingForm.addEventListener("submit", submitRating);
+  els.footerButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      openFragmentModal(button.dataset.fragment || "", button.textContent?.trim() || "");
+    });
+  });
+  els.modalClose.addEventListener("click", closeFragmentModal);
+  els.modalOverlay.addEventListener("click", (event) => {
+    if (event.target === els.modalOverlay) {
+      closeFragmentModal();
+    }
+  });
   window.addEventListener("hashchange", handleHashNavigation);
+  window.addEventListener("keydown", handleKeydown);
   window.addEventListener("resize", updateStarSizing);
   window.addEventListener("load", updateStarSizing);
   setupStarResizeObserver();
+}
+
+async function openFragmentModal(fragmentName, label) {
+  if (!fragmentName) {
+    return;
+  }
+
+  els.modalTitle.textContent = label || "Details";
+  els.modalContent.innerHTML = "<p>Loading…</p>";
+  els.modalOverlay.hidden = false;
+  document.body.classList.add("modal-open");
+
+  try {
+    const response = await fetch(`${FRAGMENT_BASE_PATH}${fragmentName}`, { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    els.modalContent.innerHTML = await response.text();
+  } catch (error) {
+    els.modalContent.innerHTML = `<p>Could not load this section: ${escapeHtml(error.message)}</p>`;
+  }
+}
+
+function closeFragmentModal() {
+  els.modalOverlay.hidden = true;
+  els.modalContent.innerHTML = "";
+  document.body.classList.remove("modal-open");
+}
+
+function handleKeydown(event) {
+  if (event.key === "Escape" && !els.modalOverlay.hidden) {
+    closeFragmentModal();
+  }
 }
 
 async function loadImages() {
