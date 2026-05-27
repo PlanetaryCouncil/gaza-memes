@@ -1,11 +1,14 @@
 const IMAGE_MANIFEST_PATH = "data/images.txt";
+const README_CONTEXT_PATH = "readme.md";
 const DEFAULT_PAGE_TITLE = "Ministry of Memes and Better Propaganda";
+const RATING_MARKER = "<!-- MEMES TO BE RATED BELOW THIS LINE -->";
 
 const state = {
   supabase: null,
   currentImage: null,
   currentIndex: -1,
   images: [],
+  contextByPath: {},
   totalCount: 0,
   skippedCount: 0,
   ratedCount: 0,
@@ -30,6 +33,7 @@ const els = {
   totalCount: document.querySelector("#total-count"),
   skippedCount: document.querySelector("#skipped-count"),
   ratedCount: document.querySelector("#rated-count"),
+  imageContext: document.querySelector("#image-context"),
   starRating: document.querySelector("#star-rating"),
   connectionStatus: document.querySelector("#connection-status"),
   captchaSlot: document.querySelector("#captcha-slot")
@@ -50,6 +54,7 @@ async function boot() {
 
   try {
     state.images = await loadImages();
+    state.contextByPath = await loadContextByImagePath();
     renderInitialImage();
     els.previousButton.disabled = false;
     els.nextButton.disabled = false;
@@ -73,6 +78,7 @@ function hasRequiredElements() {
     els.totalCount &&
     els.skippedCount &&
     els.ratedCount &&
+    els.imageContext &&
     els.starRating &&
     els.connectionStatus &&
     els.captchaSlot
@@ -131,6 +137,76 @@ async function loadImages() {
   state.totalCount = images.length;
   renderCounters();
   return shuffle(images);
+}
+
+async function loadContextByImagePath() {
+  try {
+    const response = await fetch(README_CONTEXT_PATH, { cache: "no-store" });
+    if (!response.ok) {
+      return {};
+    }
+
+    return parseContextMap(await response.text());
+  } catch (_error) {
+    return {};
+  }
+}
+
+function parseContextMap(markdown) {
+  const contextByPath = {};
+  const markerIndex = markdown.indexOf(RATING_MARKER);
+  if (markerIndex === -1) {
+    return contextByPath;
+  }
+
+  const lines = markdown.slice(markerIndex + RATING_MARKER.length).split("\n");
+  let collectingContext = false;
+  let pendingContextLines = [];
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+
+    if (!line || line.startsWith("<!--")) {
+      if (collectingContext) {
+        pendingContextLines.push("");
+      }
+      continue;
+    }
+
+    const contextMatch = line.match(/^\*\*CONTEXT:\*\*\s*(.*)$/);
+    if (contextMatch) {
+      collectingContext = true;
+      pendingContextLines = contextMatch[1] ? [contextMatch[1]] : [];
+      continue;
+    }
+
+    const imagePath = extractImagePath(line);
+    if (imagePath) {
+      const normalizedContext = normalizeContextLines(pendingContextLines);
+      if (normalizedContext) {
+        contextByPath[imagePath] = normalizedContext;
+      }
+      collectingContext = false;
+      pendingContextLines = [];
+      continue;
+    }
+
+    if (collectingContext) {
+      pendingContextLines.push(line);
+    }
+  }
+
+  return contextByPath;
+}
+
+function extractImagePath(line) {
+  const match = line.match(/!\[[^\]]*]\(([^)]+)\)/);
+  return match ? decodeURIComponent(match[1].trim()) : null;
+}
+
+function normalizeContextLines(lines) {
+  const normalized = lines.join("\n").trim();
+  return normalized || "";
 }
 
 function setupSupabase() {
@@ -274,8 +350,21 @@ function renderCurrentImage() {
   els.imageView.src = encodeURI(state.currentImage.path);
   els.imageView.alt = state.currentImage.name;
   document.title = `${prettifyName(state.currentImage.name)} | ${DEFAULT_PAGE_TITLE}`;
+  renderCurrentContext();
   syncHashToCurrentImage();
   hydrateFormFromCurrentImage();
+}
+
+function renderCurrentContext() {
+  const context = state.currentImage ? state.contextByPath[state.currentImage.path] : "";
+  if (!context) {
+    els.imageContext.innerHTML = "";
+    els.imageContext.hidden = true;
+    return;
+  }
+
+  els.imageContext.innerHTML = renderContextHtml(context);
+  els.imageContext.hidden = false;
 }
 
 function getIndexFromHash() {
@@ -500,6 +589,75 @@ function prettifyName(name) {
     .replace(/\.[^.]+$/, "")
     .replace(/\s-[A-Za-z]$/, "")
     .replace(/[-_]+/g, " ");
+}
+
+function renderContextHtml(context) {
+  const lines = context.split("\n");
+  const blocks = [];
+  let paragraphLines = [];
+  let listItems = [];
+
+  const flushParagraph = () => {
+    if (!paragraphLines.length) {
+      return;
+    }
+    blocks.push(`<p>${renderInlineContext(paragraphLines.join(" "))}</p>`);
+    paragraphLines = [];
+  };
+
+  const flushList = () => {
+    if (!listItems.length) {
+      return;
+    }
+    blocks.push(`<ul>${listItems.map((item) => `<li>${renderInlineContext(item)}</li>`).join("")}</ul>`);
+    listItems = [];
+  };
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+    if (!line) {
+      flushParagraph();
+      flushList();
+      continue;
+    }
+
+    if (/^[-*]\s+/.test(line)) {
+      flushParagraph();
+      listItems.push(line.replace(/^[-*]\s+/, ""));
+      continue;
+    }
+
+    if (listItems.length) {
+      flushList();
+    }
+    paragraphLines.push(line);
+  }
+
+  flushParagraph();
+  flushList();
+  return blocks.join("");
+}
+
+function renderInlineContext(text) {
+  const escaped = escapeHtml(text);
+  const withMarkdownLinks = escaped.replace(
+    /\[([^\]]+)]\((https?:\/\/[^)\s]+)\)/g,
+    '<a href="$2" target="_blank" rel="noreferrer">$1</a>'
+  );
+
+  return withMarkdownLinks.replace(
+    /(^|[\s(>])((https?:\/\/[^\s<]+))/g,
+    (_match, prefix, url) => `${prefix}<a href="${url}" target="_blank" rel="noreferrer">${url}</a>`
+  );
+}
+
+function escapeHtml(value) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
 }
 
 function setStatus(element, message, tone) {

@@ -257,6 +257,42 @@ code {
   object-fit: contain;
 }
 
+.image-context {
+  margin-top: -4px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(21, 71, 52, 0.06);
+  border: 1px solid rgba(21, 71, 52, 0.12);
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.image-context p,
+.image-context ul {
+  margin: 0;
+}
+
+.image-context p + p,
+.image-context p + ul,
+.image-context ul + p,
+.image-context ul + ul {
+  margin-top: 10px;
+}
+
+.image-context ul {
+  padding-left: 18px;
+}
+
+.image-context li + li {
+  margin-top: 6px;
+}
+
+.image-context a {
+  color: var(--brand);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.12em;
+}
+
 .rating-form {
   display: flex;
   flex-direction: column;
