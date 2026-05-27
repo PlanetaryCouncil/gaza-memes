@@ -363,7 +363,10 @@ function renderCurrentContext() {
     return;
   }
 
-  els.imageContext.innerHTML = renderContextHtml(context);
+  els.imageContext.innerHTML = `
+    <p class="context-label">CONTEXT:</p>
+    ${renderContextHtml(context)}
+  `;
   els.imageContext.hidden = false;
 }
 

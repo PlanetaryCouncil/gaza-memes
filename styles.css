@@ -272,6 +272,14 @@ code {
   margin: 0;
 }
 
+.image-context .context-label {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--brand-strong);
+}
+
 .image-context p + p,
 .image-context p + ul,
 .image-context ul + p,
