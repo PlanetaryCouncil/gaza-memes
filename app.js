@@ -147,13 +147,8 @@ function setupSupabase() {
   }
 
   state.supabase = window.supabase.createClient(config.supabaseUrl, config.supabaseAnonKey);
-  setStatus(
-    els.connectionStatus,
-    config.requireCaptchaForAuth
-      ? "Supabase configured. Complete CAPTCHA when you are ready to save."
-      : "Supabase configured. Ratings will sign in and save automatically.",
-    "ok"
-  );
+  clearStatus(els.connectionStatus);
+  updateCaptchaVisibility();
 
   if (config.turnstileSiteKey) {
     waitForTurnstile(() => {
@@ -163,12 +158,15 @@ function setupSupabase() {
         callback(token) {
           state.captchaToken = token;
           clearStatus(els.connectionStatus);
+          hideCaptcha();
         },
         "expired-callback"() {
           state.captchaToken = null;
           setStatus(els.connectionStatus, "CAPTCHA expired. Please verify again.", "warn");
+          showCaptcha();
         }
       });
+      updateCaptchaVisibility();
     });
   }
 }
@@ -193,11 +191,13 @@ async function ensureAnonymousSession() {
   } = await state.supabase.auth.getSession();
 
   if (session) {
+    hideCaptcha();
     return session;
   }
 
   if (config.requireCaptchaForAuth && !state.captchaToken) {
-    throw new Error("Complete the CAPTCHA first so anonymous sign-in is harder to abuse.");
+    showCaptcha();
+    throw new Error("Complete the CAPTCHA next to save, then tap save again.");
   }
 
   const options = state.captchaToken ? { captchaToken: state.captchaToken } : undefined;
@@ -211,12 +211,8 @@ async function ensureAnonymousSession() {
   if (state.captchaWidgetId !== null && window.turnstile) {
     window.turnstile.reset(state.captchaWidgetId);
   }
-
-  setStatus(
-    els.connectionStatus,
-    "Protected session ready. Ratings will be saved to Supabase.",
-    "ok"
-  );
+  hideCaptcha();
+  clearStatus(els.connectionStatus);
 
   return data.session;
 }
@@ -330,7 +326,7 @@ async function submitRating(event) {
 
   const formData = new FormData(els.ratingForm);
   els.submitButton.disabled = true;
-  setStatus(els.formStatus, "Preparing protected save...", "muted");
+  clearStatus(els.formStatus);
 
   try {
     await ensureAnonymousSession();
@@ -354,7 +350,6 @@ async function submitRating(event) {
       positive_feedback: String(formData.get("positive") || "").trim()
     };
 
-    setStatus(els.formStatus, "Saving rating...", "muted");
     const { error } = await state.supabase
       .from((window.SUPABASE_CONFIG || {}).ratingsTable || "image_ratings")
       .upsert(payload, { onConflict: "user_id,image_path" });
@@ -376,7 +371,7 @@ async function submitRating(event) {
       negative: payload.negative_feedback
     };
     renderCounters();
-    setStatus(els.formStatus, "Rating saved. Loading next image...", "ok");
+    clearStatus(els.formStatus);
     navigateNext();
   } catch (error) {
     setStatus(els.formStatus, `Save failed: ${error.message}`, "error");
@@ -515,6 +510,33 @@ function setStatus(element, message, tone) {
 function clearStatus(element) {
   element.textContent = "";
   element.className = "status-card status-muted";
+}
+
+function requiresCaptcha() {
+  const config = window.SUPABASE_CONFIG || {};
+  return Boolean(config.requireCaptchaForAuth && config.turnstileSiteKey);
+}
+
+function updateCaptchaVisibility() {
+  if (!requiresCaptcha()) {
+    hideCaptcha();
+    return;
+  }
+
+  if (state.captchaToken) {
+    hideCaptcha();
+    return;
+  }
+
+  showCaptcha();
+}
+
+function showCaptcha() {
+  els.captchaSlot.classList.add("is-visible");
+}
+
+function hideCaptcha() {
+  els.captchaSlot.classList.remove("is-visible");
 }
 
 function renderCounters() {

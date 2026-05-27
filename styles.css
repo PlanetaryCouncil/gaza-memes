@@ -193,16 +193,16 @@ code {
 }
 
 .rating-row {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
   gap: 14px;
 }
 
-.rating-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
+.action-side {
+  display: grid;
+  justify-items: end;
+  gap: 10px;
 }
 
 .rating-side {
@@ -248,7 +248,6 @@ code {
   padding: 0;
   border: 0;
   min-width: 0;
-  width: 100%;
 }
 
 .sr-only {
@@ -382,7 +381,6 @@ button:focus {
 
 .save-button {
   white-space: nowrap;
-  margin-left: auto;
 }
 
 .primary-button:hover {
@@ -424,7 +422,23 @@ button:focus {
 }
 
 .captcha-slot {
-  min-height: 68px;
+  display: none;
+  min-height: 0;
+}
+
+.captcha-slot.is-visible {
+  display: block;
+  width: 100%;
+}
+
+.captcha-slot > div {
+  margin-left: auto;
+}
+
+.captcha-slot,
+#connection-status,
+#form-status {
+  grid-column: 1 / -1;
 }
 
 @media (max-width: 960px) {
@@ -453,15 +467,38 @@ button:focus {
   }
 
   .rating-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "stars stars stars"
+      "score . action";
+    align-items: center;
     gap: 10px;
   }
 
-  .rating-meta {
-    gap: 10px;
-  }
-
-  .rating-side {
+  .rating-row > .rating-side {
+    grid-area: score;
+    width: auto;
     min-width: 0;
+    align-self: center;
+  }
+
+  .rating-row > .star-field {
+    grid-area: stars;
+    grid-column: 1 / -1;
+  }
+
+  .action-side {
+    grid-area: action;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .captcha-slot > div {
+    margin-left: 0;
   }
 
   .compact-toolbar {
@@ -501,7 +538,7 @@ button:focus {
   }
 
   .save-button {
-    width: 100%;
+    width: auto;
   }
 
   .star-rating {
