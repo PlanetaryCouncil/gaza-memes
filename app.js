@@ -4,6 +4,7 @@ const DEFAULT_PAGE_TITLE = "Memes";
 const SITE_TITLE = "Ministry of Memes and Better Propaganda";
 const RATING_MARKER = "<!-- MEMES TO BE RATED BELOW THIS LINE -->";
 const FRAGMENT_BASE_PATH = "html-fragments/";
+const INTRO_QUERY_KEY = "intro";
 
 const state = {
   supabase: null,
@@ -158,21 +159,28 @@ function wireEvents() {
     }
   });
   window.addEventListener("hashchange", handleHashNavigation);
+  window.addEventListener("popstate", handleLocationChange);
   window.addEventListener("keydown", handleKeydown);
   window.addEventListener("resize", updateStarSizing);
   window.addEventListener("load", updateStarSizing);
   setupStarResizeObserver();
 }
 
-function dismissIntro() {
+function dismissIntro({ updateHistory = true } = {}) {
   els.introOverlay.hidden = true;
   document.body.classList.remove("intro-open");
+  if (updateHistory && isIntroRoute()) {
+    setIntroRoute(false, "push");
+  }
   updateDocumentTitle();
 }
 
-function showIntro() {
+function showIntro({ updateHistory = true } = {}) {
   els.introOverlay.hidden = false;
   document.body.classList.add("intro-open");
+  if (updateHistory && !isIntroRoute()) {
+    setIntroRoute(true, "push");
+  }
   resetAndPlayIntroVideos();
   updateDocumentTitle();
 }
@@ -430,7 +438,7 @@ function renderInitialImage() {
 
   const hashIndex = getIndexFromHash();
   if (hashIndex !== -1) {
-    dismissIntro();
+    dismissIntro({ updateHistory: false });
     state.currentIndex = hashIndex;
     state.startIndex = hashIndex;
     renderCurrentImage();
@@ -440,6 +448,10 @@ function renderInitialImage() {
   state.currentIndex = Math.floor(Math.random() * state.images.length);
   state.startIndex = state.currentIndex;
   renderCurrentImage();
+  if (!isIntroRoute()) {
+    setIntroRoute(true, "replace");
+  }
+  showIntro({ updateHistory: false });
 }
 
 function navigatePrevious() {
@@ -556,6 +568,36 @@ function handleHashNavigation() {
 
   state.currentIndex = hashIndex;
   renderCurrentImage();
+}
+
+function handleLocationChange() {
+  if (isIntroRoute()) {
+    showIntro({ updateHistory: false });
+  } else {
+    dismissIntro({ updateHistory: false });
+  }
+
+  const hashIndex = getIndexFromHash();
+  if (hashIndex !== -1 && hashIndex !== state.currentIndex) {
+    state.currentIndex = hashIndex;
+    renderCurrentImage();
+  }
+}
+
+function isIntroRoute() {
+  const search = new URLSearchParams(window.location.search);
+  return search.get(INTRO_QUERY_KEY) === "1";
+}
+
+function setIntroRoute(active, historyMode) {
+  const url = new URL(window.location.href);
+  if (active) {
+    url.searchParams.set(INTRO_QUERY_KEY, "1");
+  } else {
+    url.searchParams.delete(INTRO_QUERY_KEY);
+  }
+
+  window.history[historyMode === "replace" ? "replaceState" : "pushState"](null, "", `${url.pathname}${url.search}${url.hash}`);
 }
 
 async function submitRating(event) {

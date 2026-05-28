@@ -16,18 +16,28 @@
 ## Navigation
 
 - The first shown image is chosen from a shuffled deck.
-- `Previous` and `Next` navigate through that shuffled deck in a circular way.
-- Repeated `Previous` clicks must not hit a hard stop after only visited images.
+- The first shown image in a session is sequence position `1`.
+- `Previous` and `Next` navigate through that shuffled deck.
+- `Previous` must stop at the first session item and must not wrap backward beyond it.
 - Rated images remain in the deck.
 - Revisiting an image is allowed.
 - After saving, the app advances to the next image in the shuffled deck.
 - Clicking `Previous` immediately after saving returns to the image that was just rated.
 - The current image path is reflected in the URL hash.
 - Opening a shared URL with a valid image hash restores that exact image.
+- Opening a shared URL with a valid image hash skips the intro screen.
+- The intro screen has its own URL state so browser Back can reopen it.
+- The footer contains an `Opening Intro Movie` control that reopens the intro screen.
+- Keyboard navigation works as:
+  - `ArrowLeft` for `Previous`
+  - `ArrowRight` for `Next`
+  - `Space` for `Next`
+- Keyboard navigation must not fire while the user is typing in a form field.
 
 ## Header
 
 - The current image title is shown at the top.
+- The visible header title includes the review sequence number, for example `1. filename`.
 - A trailing display suffix like ` -w` or ` -t` is removed from the visible title only.
 - Three counters are shown in the header:
   - `Total`
@@ -81,6 +91,15 @@
 - The page includes Open Graph metadata for link previews.
 - The page includes Twitter card metadata for link previews.
 - The default share image points to a valid image in the deployed repo.
+- The share image points to the dedicated root-level preview asset.
+- The browser `<title>` is `Memes` while the intro screen is open.
+- Outside the intro screen, the browser `<title>` format is:
+
+```txt
+Memes | [meme name] | Ministry of Memes and Better Propaganda
+```
+
+- The browser `<title>` must not include the sequence number.
 
 ## Layout
 
@@ -89,7 +108,29 @@
   - no folder label
   - no `Open original` link
   - no skip-rotation checkbox
-- The `About` section appears at the bottom of the page.
+- The footer includes:
+  - socials in the left column
+  - project/support popup links in the middle column
+  - a dedicated `Submit your memes` button in the right column
+- The `Submit your memes` button opens the configured GitHub issue in a new tab and shows an external-link icon.
+- The popup links load HTML content from the `html-fragments/` folder into a modal.
+- The modal occupies about `90%` of viewport width and height.
+
+## Intro screen
+
+- The app opens with a dedicated intro screen when the user is not opening a direct image URL.
+- The intro screen uses a looping video.
+- The full square frame of the intro video must always stay visible on desktop and mobile.
+- The remaining screen area is filled by the same video in a blurred background layer.
+- The intro screen contains:
+  - the full project name
+  - the main prompt
+  - the `Start evaluating the memes ➡️` button
+  - the supporting note about public perception
+- The intro screen can be dismissed by:
+  - clicking the main intro button
+  - pressing `Escape`
+  - clicking outside the intro copy area
 
 ## Regression coverage
 
@@ -97,4 +138,4 @@
   - save → next → previous restores the just-rated image and its form values
   - skipped count behavior on forward-only unrated navigation
   - URL hash deep-linking to a specific image
-  - circular `Previous` navigation through the shuffled deck
+  - stopping `Previous` at the first session item

@@ -18,9 +18,14 @@
 
 - Replaced old skip behavior with `Previous` and `Next`.
 - Uses a shuffled deck so the session is random but navigable.
-- Restored circular deck navigation after an intermediate history-only model proved to be the wrong UX.
+- The visible session numbering now starts at `1` for the first seen image, regardless of the shuffled deck index.
+- `Previous` now stops at the first session item instead of wrapping around.
 - `save ➡️` now advances to the next image while still allowing `Previous` to return to the image just rated.
 - Added URL-hash deep links so each image can be shared directly.
+- Added keyboard shortcuts:
+  - `ArrowLeft` for previous
+  - `ArrowRight` for next
+  - `Space` for next
 
 ## Rating UX
 
@@ -77,8 +82,43 @@
 
 - Added Open Graph metadata for page-level link previews.
 - Added Twitter card metadata for page-level link previews.
-- Set the default share image to `memes-homepage/ministry-of-memes.png`.
+- Updated the default share image to the dedicated root-level `preview-image.jpg`.
 - Noted the limitation that hash-based image links are great for humans, but social crawlers still use page-level metadata.
+- Updated the browser title behavior:
+  - intro screen uses `Memes`
+  - rated view uses `Memes | [meme name] | Ministry of Memes and Better Propaganda`
+  - sequence numbers do not appear in the browser title
+
+## Footer and fragments
+
+- Reworked the footer into three columns:
+  - socials
+  - popup-backed project/support links
+  - dedicated `Submit your memes` CTA
+- Added `html-fragments/` so footer content can be edited without touching the main page structure.
+- Added modal loading for:
+  - `About us`
+  - `Opening Intro Movie`
+  - `Personal favourites`
+  - `Licence`
+  - `Careers`
+  - `Donate`
+- Kept `Submit your memes` as a real external link that opens the configured GitHub issue in a new tab with an external-link icon.
+
+## Intro screen
+
+- Added a dedicated full-screen intro experience before the rating app.
+- Uses a lightweight looping MP4 from `animated/`.
+- The full square video frame stays visible at all times.
+- The remaining viewport is filled by the same video in a blurred background layer.
+- Added intro copy, CTA button, and supporting note.
+- Added a dedicated intro URL state so browser Back can reopen the intro.
+- Opening a shared hashed image URL skips the intro automatically.
+- The intro can be reopened from the footer.
+- The intro can be dismissed by:
+  - the CTA button
+  - pressing `Escape`
+  - clicking outside the intro copy block
 
 ## Test coverage
 
@@ -87,4 +127,5 @@
   - save → next → previous restore flow
   - skipped counter behavior
   - hash-based deep linking to an exact image
-  - circular `Previous` navigation through the shuffled deck
+  - stopping `Previous` at the first session item
+  - mobile single-row stars
