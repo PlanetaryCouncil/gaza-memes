@@ -486,12 +486,39 @@ code {
   min-height: 520px;
   display: grid;
   place-items: center;
+  position: relative;
 }
 
 .image-frame img {
   width: 100%;
   height: min(72vh, 820px);
   object-fit: contain;
+  transition: opacity 160ms ease;
+}
+
+.image-frame.is-loading img {
+  opacity: 0.32;
+}
+
+.image-spinner {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 3px solid rgba(21, 71, 52, 0.14);
+  border-top-color: rgba(21, 71, 52, 0.82);
+  animation: image-spinner-rotate 0.72s linear infinite;
+  z-index: 1;
+}
+
+.image-spinner[hidden] {
+  display: none;
+}
+
+@keyframes image-spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .image-context {

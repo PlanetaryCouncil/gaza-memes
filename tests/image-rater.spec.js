@@ -110,6 +110,7 @@ test("current image is reflected in the hash and can be restored from a shared U
   await dismissIntro(page);
 
   const currentImage = page.locator("#image-view");
+  await expect.poll(async () => await currentImage.getAttribute("src")).not.toBeNull();
   const initialSrc = await currentImage.getAttribute("src");
   const currentHash = await page.evaluate(() => window.location.hash);
 

@@ -5,6 +5,7 @@ const SITE_TITLE = "Ministry of Memes and Better Propaganda";
 const RATING_MARKER = "<!-- MEMES TO BE RATED BELOW THIS LINE -->";
 const FRAGMENT_BASE_PATH = "html-fragments/";
 const INTRO_QUERY_KEY = "intro";
+const MIN_IMAGE_SPINNER_MS = 200;
 
 const state = {
   supabase: null,
@@ -21,6 +22,8 @@ const state = {
   captchaToken: null,
   captchaWidgetId: null,
   starResizeObserver: null,
+  imageRequestId: 0,
+  imageCache: new Map(),
   score: null,
   hoverScore: null
 };
@@ -32,6 +35,8 @@ const els = {
   introVideoBlur: document.querySelector("#intro-video-blur"),
   openIntroButton: document.querySelector("#open-intro-button"),
   imageTitle: document.querySelector("#image-title"),
+  imageFrame: document.querySelector("#image-frame"),
+  imageSpinner: document.querySelector("#image-spinner"),
   imageView: document.querySelector("#image-view"),
   previousButton: document.querySelector("#previous-button"),
   nextButton: document.querySelector("#next-button"),
@@ -81,6 +86,8 @@ async function boot() {
 function hasRequiredElements() {
   return Boolean(
     els.imageTitle &&
+    els.imageFrame &&
+    els.imageSpinner &&
     els.imageView &&
     els.previousButton &&
     els.nextButton &&
@@ -489,21 +496,42 @@ function navigateNext() {
   renderCurrentImage();
 }
 
-function renderCurrentImage() {
+async function renderCurrentImage() {
   if (!state.images.length || state.currentIndex < 0 || state.currentIndex >= state.images.length) {
     return;
   }
 
+  const requestId = state.imageRequestId + 1;
+  state.imageRequestId = requestId;
   state.currentImage = state.images[state.currentIndex];
   const displayTitle = `${getSequencePosition()}. ${prettifyName(state.currentImage.name)}`;
   els.imageTitle.textContent = displayTitle;
-  els.imageView.src = encodeURI(state.currentImage.path);
-  els.imageView.alt = state.currentImage.name;
   els.previousButton.disabled = state.currentIndex === state.startIndex;
   updateDocumentTitle();
   renderCurrentContext();
   syncHashToCurrentImage();
   hydrateFormFromCurrentImage();
+
+  setImageLoading(true);
+  const currentPath = state.currentImage.path;
+
+  try {
+    await Promise.all([
+      loadImageAsset(currentPath),
+      delay(MIN_IMAGE_SPINNER_MS)
+    ]);
+  } catch (_error) {
+    // Let the browser still attempt to render the image URL below.
+  }
+
+  if (requestId !== state.imageRequestId) {
+    return;
+  }
+
+  els.imageView.src = encodeURI(currentPath);
+  els.imageView.alt = state.currentImage.name;
+  setImageLoading(false);
+  preloadAdjacentImage(1);
 }
 
 function updateDocumentTitle() {
@@ -559,6 +587,43 @@ function syncHashToCurrentImage() {
   }
 
   window.history.replaceState(null, "", nextHash);
+}
+
+function preloadAdjacentImage(offset) {
+  if (!state.images.length || state.currentIndex < 0) {
+    return;
+  }
+
+  const nextIndex = (state.currentIndex + offset + state.images.length) % state.images.length;
+  const nextImage = state.images[nextIndex];
+  if (nextImage) {
+    void loadImageAsset(nextImage.path);
+  }
+}
+
+function loadImageAsset(path) {
+  if (state.imageCache.has(path)) {
+    return state.imageCache.get(path);
+  }
+
+  const imagePromise = new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(path);
+    img.onerror = () => reject(new Error(`Could not preload ${path}`));
+    img.src = encodeURI(path);
+  });
+
+  state.imageCache.set(path, imagePromise);
+  return imagePromise;
+}
+
+function setImageLoading(isLoading) {
+  els.imageFrame.classList.toggle("is-loading", isLoading);
+  els.imageSpinner.hidden = !isLoading;
+}
+
+function delay(ms) {
+  return new Promise((resolve) => window.setTimeout(resolve, ms));
 }
 
 function handleHashNavigation() {
