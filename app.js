@@ -27,6 +27,9 @@ const state = {
 const els = {
   introOverlay: document.querySelector("#intro-overlay"),
   introProceed: document.querySelector("#intro-proceed"),
+  introVideo: document.querySelector("#intro-video"),
+  introVideoBlur: document.querySelector("#intro-video-blur"),
+  openIntroButton: document.querySelector("#open-intro-button"),
   imageTitle: document.querySelector("#image-title"),
   imageView: document.querySelector("#image-view"),
   previousButton: document.querySelector("#previous-button"),
@@ -93,6 +96,9 @@ function hasRequiredElements() {
     els.captchaSlot &&
     els.introOverlay &&
     els.introProceed &&
+    els.introVideo &&
+    els.introVideoBlur &&
+    els.openIntroButton &&
     els.modalOverlay &&
     els.modalTitle &&
     els.modalContent &&
@@ -128,6 +134,18 @@ function wireEvents() {
 
   els.ratingForm.addEventListener("submit", submitRating);
   els.introProceed.addEventListener("click", dismissIntro);
+  els.introOverlay.addEventListener("click", (event) => {
+    if (!(event.target instanceof HTMLElement)) {
+      return;
+    }
+
+    if (event.target.closest(".intro-copy")) {
+      return;
+    }
+
+    dismissIntro();
+  });
+  els.openIntroButton.addEventListener("click", showIntro);
   els.footerButtons.forEach((button) => {
     button.addEventListener("click", () => {
       openFragmentModal(button.dataset.fragment || "", button.textContent?.trim() || "");
@@ -150,6 +168,20 @@ function dismissIntro() {
   els.introOverlay.hidden = true;
   document.body.classList.remove("intro-open");
   updateDocumentTitle();
+}
+
+function showIntro() {
+  els.introOverlay.hidden = false;
+  document.body.classList.add("intro-open");
+  resetAndPlayIntroVideos();
+  updateDocumentTitle();
+}
+
+function resetAndPlayIntroVideos() {
+  [els.introVideo, els.introVideoBlur].forEach((video) => {
+    video.currentTime = 0;
+    void video.play().catch(() => {});
+  });
 }
 
 async function openFragmentModal(fragmentName, label) {
@@ -181,6 +213,11 @@ function closeFragmentModal() {
 }
 
 function handleKeydown(event) {
+  if (event.key === "Escape" && !els.introOverlay.hidden) {
+    dismissIntro();
+    return;
+  }
+
   if (event.key === "Escape" && !els.modalOverlay.hidden) {
     closeFragmentModal();
     return;
@@ -393,6 +430,7 @@ function renderInitialImage() {
 
   const hashIndex = getIndexFromHash();
   if (hashIndex !== -1) {
+    dismissIntro();
     state.currentIndex = hashIndex;
     state.startIndex = hashIndex;
     renderCurrentImage();
