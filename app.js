@@ -181,6 +181,29 @@ function closeFragmentModal() {
 function handleKeydown(event) {
   if (event.key === "Escape" && !els.modalOverlay.hidden) {
     closeFragmentModal();
+    return;
+  }
+
+  const target = event.target;
+  const isTypingTarget = target instanceof HTMLElement && (
+    target.tagName === "TEXTAREA" ||
+    target.tagName === "INPUT" ||
+    target.isContentEditable
+  );
+
+  if (isTypingTarget || !els.introOverlay.hidden || !els.modalOverlay.hidden) {
+    return;
+  }
+
+  if (event.key === "ArrowLeft" && !els.previousButton.disabled) {
+    event.preventDefault();
+    navigatePrevious();
+    return;
+  }
+
+  if ((event.key === "ArrowRight" || event.key === " ") && !els.nextButton.disabled) {
+    event.preventDefault();
+    navigateNext();
   }
 }
 
