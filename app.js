@@ -171,6 +171,7 @@ function dismissIntro({ updateHistory = true } = {}) {
   document.body.classList.remove("intro-open");
   if (updateHistory && isIntroRoute()) {
     setIntroRoute(false, "push");
+    syncHashToCurrentImage();
   }
   updateDocumentTitle();
 }
@@ -548,7 +549,7 @@ function getIndexFromHash() {
 }
 
 function syncHashToCurrentImage() {
-  if (!state.currentImage) {
+  if (!state.currentImage || !els.introOverlay.hidden) {
     return;
   }
 
@@ -593,6 +594,7 @@ function setIntroRoute(active, historyMode) {
   const url = new URL(window.location.href);
   if (active) {
     url.searchParams.set(INTRO_QUERY_KEY, "1");
+    url.hash = "";
   } else {
     url.searchParams.delete(INTRO_QUERY_KEY);
   }

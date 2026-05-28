@@ -47,7 +47,7 @@ body.modal-open {
   inset: 0;
   z-index: 60;
   display: grid;
-  place-items: center;
+  grid-template-rows: minmax(0, 1fr) auto;
   background: #0a0a0a;
   overflow: hidden;
 }
@@ -71,17 +71,18 @@ body.modal-open {
 }
 
 .intro-stage {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  z-index: 1;
   display: grid;
   place-items: center;
-  padding: 24px;
+  align-self: end;
+  padding: 24px 24px 24px;
 }
 
 .intro-video-frame {
   position: relative;
-  width: min(88vh, calc(100vw - 48px));
-  height: min(88vh, calc(100vw - 48px));
+  width: min(72vh, calc(100vw - 96px));
+  height: min(72vh, calc(100vw - 96px));
   max-width: 92vw;
   max-height: 92vw;
   border-radius: 28px;
@@ -105,33 +106,15 @@ body.modal-open {
   position: relative;
   z-index: 1;
   width: min(760px, calc(100% - 32px));
-  align-self: end;
-  padding: 0 0 36px;
+  align-self: start;
+  margin: 0 auto 32px;
+  padding: 0;
   text-align: center;
   color: #fff8ee;
   pointer-events: none;
 }
 
-.intro-kicker {
-  margin: 0 0 10px;
-  font-family: var(--font-display);
-  font-size: 1rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  opacity: 0.84;
-}
-
-.intro-copy h1 {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 6vw, 4.8rem);
-  line-height: 0.95;
-  text-wrap: balance;
-  text-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-}
-
 .intro-button {
-  margin-top: 22px;
   min-height: 58px;
   padding: 0 26px;
   border: 0;
@@ -158,13 +141,30 @@ body.modal-open {
   outline-offset: 4px;
 }
 
+.intro-line,
 .intro-note {
-  margin: 16px auto 0;
+  margin: 10px auto 0;
   max-width: 44rem;
-  font-size: 0.98rem;
-  line-height: 1.45;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: 1.2;
   color: rgba(255, 248, 238, 0.88);
   text-wrap: balance;
+  text-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 640px) {
+  .intro-stage {
+    padding: 20px 16px 16px;
+  }
+
+  .intro-video-frame {
+    width: min(88vw, 88vh);
+    height: min(88vw, 88vh);
+  }
+
+  .intro-copy {
+    margin-bottom: 20px;
+  }
 }
 
 img {
