@@ -1,6 +1,7 @@
 const IMAGE_MANIFEST_PATH = "data/images.txt";
 const README_CONTEXT_PATH = "readme.md";
-const DEFAULT_PAGE_TITLE = "Ministry of Memes and Better Propaganda";
+const DEFAULT_PAGE_TITLE = "Memes";
+const SITE_TITLE = "Ministry of Memes and Better Propaganda";
 const RATING_MARKER = "<!-- MEMES TO BE RATED BELOW THIS LINE -->";
 const FRAGMENT_BASE_PATH = "html-fragments/";
 
@@ -148,6 +149,7 @@ function wireEvents() {
 function dismissIntro() {
   els.introOverlay.hidden = true;
   document.body.classList.remove("intro-open");
+  updateDocumentTitle();
 }
 
 async function openFragmentModal(fragmentName, label) {
@@ -447,10 +449,19 @@ function renderCurrentImage() {
   els.imageView.src = encodeURI(state.currentImage.path);
   els.imageView.alt = state.currentImage.name;
   els.previousButton.disabled = state.currentIndex === state.startIndex;
-  document.title = `${displayTitle} | ${DEFAULT_PAGE_TITLE}`;
+  updateDocumentTitle();
   renderCurrentContext();
   syncHashToCurrentImage();
   hydrateFormFromCurrentImage();
+}
+
+function updateDocumentTitle() {
+  if (!state.currentImage || !els.introOverlay.hidden) {
+    document.title = DEFAULT_PAGE_TITLE;
+    return;
+  }
+
+  document.title = `Memes | ${prettifyName(state.currentImage.name)} | ${SITE_TITLE}`;
 }
 
 function getSequencePosition() {
