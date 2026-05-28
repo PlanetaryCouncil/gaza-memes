@@ -111,7 +111,8 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 * @anadoluagency ➡️ https://aa.com.tr/en/middle-east/gaza-authorities-accuse-israel-of-stealing-organs-from-released-palestinian-bodies/3719641
 * @NewIndianXpress ➡️ https://newindianexpress.com/world/2025/Oct/19/gaza-authorities-flag-missing-organs-signs-of-torture-in-palestinian-bodies-returned-by-israel
 * @Guardian ➡️ https://theguardian.com/world/2025/oct/15/palestinian-bodies-returned-by-israel-show-signs-of-torture-and-execution-say-doctors
-* @BBC ➡️ https://bbc.com/news/articles/c4gz3r46e37o
+* @BBC ➡️  https://bbc.com/news/articles/c4gz3r46e37o
+* @euromedhr @EuroMedHRar ➡️ https://euromedmonitor.org/en/article/6889/Clear-evidence-of-brutal-torture:-Condition-of-Palestinian-bodies-released-from-Israeli-prisons-demands-urgent-int%E2%80%99l-investigation
 * Translating Falasteen (Palestine) ➡️ https://x.com/translatingpal/status/1979271388767666669
 
 ![](memes/detention%20v2.png)
