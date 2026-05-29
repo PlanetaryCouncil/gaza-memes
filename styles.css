@@ -42,6 +42,41 @@ body.modal-open {
   overflow: hidden;
 }
 
+.completion-confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 55;
+}
+
+.completion-confetti-piece {
+  position: absolute;
+  top: -10vh;
+  width: 12px;
+  height: 22px;
+  border-radius: 999px;
+  opacity: 0;
+  transform: translate3d(0, 0, 0) rotate(0deg);
+  animation: confetti-fall 1400ms ease-out forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--drift, 0px), 110vh, 0) rotate(var(--spin, 360deg));
+  }
+}
+
 .intro-overlay {
   position: fixed;
   inset: 0;
@@ -827,6 +862,17 @@ button:focus {
 
 .status-card:empty {
   display: none;
+}
+
+.inline-status-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: currentColor;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+  cursor: pointer;
 }
 
 .status-muted {

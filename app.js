@@ -11,6 +11,7 @@ const INTRO_QUERY_KEY = "intro";
 const MODE_QUERY_KEY = "mode";
 const MIN_IMAGE_SPINNER_MS = 200;
 const DEFAULT_MODE = "positive";
+const RESUME_SESSION_KEY = "meme-rater-resume";
 
 const state = {
   supabase: null,
@@ -33,6 +34,7 @@ const state = {
   ratedCount: 0,
   ratedByPath: {},
   skippedPaths: new Set(),
+  completionCelebrated: false,
   captchaToken: null,
   captchaWidgetId: null,
   starResizeObserver: null,
@@ -48,6 +50,7 @@ const els = {
   introVideo: document.querySelector("#intro-video"),
   introVideoBlur: document.querySelector("#intro-video-blur"),
   openIntroButton: document.querySelector("#open-intro-button"),
+  confetti: document.querySelector("#completion-confetti"),
   modeToggle: document.querySelector("#mode-toggle"),
   modeLabelNegative: document.querySelector("#mode-label-negative"),
   modeLabelPositive: document.querySelector("#mode-label-positive"),
@@ -60,6 +63,7 @@ const els = {
   ratingForm: document.querySelector("#rating-form"),
   submitButton: document.querySelector("#submit-button"),
   formStatus: document.querySelector("#form-status"),
+  completionStatus: document.querySelector("#completion-status"),
   scoreValue: document.querySelector("#score-value"),
   totalCount: document.querySelector("#total-count"),
   skippedCount: document.querySelector("#skipped-count"),
@@ -119,6 +123,7 @@ function hasRequiredElements() {
     els.ratingForm &&
     els.submitButton &&
     els.formStatus &&
+    els.completionStatus &&
     els.scoreValue &&
     els.totalCount &&
     els.skippedCount &&
@@ -132,6 +137,7 @@ function hasRequiredElements() {
     els.introVideo &&
     els.introVideoBlur &&
     els.openIntroButton &&
+    els.confetti &&
     els.modeToggle &&
     els.modeLabelNegative &&
     els.modeLabelPositive &&
@@ -196,6 +202,8 @@ function wireEvents() {
   });
   window.addEventListener("hashchange", handleHashNavigation);
   window.addEventListener("popstate", handleLocationChange);
+  window.addEventListener("beforeunload", persistResumeState);
+  window.addEventListener("pagehide", persistResumeState);
   window.addEventListener("keydown", handleKeydown);
   window.addEventListener("resize", updateStarSizing);
   window.addEventListener("load", updateStarSizing);
@@ -475,22 +483,47 @@ function renderInitialImage() {
     return;
   }
 
+  const resumedImagePath = consumeResumeImagePath();
+  if (resumedImagePath) {
+    const resumedIndex = state.images.findIndex((image) => image.path === resumedImagePath);
+    if (resumedIndex !== -1) {
+      dismissIntro({ updateHistory: false });
+      state.images = rotateImagesToStartAt(resumedIndex);
+      state.currentIndex = 0;
+      state.startIndex = 0;
+      state.totalCount = state.images.length;
+      renderCounters();
+      renderCurrentImage();
+      return;
+    }
+  }
+
   const hashIndex = getIndexFromHash();
   if (hashIndex !== -1) {
     dismissIntro({ updateHistory: false });
-    state.currentIndex = hashIndex;
-    state.startIndex = hashIndex;
+    state.images = rotateImagesToStartAt(hashIndex);
+    state.currentIndex = 0;
+    state.startIndex = 0;
+    state.totalCount = state.images.length;
+    renderCounters();
     renderCurrentImage();
     return;
   }
 
-  state.currentIndex = Math.floor(Math.random() * state.images.length);
-  state.startIndex = state.currentIndex;
+  state.currentIndex = 0;
+  state.startIndex = 0;
   renderCurrentImage();
-  if (!isIntroRoute()) {
-    setIntroRoute(true, "replace");
+  if (shouldShowIntroForCurrentMode()) {
+    if (!isIntroRoute()) {
+      setIntroRoute(true, "replace");
+    }
+    showIntro({ updateHistory: false });
+  } else {
+    if (isIntroRoute()) {
+      setIntroRoute(false, "replace");
+    }
+    dismissIntro({ updateHistory: false });
   }
-  showIntro({ updateHistory: false });
 }
 
 function navigatePrevious() {
@@ -514,16 +547,16 @@ function navigateNext() {
     return;
   }
 
-  const currentPath = state.currentImage.path;
-  if (state.score === null && !state.ratedByPath[currentPath] && !state.skippedPaths.has(currentPath)) {
-    state.skippedPaths.add(currentPath);
-    state.skippedCount += 1;
-    renderCounters();
+  countCurrentImageAsSkippedIfNeeded();
+
+  if (state.currentIndex >= state.images.length - 1) {
+    celebrateCompletion();
+    return;
   }
 
   state.currentIndex = state.currentIndex === -1
     ? 0
-    : (state.currentIndex + 1 + state.images.length) % state.images.length;
+    : Math.min(state.currentIndex + 1, state.images.length - 1);
   renderCurrentImage();
 }
 
@@ -538,8 +571,10 @@ async function renderCurrentImage() {
   const displayTitle = `${getSequencePosition()}. ${prettifyName(state.currentImage.name)}`;
   els.imageTitle.textContent = displayTitle;
   els.previousButton.disabled = state.currentIndex === state.startIndex;
+  els.nextButton.disabled = state.currentIndex >= state.images.length - 1 && state.completionCelebrated;
   updateDocumentTitle();
   renderCurrentContext();
+  renderCompletionStatus();
   syncHashToCurrentImage();
   hydrateFormFromCurrentImage();
 
@@ -579,7 +614,7 @@ function getSequencePosition() {
     return 1;
   }
 
-  return ((state.currentIndex - state.startIndex + state.images.length) % state.images.length) + 1;
+  return state.currentIndex + 1;
 }
 
 function renderCurrentContext() {
@@ -681,7 +716,7 @@ function handleLocationChange() {
     switchMode(urlMode, { updateHistory: false });
   }
 
-  if (isIntroRoute()) {
+  if (isIntroRoute() && shouldShowIntroForCurrentMode()) {
     showIntro({ updateHistory: false });
   } else {
     dismissIntro({ updateHistory: false });
@@ -697,6 +732,54 @@ function handleLocationChange() {
 function isIntroRoute() {
   const search = new URLSearchParams(window.location.search);
   return search.get(INTRO_QUERY_KEY) === "1";
+}
+
+function rotateImagesToStartAt(index) {
+  if (index <= 0 || index >= state.images.length) {
+    return state.images;
+  }
+
+  return [...state.images.slice(index), ...state.images.slice(0, index)];
+}
+
+function persistResumeState() {
+  const resumePath = getVisibleImagePath() || state.currentImage?.path || "";
+  if (!resumePath) {
+    window.sessionStorage.removeItem(RESUME_SESSION_KEY);
+    return;
+  }
+
+  window.sessionStorage.setItem(
+    RESUME_SESSION_KEY,
+    JSON.stringify({
+      mode: state.currentMode,
+      path: resumePath
+    })
+  );
+}
+
+function consumeResumeImagePath() {
+  const raw = window.sessionStorage.getItem(RESUME_SESSION_KEY);
+  if (!raw) {
+    return "";
+  }
+
+  window.sessionStorage.removeItem(RESUME_SESSION_KEY);
+
+  try {
+    const parsed = JSON.parse(raw);
+    if (parsed?.mode !== state.currentMode) {
+      return "";
+    }
+    return typeof parsed.path === "string" ? parsed.path : "";
+  } catch (_error) {
+    return "";
+  }
+}
+
+function getVisibleImagePath() {
+  const visiblePath = els.imageView?.getAttribute("src");
+  return visiblePath ? decodeURIComponent(visiblePath) : "";
 }
 
 function setIntroRoute(active, historyMode) {
@@ -1028,7 +1111,8 @@ function createModeSession() {
     skippedCount: 0,
     ratedCount: 0,
     ratedByPath: {},
-    skippedPaths: new Set()
+    skippedPaths: new Set(),
+    completionCelebrated: false
   };
 }
 
@@ -1040,7 +1124,8 @@ function saveCurrentModeSession() {
     skippedCount: state.skippedCount,
     ratedCount: state.ratedCount,
     ratedByPath: { ...state.ratedByPath },
-    skippedPaths: new Set(state.skippedPaths)
+    skippedPaths: new Set(state.skippedPaths),
+    completionCelebrated: state.completionCelebrated
   };
 }
 
@@ -1055,6 +1140,7 @@ function restoreModeSession(mode) {
   state.ratedCount = session.ratedCount;
   state.ratedByPath = { ...session.ratedByPath };
   state.skippedPaths = new Set(session.skippedPaths);
+  state.completionCelebrated = Boolean(session.completionCelebrated);
   renderCounters();
 }
 
@@ -1116,6 +1202,12 @@ function switchMode(mode, { updateHistory = true } = {}) {
   if (updateHistory) {
     syncHashToCurrentImage();
   }
+
+  renderCompletionStatus();
+}
+
+function shouldShowIntroForCurrentMode() {
+  return state.currentMode === DEFAULT_MODE;
 }
 
 function renderModeToggle() {
@@ -1125,6 +1217,84 @@ function renderModeToggle() {
   els.modeToggle.setAttribute("aria-checked", String(isPositive));
   els.modeLabelPositive.classList.toggle("is-active", isPositive);
   els.modeLabelNegative.classList.toggle("is-active", !isPositive);
+}
+
+function celebrateCompletion() {
+  if (state.completionCelebrated) {
+    return;
+  }
+
+  state.completionCelebrated = true;
+  saveCurrentModeSession();
+  launchConfetti();
+  renderCurrentImage();
+}
+
+function launchConfetti() {
+  const colors = ["#f6bd18", "#154734", "#d46842", "#fff4cf", "#b24a2a"];
+  els.confetti.innerHTML = "";
+
+  for (let index = 0; index < 28; index += 1) {
+    const piece = document.createElement("span");
+    piece.className = "completion-confetti-piece";
+    piece.style.left = `${Math.random() * 100}%`;
+    piece.style.background = colors[index % colors.length];
+    piece.style.setProperty("--drift", `${(Math.random() - 0.5) * 180}px`);
+    piece.style.setProperty("--spin", `${(Math.random() - 0.5) * 960}deg`);
+    piece.style.animationDelay = `${Math.random() * 120}ms`;
+    els.confetti.appendChild(piece);
+  }
+
+  window.setTimeout(() => {
+    els.confetti.innerHTML = "";
+  }, 1800);
+}
+
+function countCurrentImageAsSkippedIfNeeded() {
+  const currentPath = state.currentImage?.path;
+  if (!currentPath) {
+    return;
+  }
+
+  if (state.score === null && !state.ratedByPath[currentPath] && !state.skippedPaths.has(currentPath)) {
+    state.skippedPaths.add(currentPath);
+    state.skippedCount += 1;
+    renderCounters();
+  }
+}
+
+function renderCompletionStatus() {
+  if (!state.completionCelebrated) {
+    clearStatus(els.completionStatus);
+    return;
+  }
+
+  const otherMode = state.currentMode === "positive" ? "negative" : "positive";
+  const otherModeCompleted = Boolean(state.modeSessions[otherMode]?.completionCelebrated);
+
+  if (otherModeCompleted) {
+    setStatus(
+      els.completionStatus,
+      "You are a legend, very few completed that, join our social media circus.",
+      "ok"
+    );
+    return;
+  }
+
+  const nextModeLabel = otherMode === "positive" ? "positive" : "doom";
+  setHtmlStatus(
+    els.completionStatus,
+    `You have seen all the memes, <button type="button" class="inline-status-button" data-switch-mode="${otherMode}">click here to switch to ${nextModeLabel}</button>.`,
+    "ok"
+  );
+  els.completionStatus.querySelector("[data-switch-mode]")?.addEventListener("click", () => {
+    switchMode(otherMode);
+  });
+}
+
+function setHtmlStatus(element, html, tone) {
+  element.innerHTML = html;
+  element.className = `status-card status-${tone}`;
 }
 
 function shuffle(items) {

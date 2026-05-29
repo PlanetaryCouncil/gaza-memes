@@ -89,11 +89,62 @@ test("doom mode URL restores doom mode on reload", async ({ page }) => {
   await expect(page).toHaveURL(/mode=negative/);
 
   await page.reload();
-  await dismissIntro(page);
 
   await expect(page.locator("#mode-toggle")).toHaveAttribute("aria-checked", "false");
   await expect(page.locator("#mode-label-negative")).toHaveClass(/is-active/);
   await expect(page).toHaveURL(/mode=negative/);
+  await expect(page.locator("#intro-overlay")).toBeHidden();
+});
+
+test("reloading the page keeps the current image but resets it to the first session item", async ({ page }) => {
+  await page.goto("/");
+  await dismissIntro(page);
+
+  await page.locator("#next-button").click();
+  await page.locator("#next-button").click();
+  await expect.poll(async () => await page.locator("#image-view").getAttribute("src")).not.toBeNull();
+  const titleBeforeReload = await page.locator("#image-title").textContent();
+  const imageBeforeReload = await page.locator("#image-view").getAttribute("src");
+  await expect(page.locator("#image-title")).toHaveText(/^3\.\s/);
+
+  await page.reload();
+  await dismissIntro(page);
+
+  await expect(page.locator("#image-view")).toHaveAttribute("src", imageBeforeReload ?? "");
+  await expect(page.locator("#image-title")).not.toHaveText(titleBeforeReload ?? "");
+  await expect(page.locator("#image-title")).toHaveText(/^1\.\s/);
+});
+
+test("reaching the end stops navigation and shows confetti", async ({ page }) => {
+  await page.goto("/");
+  await dismissIntro(page);
+
+  const nextButton = page.locator("#next-button");
+  for (let index = 0; index < 30; index += 1) {
+    if (await nextButton.isDisabled()) {
+      break;
+    }
+    await nextButton.click();
+  }
+
+  await expect(nextButton).toBeDisabled();
+  await expect(page.locator("#completion-confetti .completion-confetti-piece")).toHaveCount(28);
+});
+
+test("finishing a mode counts the last skipped image and offers switching mode", async ({ page }) => {
+  await page.goto("/");
+  await dismissIntro(page);
+
+  const total = Number(await page.locator("#total-count").textContent());
+  const nextButton = page.locator("#next-button");
+
+  for (let index = 0; index < total; index += 1) {
+    await nextButton.click();
+  }
+
+  await expect(page.locator("#skipped-count")).toHaveText(String(total));
+  await expect(page.locator("#completion-status")).toContainText("You have seen all the memes");
+  await expect(page.locator("#completion-status")).toContainText("switch to doom");
 });
 
 test("save then previous returns to the same rated image with data restored", async ({ page }) => {

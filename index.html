@@ -50,6 +50,7 @@
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   </head>
   <body>
+    <div id="completion-confetti" class="completion-confetti" aria-hidden="true"></div>
     <section id="intro-overlay" class="intro-overlay" aria-label="Intro screen">
       <video
         id="intro-video-blur"
@@ -147,6 +148,7 @@
             <div id="captcha-slot" class="captcha-slot"></div>
             <div id="connection-status" class="status-card status-muted"></div>
             <div id="form-status" class="status-card status-muted"></div>
+            <div id="completion-status" class="status-card status-muted"></div>
 
             <label class="field-group" for="negative">
               <span>✅ Positive</span>
