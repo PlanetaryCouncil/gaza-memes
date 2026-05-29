@@ -105,7 +105,6 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 
 ## detention v2
 **CONTEXT:** Someone should do something about it, but who is someone, what is something?
-
 * @novaramedia ➡️ https://novaramedia.com/2025/10/29/israeli-military-accused-of-palestinian-organ-theft-again/
 * @Mondoweiss ➡️ https://mondoweiss.net/2025/10/israel-returns-195-dead-bodies-to-gaza-many-mutilated-with-hands-bound-signs-of-torture/
 * @anadoluagency ➡️ https://aa.com.tr/en/middle-east/gaza-authorities-accuse-israel-of-stealing-organs-from-released-palestinian-bodies/3719641
@@ -114,6 +113,9 @@ Check this [PDF online](https://planetarycouncil.github.io/moneyfromthefuture.co
 * @BBC ➡️  https://bbc.com/news/articles/c4gz3r46e37o
 * @euromedhr @EuroMedHRar ➡️ https://euromedmonitor.org/en/article/6889/Clear-evidence-of-brutal-torture:-Condition-of-Palestinian-bodies-released-from-Israeli-prisons-demands-urgent-int%E2%80%99l-investigation
 * Translating Falasteen (Palestine) ➡️ https://x.com/translatingpal/status/1979271388767666669
+* Raping with dogs by @NickKristof @NYTimes: https://www.nytimes.com/2026/05/11/opinion/israel-palestinians-sexual-violence.html?unlocked_article_code=1.h1A.Bvl7.HOHhhhq_xdze and follow up "Your Questions About Nicholas Kristof’s Column on Palestinians and Sexual Assault" https://www.nytimes.com/2026/05/21/opinion/kristof-palestinian-sexual-assault.html?unlocked_article_code=1.kFA.0f5m.J4kT1NIKg_Wb
+* @caitoz @BRAVENEWEUROPE1 ➡️ https://braveneweurope.com/caitlin-johnstone-sorry-if-this-is-antisemitic-but-i-think-its-wrong-to-train-dogs-to-rape-prisoners
+* Novara Media once again ➡️ https://novaramedia.com/2025/11/25/israeli-prison-guards-are-using-dogs-to-rape-palestinians-former-detainees-say/
 
 ![](memes/detention%20v2.png)
 
