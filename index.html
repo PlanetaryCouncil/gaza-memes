@@ -94,6 +94,20 @@
             <button id="previous-button" class="nav-button" type="button" aria-label="Previous image">
               &#8592;
             </button>
+            <div class="mode-toggle" aria-label="Meme tone">
+              <span id="mode-label-negative" class="mode-toggle-label">Doom</span>
+              <button
+                id="mode-toggle"
+                class="mode-toggle-button is-positive"
+                type="button"
+                role="switch"
+                aria-checked="true"
+                aria-label="Toggle between positive and negative memes"
+              >
+                <span class="mode-toggle-thumb"></span>
+              </button>
+              <span id="mode-label-positive" class="mode-toggle-label is-active">Positive</span>
+            </div>
             <h1 id="image-title">Loading images...</h1>
             <div class="header-counters" aria-label="Session counters">
               <p><span>Total</span><strong id="total-count">0</strong></p>

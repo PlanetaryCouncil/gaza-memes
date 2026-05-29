@@ -1,18 +1,32 @@
-const IMAGE_MANIFEST_PATH = "data/images.txt";
+const IMAGE_MANIFESTS = {
+  negative: "data/images.txt",
+  positive: "data/images-positive.txt"
+};
 const README_CONTEXT_PATH = "readme.md";
 const DEFAULT_PAGE_TITLE = "Memes";
 const SITE_TITLE = "Ministry of Memes and Better Propaganda";
 const RATING_MARKER = "<!-- MEMES TO BE RATED BELOW THIS LINE -->";
 const FRAGMENT_BASE_PATH = "html-fragments/";
 const INTRO_QUERY_KEY = "intro";
+const MODE_QUERY_KEY = "mode";
 const MIN_IMAGE_SPINNER_MS = 200;
+const DEFAULT_MODE = "positive";
 
 const state = {
   supabase: null,
+  currentMode: DEFAULT_MODE,
   currentImage: null,
   currentIndex: -1,
   startIndex: -1,
   images: [],
+  imagesByMode: {
+    negative: [],
+    positive: []
+  },
+  modeSessions: {
+    negative: createModeSession(),
+    positive: createModeSession()
+  },
   contextByPath: {},
   totalCount: 0,
   skippedCount: 0,
@@ -34,6 +48,9 @@ const els = {
   introVideo: document.querySelector("#intro-video"),
   introVideoBlur: document.querySelector("#intro-video-blur"),
   openIntroButton: document.querySelector("#open-intro-button"),
+  modeToggle: document.querySelector("#mode-toggle"),
+  modeLabelNegative: document.querySelector("#mode-label-negative"),
+  modeLabelPositive: document.querySelector("#mode-label-positive"),
   imageTitle: document.querySelector("#image-title"),
   imageFrame: document.querySelector("#image-frame"),
   imageSpinner: document.querySelector("#image-spinner"),
@@ -72,8 +89,16 @@ async function boot() {
   els.nextButton.disabled = true;
 
   try {
-    state.images = await loadImages();
+    const [negativeImages, positiveImages] = await Promise.all([
+      loadImagesForMode("negative"),
+      loadImagesForMode("positive")
+    ]);
+    state.imagesByMode.negative = negativeImages;
+    state.imagesByMode.positive = positiveImages;
     state.contextByPath = await loadContextByImagePath();
+    state.currentMode = resolveInitialMode();
+    restoreModeSession(state.currentMode);
+    renderModeToggle();
     renderInitialImage();
     els.nextButton.disabled = false;
   } catch (error) {
@@ -107,6 +132,9 @@ function hasRequiredElements() {
     els.introVideo &&
     els.introVideoBlur &&
     els.openIntroButton &&
+    els.modeToggle &&
+    els.modeLabelNegative &&
+    els.modeLabelPositive &&
     els.modalOverlay &&
     els.modalTitle &&
     els.modalContent &&
@@ -139,6 +167,7 @@ function wireEvents() {
   els.nextButton.addEventListener("click", () => {
     navigateNext();
   });
+  els.modeToggle.addEventListener("click", toggleMode);
 
   els.ratingForm.addEventListener("submit", submitRating);
   els.introProceed.addEventListener("click", dismissIntro);
@@ -262,8 +291,8 @@ function handleKeydown(event) {
   }
 }
 
-async function loadImages() {
-  const response = await fetch(IMAGE_MANIFEST_PATH, { cache: "no-store" });
+async function loadImagesForMode(mode) {
+  const response = await fetch(IMAGE_MANIFESTS[mode], { cache: "no-store" });
   if (!response.ok) {
     throw new Error(`HTTP ${response.status}`);
   }
@@ -278,8 +307,6 @@ async function loadImages() {
       folder: path.includes("/") ? path.slice(0, path.lastIndexOf("/")) : "root",
       name: path.split("/").pop()
     }));
-  state.totalCount = images.length;
-  renderCounters();
   return shuffle(images);
 }
 
@@ -438,6 +465,10 @@ async function ensureAnonymousSession() {
 }
 
 function renderInitialImage() {
+  state.images = state.imagesByMode[state.currentMode] || [];
+  state.totalCount = state.images.length;
+  renderCounters();
+
   if (!state.images.length) {
     els.imageTitle.textContent = "No images found";
     document.title = DEFAULT_PAGE_TITLE;
@@ -582,11 +613,19 @@ function syncHashToCurrentImage() {
   }
 
   const nextHash = `#${encodeURIComponent(state.currentImage.path)}`;
-  if (window.location.hash === nextHash) {
+  const url = new URL(window.location.href);
+  if (state.currentMode === DEFAULT_MODE) {
+    url.searchParams.delete(MODE_QUERY_KEY);
+  } else {
+    url.searchParams.set(MODE_QUERY_KEY, state.currentMode);
+  }
+
+  if (url.hash === nextHash && getModeFromUrl() === state.currentMode) {
     return;
   }
 
-  window.history.replaceState(null, "", nextHash);
+  url.hash = nextHash;
+  window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
 }
 
 function preloadAdjacentImage(offset) {
@@ -637,6 +676,11 @@ function handleHashNavigation() {
 }
 
 function handleLocationChange() {
+  const urlMode = getModeFromUrl();
+  if (urlMode !== state.currentMode) {
+    switchMode(urlMode, { updateHistory: false });
+  }
+
   if (isIntroRoute()) {
     showIntro({ updateHistory: false });
   } else {
@@ -662,6 +706,12 @@ function setIntroRoute(active, historyMode) {
     url.hash = "";
   } else {
     url.searchParams.delete(INTRO_QUERY_KEY);
+  }
+
+  if (state.currentMode === DEFAULT_MODE) {
+    url.searchParams.delete(MODE_QUERY_KEY);
+  } else {
+    url.searchParams.set(MODE_QUERY_KEY, state.currentMode);
   }
 
   window.history[historyMode === "replace" ? "replaceState" : "pushState"](null, "", `${url.pathname}${url.search}${url.hash}`);
@@ -968,6 +1018,113 @@ function renderCounters() {
   els.totalCount.textContent = String(state.totalCount);
   els.skippedCount.textContent = String(state.skippedCount);
   els.ratedCount.textContent = String(state.ratedCount);
+}
+
+function createModeSession() {
+  return {
+    currentImage: null,
+    currentIndex: -1,
+    startIndex: -1,
+    skippedCount: 0,
+    ratedCount: 0,
+    ratedByPath: {},
+    skippedPaths: new Set()
+  };
+}
+
+function saveCurrentModeSession() {
+  state.modeSessions[state.currentMode] = {
+    currentImage: state.currentImage,
+    currentIndex: state.currentIndex,
+    startIndex: state.startIndex,
+    skippedCount: state.skippedCount,
+    ratedCount: state.ratedCount,
+    ratedByPath: { ...state.ratedByPath },
+    skippedPaths: new Set(state.skippedPaths)
+  };
+}
+
+function restoreModeSession(mode) {
+  const session = state.modeSessions[mode] || createModeSession();
+  state.images = state.imagesByMode[mode] || [];
+  state.totalCount = state.images.length;
+  state.currentImage = session.currentImage;
+  state.currentIndex = session.currentIndex;
+  state.startIndex = session.startIndex;
+  state.skippedCount = session.skippedCount;
+  state.ratedCount = session.ratedCount;
+  state.ratedByPath = { ...session.ratedByPath };
+  state.skippedPaths = new Set(session.skippedPaths);
+  renderCounters();
+}
+
+function resolveInitialMode() {
+  const urlMode = getModeFromUrl();
+  if (urlMode !== DEFAULT_MODE) {
+    return urlMode;
+  }
+
+  const rawHash = window.location.hash.slice(1);
+  if (!rawHash) {
+    return DEFAULT_MODE;
+  }
+
+  const decodedPath = decodeURIComponent(rawHash);
+  if (state.imagesByMode.positive.some((image) => image.path === decodedPath)) {
+    return "positive";
+  }
+  if (state.imagesByMode.negative.some((image) => image.path === decodedPath)) {
+    return "negative";
+  }
+
+  return DEFAULT_MODE;
+}
+
+function getModeFromUrl() {
+  const search = new URLSearchParams(window.location.search);
+  const mode = search.get(MODE_QUERY_KEY);
+  return mode === "negative" || mode === "positive" ? mode : DEFAULT_MODE;
+}
+
+function toggleMode() {
+  switchMode(state.currentMode === "positive" ? "negative" : "positive");
+}
+
+function switchMode(mode, { updateHistory = true } = {}) {
+  if (mode === state.currentMode) {
+    return;
+  }
+
+  saveCurrentModeSession();
+  state.currentMode = mode;
+  restoreModeSession(mode);
+  renderModeToggle();
+
+  const hashIndex = getIndexFromHash();
+  if (hashIndex !== -1) {
+    state.currentIndex = hashIndex;
+    if (state.startIndex === -1) {
+      state.startIndex = hashIndex;
+    }
+    renderCurrentImage();
+  } else if (state.currentIndex >= 0 && state.currentIndex < state.images.length) {
+    renderCurrentImage();
+  } else {
+    renderInitialImage();
+  }
+
+  if (updateHistory) {
+    syncHashToCurrentImage();
+  }
+}
+
+function renderModeToggle() {
+  const isPositive = state.currentMode === "positive";
+  els.modeToggle.classList.toggle("is-positive", isPositive);
+  els.modeToggle.classList.toggle("is-negative", !isPositive);
+  els.modeToggle.setAttribute("aria-checked", String(isPositive));
+  els.modeLabelPositive.classList.toggle("is-active", isPositive);
+  els.modeLabelNegative.classList.toggle("is-active", !isPositive);
 }
 
 function shuffle(items) {

@@ -60,6 +60,42 @@ async function dismissIntro(page) {
   }
 }
 
+test("defaults to positive mode and can toggle to doom mode", async ({ page }) => {
+  await page.goto("/");
+  await dismissIntro(page);
+
+  const modeToggle = page.locator("#mode-toggle");
+  const positiveLabel = page.locator("#mode-label-positive");
+  const negativeLabel = page.locator("#mode-label-negative");
+
+  await expect(modeToggle).toHaveAttribute("aria-checked", "true");
+  await expect(positiveLabel).toHaveClass(/is-active/);
+  await expect(negativeLabel).not.toHaveClass(/is-active/);
+  await expect(page).not.toHaveURL(/mode=negative/);
+
+  await modeToggle.click();
+
+  await expect(modeToggle).toHaveAttribute("aria-checked", "false");
+  await expect(negativeLabel).toHaveClass(/is-active/);
+  await expect(positiveLabel).not.toHaveClass(/is-active/);
+  await expect(page).toHaveURL(/mode=negative/);
+});
+
+test("doom mode URL restores doom mode on reload", async ({ page }) => {
+  await page.goto("/");
+  await dismissIntro(page);
+
+  await page.locator("#mode-toggle").click();
+  await expect(page).toHaveURL(/mode=negative/);
+
+  await page.reload();
+  await dismissIntro(page);
+
+  await expect(page.locator("#mode-toggle")).toHaveAttribute("aria-checked", "false");
+  await expect(page.locator("#mode-label-negative")).toHaveClass(/is-active/);
+  await expect(page).toHaveURL(/mode=negative/);
+});
+
 test("save then previous returns to the same rated image with data restored", async ({ page }) => {
   await page.goto("/");
   await dismissIntro(page);

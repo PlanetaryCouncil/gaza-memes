@@ -422,6 +422,58 @@ code {
   align-items: center;
 }
 
+.mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.mode-toggle-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.mode-toggle-label.is-active {
+  color: var(--brand-strong);
+}
+
+.mode-toggle-button {
+  width: 58px;
+  height: 32px;
+  padding: 3px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(87, 70, 32, 0.2);
+  cursor: pointer;
+  transition: background 140ms ease;
+}
+
+.mode-toggle-button.is-positive {
+  background: rgba(21, 71, 52, 0.24);
+}
+
+.mode-toggle-button.is-negative {
+  background: rgba(178, 74, 42, 0.22);
+}
+
+.mode-toggle-thumb {
+  width: 26px;
+  height: 26px;
+  display: block;
+  border-radius: 999px;
+  background: #fffaf0;
+  box-shadow: 0 6px 14px rgba(45, 34, 23, 0.16);
+  transform: translateX(0);
+  transition: transform 140ms ease;
+}
+
+.mode-toggle-button.is-positive .mode-toggle-thumb {
+  transform: translateX(26px);
+}
+
 .compact-toolbar h1 {
   flex: 1;
   text-align: center;
@@ -881,12 +933,36 @@ button:focus {
   }
 
   .compact-toolbar {
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 8px;
   }
 
+  .mode-toggle {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
   .compact-toolbar h1 {
+    flex: 1 1 100%;
     font-size: 1.05rem;
+    order: 1;
+  }
+
+  .compact-toolbar .nav-button:first-child {
+    order: 2;
+  }
+
+  .compact-toolbar .nav-button:last-child {
+    order: 4;
+  }
+
+  .compact-toolbar .header-counters {
+    order: 5;
+    width: 100%;
+    text-align: center;
+    align-items: center;
   }
 
   .header-counters {
