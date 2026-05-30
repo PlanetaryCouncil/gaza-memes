@@ -52,7 +52,7 @@ If you think we've misjudged what is "obvious" - feel free to share feedback!
 
 # Media training
 
-![](media-training/media%20training%20v5.jpg)
+![](media-training/media%20training%20v5.png)
 
 Open for work in media 🙏
 
