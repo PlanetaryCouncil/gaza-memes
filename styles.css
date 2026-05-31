@@ -979,48 +979,39 @@ button:focus {
   }
 
   .compact-toolbar {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .mode-toggle {
-    order: 3;
-    width: 100%;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "title title title"
+      "prev toggle next";
+    align-items: center;
+    justify-items: center;
+    gap: 10px 12px;
   }
 
   .compact-toolbar h1 {
-    flex: 1 1 100%;
+    grid-area: title;
+    width: 100%;
+    flex: initial;
     font-size: 1.05rem;
-    order: 1;
   }
 
   .compact-toolbar .nav-button:first-child {
-    order: 2;
+    grid-area: prev;
   }
 
   .compact-toolbar .nav-button:last-child {
-    order: 4;
+    grid-area: next;
+  }
+
+  .mode-toggle {
+    grid-area: toggle;
+    width: auto;
+    justify-content: center;
   }
 
   .compact-toolbar .header-counters {
-    order: 5;
-    width: 100%;
-    text-align: center;
-    align-items: center;
-  }
-
-  .header-counters {
-    min-width: 62px;
-  }
-
-  .header-counters p {
-    font-size: 0.66rem;
-  }
-
-  .header-counters strong {
-    font-size: 0.88rem;
+    display: none;
   }
 
   .image-frame {
