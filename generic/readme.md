@@ -1,3 +1,12 @@
+## law of propaganda
+![](generic/law%20of%20propaganda.png)
+
+## sending email is not terrorism
+![](generic/sending%20email%20is%20not%20terrorism.png)
+
+## silence complicity neutrality
+![](generic/silence-complicity-neutrality.jpg)
+
 # choose version of reality
 ![](choose%20version%20of%20reality.png)
 
