@@ -1,5 +1,5 @@
 ## america enemies in epstein files
-![](america/enemies%20in%20epstein%20files.png)
+![](enemies%20in%20epstein%20files.png)
 
 ## bearded woman
 ![](bearded%20woman.jpeg)
