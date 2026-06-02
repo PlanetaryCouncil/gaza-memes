@@ -2,6 +2,7 @@ positive/IRONY signal bad telegram bad chat control good.png
 positive/change the word, change the world.jpg
 positive/door to better world.png
 positive/exit the system, enter the future.png
+positive/explore more.png
 positive/focus on things you control.png
 positive/hack system, hack narrative engine.png
 positive/hatred forgiveness.png
